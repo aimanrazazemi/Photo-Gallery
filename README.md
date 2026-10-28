@@ -1,6 +1,6 @@
 # Off Hours
 
-A personal photo portfolio: light warm-grey palette, Bebas Neue headings, an asymmetric editorial layout on a 12-column grid, and details for each photo on hover (or tap, on phones).
+A personal photo portfolio: light warm-grey palette, Bebas Neue headings, a collage layout grouped by category, and details for each photo on hover (or tap, on phones).
 
 No build step and no dependencies. It's plain HTML, CSS and JavaScript, so it runs on GitHub Pages as-is.
 
@@ -28,7 +28,7 @@ No build step and no dependencies. It's plain HTML, CSS and JavaScript, so it ru
 
 Only `file`, `title` and `category` are required. Leave out any field you don't have and it won't be shown.
 
-3. Commit and push. The layout places photos automatically based on their shape (portrait, landscape, square or panoramic), so you don't have to position anything.
+3. Commit and push. The collage packs photos automatically, keeping each photo's full shape, so you don't have to position anything.
 
 New categories appear in the menu the first time you use them. Each category also has its own link, e.g. `/#street`.
 

@@ -41,7 +41,6 @@
   const LETTERS = "ABCDEFGHIJKL";
   document.querySelector(".grid-lines").innerHTML = "<span></span>".repeat(12);
   axis.innerHTML = [...LETTERS].map((l) => `<span>${l}</span>`).join("");
-  const axisLabels = [...axis.children];
 
   /* ---------- Filters ---------- */
   const renderFilters = (active) => {
@@ -64,69 +63,90 @@
     img.onerror = () => resolve({ ...p, w: 4, h: 3 });
     img.src = p.file;
   });
-  const shape = (p) => {
-    const r = p.w / p.h;
-    if (r >= 1.6) return "wide";
-    if (r >= 1.15) return "land";
-    if (r > 0.88) return "square";
-    return "port";
-  };
-  const SPAN = { wide: 10, land: 7, square: 5, port: 4 };
-  const DROP = "clamp(40px, 9vw, 160px)";
+  // Justified collage: photos are packed edge to edge in rows that alternate between tall and short,
+  // so each group forms a solid block without cropping anyone's photo.
+  const ROW_HEIGHTS = { wide: [0.40, 0.24, 0.31], narrow: [0.62, 0.42] };
 
-  /* ---------- Asymmetric layout: build rows of one or two photos ---------- */
-  const layout = (list) => {
+  const pack = (collage) => {
+    const shots = collage._shots || (collage._shots = [...collage.querySelectorAll(".shot")]);
+    const W = collage.clientWidth;
+    if (!W) return;
+    const g = parseFloat(getComputedStyle(collage).rowGap) || 0;
+    const pattern = W < 600 ? ROW_HEIGHTS.narrow : ROW_HEIGHTS.wide;
     const rows = [];
-    let k = 0, r = 0;
-    while (k < list.length) {
-      const a = list[k], b = list[k + 1];
-      const sa = shape(a), sb = b && shape(b);
-      if (sa === "wide") {
-        rows.push([{ p: a, c: r % 2 ? 3 : 1, s: 10, m: "1 / -1" }]);
-        k += 1;
-      } else if (r % 4 === 3 || !b || sb === "wide") {
-        // a single photo in its own bay, set off-centre
-        const s = sa === "land" ? 7 : sa === "square" ? 6 : 5;
-        const c = r % 8 === 3 ? 13 - s - 1 : 2;
-        rows.push([{ p: a, c, s, m: sa === "land" ? "1 / -1" : "2 / span 4" }]);
-        k += 1;
-      } else {
-        let s1 = SPAN[sa], s2 = SPAN[sb];
-        while (s1 + s2 > 11) s1 >= s2 ? s1-- : s2--;
-        let c1, c2, d1 = "0px", d2 = "0px";
-        if (r % 2 === 0) { c1 = 1; c2 = 13 - s2; d2 = DROP; }
-        else { c1 = 2; c2 = Math.min(c1 + s1 + 1, 13 - s2); d1 = DROP; }
-        const mob = (sh, left) => sh === "land" ? "1 / -1" : left ? "1 / span 4" : "3 / span 4";
-        rows.push([
-          { p: a, c: c1, s: s1, d: d1, m: mob(sa, true) },
-          { p: b, c: c2, s: s2, d: d2, m: mob(sb, false) },
-        ]);
-        k += 2;
+    let cur = [], sum = 0;
+    const height = (items, total) => (W - g * (items.length - 1)) / total;
+
+    shots.forEach((el) => {
+      const ar = +el.dataset.ar;
+      const target = Math.max(140, W * pattern[rows.length % pattern.length]);
+      // Close the row early if adding this photo would squeeze it further from the target height.
+      if (cur.length) {
+        const without = height(cur, sum), withIt = height([...cur, el], sum + ar);
+        if (without <= target * 1.35 && Math.abs(without - target) < Math.abs(withIt - target)) {
+          rows.push({ items: cur, sum });
+          cur = []; sum = 0;
+        }
       }
-      r++;
+      cur.push(el);
+      sum += ar;
+      if (height(cur, sum) <= target) {
+        rows.push({ items: cur, sum });
+        cur = []; sum = 0;
+      }
+    });
+    if (cur.length) {
+      // A short leftover row would be stretched too tall, so fold it into the row above.
+      const target = Math.max(140, W * pattern[rows.length % pattern.length]);
+      const last = rows[rows.length - 1];
+      if (last && height(cur, sum) > target * 1.5) { last.items.push(...cur); last.sum += sum; }
+      else rows.push({ items: cur, sum });
     }
-    return rows;
+
+    collage.replaceChildren(...rows.map(({ items, sum }) => {
+      const row = document.createElement("div");
+      row.className = "crow";
+      row.style.height = `${height(items, sum).toFixed(2)}px`;
+      row.append(...items);
+      return row;
+    }));
   };
+
+  const packAll = () => gallery.querySelectorAll(".collage").forEach(pack);
+  let lastWidth = 0;
+  new ResizeObserver(() => {
+    if (gallery.clientWidth !== lastWidth) { lastWidth = gallery.clientWidth; packAll(); }
+  }).observe(gallery);
 
   const exifRow = (label, v) => v ? `<div><dt>${label}</dt><dd>${esc(v)}</dd></div>` : "";
-  const shotHTML = ({ p, c, s, d = "0px", m }, idx) => `
-    <figure class="shot" style="--col:${c} / span ${s};--mcol:${m};--drop:${d}" data-c="${c}" data-s="${s}" data-i="${idx}">
-      <div class="frame" style="--ratio:${p.w} / ${p.h}" tabindex="0" aria-label="${esc(p.title)}, show details">
-        <img src="${esc(p.file)}" alt="${esc(p.title)}${p.location ? ", " + esc(p.location) : ""}" width="${p.w}" height="${p.h}" decoding="async">
-        <div class="details">
-          <div class="d-head">
-            <h2 class="d-title">${esc(p.title)}</h2>
-            <span class="d-place">${[p.location, fmtDate(p.date)].filter(Boolean).map(esc).join(" · ")}</span>
-          </div>
+  const shotHTML = (p, idx) => {
+    const line = [p.aperture, p.shutter, p.iso && `ISO ${p.iso}`].filter(Boolean).join(" · ");
+    return `
+    <figure class="shot" style="--ar:${(p.w / p.h).toFixed(4)}" data-ar="${p.w / p.h}" data-i="${idx}">
+      <div class="frame" tabindex="0" aria-label="${esc(p.title)}, show details">
+        <img src="${esc(p.file)}" alt="${esc(p.title)}${p.location ? ", " + esc(p.location) : ""}" decoding="async">
+        <figcaption class="details">
+          <span class="d-no">No. ${pad(p.no)}</span>
+          <span class="d-cat">${esc(p.category || "")}</span>
+          <h3 class="d-title">${esc(p.title)}</h3>
+          <span class="d-place">${[p.location, fmtDate(p.date)].filter(Boolean).map(esc).join(" · ")}</span>
+          ${line || p.camera ? `<span class="d-line">${esc([p.camera, line].filter(Boolean).join(" — "))}</span>` : ""}
           <dl class="d-exif">
             ${exifRow("Camera", p.camera)}${exifRow("Lens", p.lens)}${exifRow("Focal", p.focal)}
             ${exifRow("Aperture", p.aperture)}${exifRow("Shutter", p.shutter)}${exifRow("ISO", p.iso)}
           </dl>
           ${p.note ? `<p class="d-note">${esc(p.note)}</p>` : ""}
-        </div>
+        </figcaption>
       </div>
-      <figcaption class="cap"><span>No. ${pad(p.no)} &nbsp;<b>${esc(p.title)}</b></span><span>${esc(p.category || "")}</span></figcaption>
     </figure>`;
+  };
+
+  const yearSpan = (list) => {
+    const ys = list.map((p) => parseInt(p.date)).filter(Boolean);
+    if (!ys.length) return "";
+    const a = Math.min(...ys), b = Math.max(...ys);
+    return a === b ? `${a}` : `${a}–${b}`;
+  };
 
   /* ---------- Render ---------- */
   let measured = [];
@@ -139,17 +159,26 @@
       counterTotal.textContent = "00";
       return;
     }
+    const groups = cat === "all" ? categories : categories.filter((c) => slug(c) === cat);
     let idx = 0;
-    gallery.innerHTML = layout(list).map((row) =>
-      `<div class="row">${row.map((it) => shotHTML(it, ++idx)).join("")}</div>`
-    ).join("");
+    gallery.innerHTML = groups.map((c) => {
+      const items = list.filter((p) => p.category === c);
+      if (!items.length) return "";
+      return `<section class="group" id="group-${slug(c)}">
+        <div class="group-head">
+          <h2 class="group-title">${esc(c)}</h2>
+          <p class="group-meta">${String(items.length).padStart(2, "0")} photos${yearSpan(items) ? " · " + yearSpan(items) : ""}</p>
+        </div>
+        <div class="collage">${items.map((p) => shotHTML(p, ++idx)).join("")}</div>
+      </section>`;
+    }).join("");
     counterTotal.textContent = String(list.length).padStart(2, "0");
     counterNow.textContent = "01";
+    packAll();
     observe();
-    parallax();
   };
 
-  /* ---------- Scroll: reveal, counter, parallax ---------- */
+  /* ---------- Scroll: reveal and counter ---------- */
   const observe = () => {
     revealObs?.disconnect();
     countObs?.disconnect();
@@ -168,6 +197,7 @@
         // Only photos that start below the fold animate in; everything on screen is shown immediately.
         if (s.getBoundingClientRect().top > window.innerHeight) {
           s.classList.add("pending");
+          s.style.setProperty("--delay", `${(+s.dataset.i % 4) * 70}ms`);
           revealObs.observe(s);
         }
       });
@@ -182,35 +212,6 @@
       shots.forEach((s) => countObs.observe(s));
     }
   };
-
-  let ticking = false;
-  const parallax = () => {
-    if (reduceMotion) return;
-    const vh = window.innerHeight;
-    gallery.querySelectorAll(".frame").forEach((f) => {
-      const r = f.getBoundingClientRect();
-      if (r.bottom < -100 || r.top > vh + 100) return;
-      const offset = ((r.top + r.height / 2) - vh / 2) / vh;  // -1 .. 1 across the screen
-      const max = r.height * 0.028;                           // stays inside the 6% overscale
-      f.firstElementChild.style.setProperty("--px", `${(-offset * max).toFixed(1)}px`);
-    });
-    ticking = false;
-  };
-  window.addEventListener("scroll", () => {
-    if (!ticking) { ticking = true; requestAnimationFrame(parallax); }
-  }, { passive: true });
-  window.addEventListener("resize", parallax);
-
-  /* ---------- Hover: light up the grid columns a photo spans ---------- */
-  const lightAxis = (shot) => {
-    axisLabels.forEach((l) => l.classList.remove("on"));
-    if (!shot) return;
-    const c = +shot.dataset.c, s = +shot.dataset.s;
-    for (let i = c - 1; i < c - 1 + s; i++) axisLabels[i]?.classList.add("on");
-  };
-  gallery.addEventListener("mouseover", (e) => lightAxis(e.target.closest(".shot")));
-  gallery.addEventListener("mouseleave", () => lightAxis(null));
-  gallery.addEventListener("focusin", (e) => lightAxis(e.target.closest(".shot")));
 
   /* ---------- Touch: tap a photo to show or hide its details ---------- */
   gallery.addEventListener("click", (e) => {

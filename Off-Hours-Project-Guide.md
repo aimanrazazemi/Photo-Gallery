@@ -16,7 +16,7 @@ A personal website for favourite photos taken in free time. It's built as plain 
 | Heading font | Bebas Neue |
 | Body font | Archivo |
 | Camera details font | IBM Plex Mono |
-| Layout | Asymmetric editorial layout, mixed sizes, lots of white space |
+| Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
 | Categories | Yes, with a filter menu |
 | Hosting | GitHub, published with GitHub Pages |
@@ -37,12 +37,12 @@ A personal website for favourite photos taken in free time. It's built as plain 
 ## 2. Features
 
 - **Structural grid:** faint column lines run behind the page like a plan drawing, with the columns labelled A to L.
-- **Automatic layout:** each photo's size and position come from its shape (portrait, landscape, square or panoramic). Photos are placed in staggered pairs and single off-centre photos.
-- **Hover details:** title, location, date, camera, lens, focal length, aperture, shutter speed, ISO and a short note.
-- **Column highlight:** hovering a photo lights up the column letters it covers.
-- **Scroll effects:** photos rise in as you reach them, images drift slightly as you scroll, and a counter in the corner shows your position (e.g. `06 / 30`).
+- **Collage by category:** each category is its own section with a large heading, a photo count and its years. Photos are packed edge to edge with thin gaps, so each group forms a solid block that's easy to scan.
+- **Automatic layout:** rows alternate between tall and short for a mix of sizes. Photos are never cropped, and the collage repacks itself to fit any screen width.
+- **Hover details:** a panel fades in over the photo with its number, title, location and date. Large photos also show the camera, lens, focal length, aperture, shutter speed, ISO and your note. Small photos show a one-line summary of the settings instead.
+- **Scroll effects:** photos fade up as you reach them, and a counter in the corner shows your position (e.g. `06 / 30`).
 - **Categories:** a filter menu with photo counts. Each category has its own link, e.g. `#street`.
-- **Phones:** the page switches to a 6-column layout, and you tap a photo to show or hide its details.
+- **Phones:** rows are taller with fewer photos in each, and you tap a photo to show or hide its details.
 - **Accessibility:** works with the keyboard and turns off motion for visitors who have reduced motion enabled.
 
 ---
@@ -66,7 +66,7 @@ photo-portfolio/
 
 1. Put the image in the `images/` folder. A JPG about 2000px on the long edge is plenty.
 2. Open `js/photos.js`, copy one entry and paste it at the **top** of the `PHOTOS` list.
-3. Fill it in:
+3. Fill it in (photos appear in a category's collage in the order they're listed):
 
 ```js
 {

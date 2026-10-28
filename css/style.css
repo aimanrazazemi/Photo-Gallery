@@ -114,59 +114,75 @@ main { position: relative; z-index: 1; }
 }
 .axis span.on { color: var(--umber); }
 
-/* Gallery rows */
-.gallery { display: grid; gap: clamp(64px, 10vw, 160px); padding-bottom: clamp(80px, 12vw, 180px); }
-.row {
+/* Collage: photos grouped by category, packed into a dense grid of square cells */
+.gallery { display: grid; gap: clamp(72px, 9vw, 140px); padding-bottom: clamp(80px, 12vw, 180px); }
+
+.group-head {
   display: grid; grid-template-columns: repeat(var(--cols), 1fr); column-gap: var(--gap);
-  align-items: start;
+  align-items: end; margin-bottom: clamp(16px, 2vw, 28px);
 }
-.shot { grid-column: var(--col); margin: 0; margin-top: var(--drop, 0); min-width: 0; }
+.group-title {
+  grid-column: 1 / span 8; margin: 0;
+  font: 400 clamp(48px, 7vw, 110px)/.85 var(--display); letter-spacing: .01em;
+}
+.group-meta {
+  grid-column: 9 / -1; justify-self: end; text-align: right;
+  font: 500 10px/1.6 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.collage { --cgap: clamp(6px, .7vw, 10px); display: grid; row-gap: var(--cgap); }
+.crow { display: flex; gap: var(--cgap); }
+.shot { flex: var(--ar) 1 0; margin: 0; min-width: 0; position: relative; }
 
 .frame {
   position: relative; overflow: hidden; cursor: default;
-  aspect-ratio: var(--ratio, 4 / 3); max-width: 100%;
+  width: 100%; height: 100%; max-width: 100%;
   background: var(--stone);
+  container-type: size;
 }
 .frame img {
   width: 100%; height: 100%; object-fit: cover;
-  transform: translate3d(0, var(--px, 0px), 0) scale(1.06);
-  transition: filter .6s var(--ease), scale .9s var(--ease);
-  will-change: transform;
+  transition: filter .6s var(--ease), transform .9s var(--ease);
 }
-.shot:hover .frame img, .shot.open .frame img { filter: saturate(.85) brightness(.97); scale: 1.025; }
+.shot:hover .frame img, .shot:focus-within .frame img, .shot.open .frame img { filter: saturate(.8) brightness(.96); transform: scale(1.04); }
 
-/* Hover details */
+/* Hover details: fills the tile, adapts to tile size */
 .details {
-  position: absolute; left: 0; right: 0; bottom: 0;
+  position: absolute; inset: 0;
   background: var(--veil);
-  padding: clamp(14px, 1.8vw, 22px);
-  display: grid; gap: 12px;
-  transform: translateY(101%);
-  transition: transform .55s var(--ease);
+  padding: clamp(12px, 6cqmin, 22px);
+  display: flex; flex-direction: column; justify-content: flex-end; gap: 8px;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .4s var(--ease), transform .5s var(--ease);
+  overflow: hidden;
 }
-.shot:hover .details, .shot:focus-within .details, .shot.open .details { transform: none; }
-.d-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.d-title { margin: 0; font: 400 clamp(24px, 2.4vw, 34px)/1 var(--display); letter-spacing: .03em; }
+.shot:hover .details, .shot:focus-within .details, .shot.open .details { opacity: 1; transform: none; }
+.d-no { position: absolute; top: clamp(12px, 6cqmin, 22px); left: clamp(12px, 6cqmin, 22px); font: 500 10px/1 var(--mono); letter-spacing: .14em; color: var(--umber); }
+.d-cat { position: absolute; top: clamp(12px, 6cqmin, 22px); right: clamp(12px, 6cqmin, 22px); font: 500 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+.d-title { margin: 0; font: 400 clamp(22px, 11cqmin, 40px)/1 var(--display); letter-spacing: .03em; text-wrap: balance; }
 .d-place { font: 500 10px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.d-line { font: 400 11px/1.5 var(--mono); color: var(--ink); border-top: 1px solid var(--sand); padding-top: 8px; }
 .d-exif {
-  margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px 14px;
+  margin: 0; display: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 14px;
   border-top: 1px solid var(--sand); padding-top: 10px;
 }
-.d-exif div { min-width: 0; }
 .d-exif dt { font: 500 9px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
 .d-exif dd { margin: 2px 0 0; font: 400 12px/1.3 var(--mono); overflow-wrap: anywhere; }
-.d-note { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink); max-width: 52ch; }
+.d-note { margin: 0; display: none; font-size: 13px; line-height: 1.5; max-width: 52ch; }
 
-/* Caption under each photo (always visible) */
-.cap {
-  display: flex; justify-content: space-between; gap: 12px; padding-top: 10px;
-  font: 500 10px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft);
+/* Bigger tiles get the full spec sheet and the note */
+@container (min-width: 340px) and (min-height: 300px) {
+  .d-line { display: none; }
+  .d-exif { display: grid; }
+  .d-note { display: block; }
 }
-.cap b { font-weight: 500; color: var(--ink); }
+@container (max-height: 170px) {
+  .d-place, .d-line { display: none; }
+}
 
 /* Scroll reveal: only applied to photos that start below the fold */
-.shot.pending { opacity: 0; transform: translateY(48px); }
-.shot.shown { opacity: 1; transform: none; transition: opacity 1s var(--ease), transform 1.2s var(--ease); }
+.shot.pending { opacity: 0; transform: translateY(32px); }
+.shot.shown { opacity: 1; transform: none; transition: opacity .9s var(--ease) var(--delay, 0s), transform 1s var(--ease) var(--delay, 0s); }
 
 /* Footer and counter */
 .foot {
@@ -192,8 +208,8 @@ main { position: relative; z-index: 1; }
   :root { --cols: 6; }
   .intro-title, .intro-meta { grid-column: 1 / -1; }
   .intro-meta { margin-top: 28px; }
-  .shot { grid-column: var(--mcol); margin-top: 0; }
-  .row { row-gap: 64px; }
+  .group-title, .group-meta { grid-column: 1 / -1; justify-self: start; text-align: left; }
+  .group-meta { margin-top: 8px; }
   .counter { display: none; }
   .grid-lines span:nth-child(n+7), .axis span:nth-child(n+7) { display: none; }
   .foot-hint::before { content: "Tap"; }
@@ -210,5 +226,4 @@ main { position: relative; z-index: 1; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .shot.pending { opacity: 1; transform: none; }
-  .frame img { transform: scale(1.06); }
 }
