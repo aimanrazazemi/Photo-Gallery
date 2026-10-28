@@ -1,9 +1,13 @@
-# Off Hours: Photo Portfolio Project Guide
+# Photo Gallery: Aiman
 
 A personal website for favourite photos taken in free time. It's built as plain HTML, CSS and JavaScript, with no build step and nothing to install.
 
+This file is the project's working record. Every change to the site is noted in the change log at the end.
+
+- **Repository:** https://github.com/aimanrazazemi/Photo-Gallery
+- **Live site (once GitHub Pages is on):** https://aimanrazazemi.github.io/Photo-Gallery/
 - **Preview (private to you):** https://claude.ai/artifact/CU9gPWMXNbQyburLL7moef
-- **Status:** first version built and committed to git, not yet pushed to GitHub.
+- **Status:** pushed to GitHub. GitHub Pages still needs to be switched on (see section 7).
 
 ---
 
@@ -50,13 +54,14 @@ A personal website for favourite photos taken in free time. It's built as plain 
 ## 3. Project files
 
 ```
-photo-portfolio/
+Photo-Gallery/
 ├── index.html          The page
 ├── css/style.css       Colours, fonts, layout
 ├── js/photos.js        YOUR PHOTOS AND SITE TEXT (the only file you normally edit)
 ├── js/main.js          Layout and interactions
 ├── images/             Photo files
 ├── README.md           Short instructions
+├── Photo-Gallery-Aiman.md   This file: project record and change log
 └── .nojekyll           Tells GitHub Pages to serve the files as-is
 ```
 
@@ -120,21 +125,41 @@ Then open http://localhost:8000 in your browser.
 
 ---
 
-## 7. Putting it on GitHub
+## 7. GitHub and publishing
 
-1. Connect GitHub to Claude at https://claude.ai/connect-github and install the Claude GitHub App when it asks.
-2. On GitHub, create an empty repository, for example `photo-portfolio`.
-3. Send Claude your GitHub username and the repository name so the site can be pushed.
-4. In the repository on GitHub, open **Settings → Pages**. Set **Source** to *Deploy from a branch*, choose `main` and `/ (root)`, then save.
-5. The site will be live at `https://<your-username>.github.io/photo-portfolio/`.
+The site lives in **https://github.com/aimanrazazemi/Photo-Gallery** on the `main` branch.
+
+To put it online with GitHub Pages (one-time):
+
+1. Open https://github.com/aimanrazazemi/Photo-Gallery/settings/pages
+2. Under **Build and deployment → Source**, choose **Deploy from a branch**.
+3. Set the branch to `main` and the folder to `/ (root)`, then click **Save**.
+4. After 1–2 minutes the site is live at **https://aimanrazazemi.github.io/Photo-Gallery/**
+
+GitHub Pages is free only for public repositories. If the Pages settings are greyed out, change the repository to public under **Settings → General → Danger Zone → Change visibility**.
+
+After that, every push to `main` updates the live site within a minute or two.
 
 ---
 
 ## 8. To do
 
-- [ ] Connect GitHub and push the site
+- [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
 - [ ] Replace the 30 sample images and their details with your own photos
 - [ ] Set your real site name, tagline and name in `SITE`
 - [ ] Rename or adjust the categories (currently Architecture, Street, Nature, Travel)
 - [ ] Share reference layouts so the design can be fine-tuned
+
+---
+
+## 9. Change log
+
+Newest first.
+
+| Date | Change |
+|---|---|
+| 2026-10-28 | This file became the project record (renamed from `Off-Hours-Project-Guide.md`). Added the GitHub details and this change log. |
+| 2026-10-28 | Pushed the site to GitHub: `aimanrazazemi/Photo-Gallery`, branch `main`. |
+| 2026-10-28 | Switched the gallery to a collage grouped by category: photos packed edge to edge in rows of mixed heights, no cropping. Hover details adapt to photo size. |
+| 2026-10-28 | First version: warm grey palette, Bebas Neue headings, 12-column structural grid, category filters, hover details, 30 sample photos. |
