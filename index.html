@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Off Hours</title>
+<meta name="description" content="A personal collection of photographs taken in free time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grid-lines" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="brand" href="#" id="brand">Off Hours</a>
+  <nav class="filters" id="filters" aria-label="Categories"></nav>
+</header>
+
+<main>
+  <section class="intro">
+    <h1 class="intro-title" id="intro-title">Off Hours</h1>
+    <div class="intro-meta">
+      <p class="intro-tagline" id="intro-tagline"></p>
+      <dl class="intro-stats" id="intro-stats"></dl>
+    </div>
+  </section>
+
+  <div class="axis" id="axis" aria-hidden="true"></div>
+
+  <section class="gallery" id="gallery" aria-live="polite"></section>
+</main>
+
+<footer class="foot">
+  <span id="foot-author"></span>
+  <span class="foot-hint">Hover or tap a photo for details</span>
+</footer>
+
+<div class="counter" id="counter" aria-hidden="true"><span id="counter-now">01</span> / <span id="counter-total">30</span></div>
+
+<script src="js/photos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
