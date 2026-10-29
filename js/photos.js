@@ -12,9 +12,10 @@
 */
 
 const SITE = {
-  name: "Off Hours",
+  name: "Aiman Razazemi",          // small name at the top left of every page
+  title: "After Hours",            // large heading at the top of the page
   tagline: "Photographs taken on free days, long walks and the way home.",
-  author: "Your Name",
+  author: "Aiman Razazemi",
   instagram: "" // optional, e.g. "https://instagram.com/yourhandle"
 };
 

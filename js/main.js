@@ -21,9 +21,10 @@
   const photos = PHOTOS.map((p, i) => ({ ...p, no: PHOTOS.length - i }));
 
   /* ---------- Site text ---------- */
-  document.title = SITE.name;
+  const heading = SITE.title || SITE.name;
+  document.title = heading === SITE.name ? SITE.name : `${heading} · ${SITE.name}`;
   document.getElementById("brand").textContent = SITE.name;
-  document.getElementById("intro-title").textContent = SITE.name;
+  document.getElementById("intro-title").textContent = heading;
   document.getElementById("intro-tagline").textContent = SITE.tagline;
   const foot = document.getElementById("foot-author");
   foot.innerHTML = `© ${new Date().getFullYear()} ${esc(SITE.author)}` +

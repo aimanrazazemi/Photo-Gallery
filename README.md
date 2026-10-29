@@ -1,4 +1,4 @@
-# Off Hours
+# After Hours · Aiman Razazemi
 
 A personal photo portfolio: light warm-grey palette, Bebas Neue headings, a collage layout grouped by category, and details for each photo on hover (or tap, on phones).
 
@@ -32,7 +32,7 @@ Only `file`, `title` and `category` are required. Leave out any field you don't 
 
 New categories appear in the menu the first time you use them. Each category also has its own link, e.g. `/#street`.
 
-## Changing the site name and intro
+## Changing the names and intro
 
 Edit the `SITE` block at the top of `js/photos.js`.
 

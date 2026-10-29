@@ -98,16 +98,17 @@ Photo-Gallery/
 - A new category appears in the menu the first time you use it.
 - Photos are numbered from oldest to newest, so existing numbers don't change when you add new photos at the top.
 
-## 5. Changing the site name and intro
+## 5. Changing the names and intro
 
 Edit the `SITE` block at the top of `js/photos.js`:
 
 ```js
 const SITE = {
-  name: "Off Hours",
+  name: "Aiman Razazemi",   // small name at the top left of every page
+  title: "After Hours",     // large heading at the top of the page
   tagline: "Photographs taken on free days, long walks and the way home.",
-  author: "Your Name",
-  instagram: ""   // optional, e.g. "https://instagram.com/yourhandle"
+  author: "Aiman Razazemi", // name in the footer
+  instagram: ""             // optional, e.g. "https://instagram.com/yourhandle"
 };
 ```
 
@@ -147,7 +148,8 @@ After that, every push to `main` updates the live site within a minute or two.
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
 - [ ] Replace the 30 sample images and their details with your own photos
-- [ ] Set your real site name, tagline and name in `SITE`
+- [x] Set the site name and heading in `SITE`
+- [ ] Write your own tagline in `SITE`
 - [ ] Rename or adjust the categories (currently Architecture, Street, Nature, Travel)
 - [ ] Share reference layouts so the design can be fine-tuned
 
@@ -159,6 +161,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | Top-left name changed from "Off Hours" to "Aiman Razazemi". Large heading changed from "Off Hours" to "After Hours". Footer now shows "© Aiman Razazemi". Browser tab reads "After Hours · Aiman Razazemi". |
 | 2026-10-28 | This file became the project record (renamed from `Off-Hours-Project-Guide.md`). Added the GitHub details and this change log. |
 | 2026-10-28 | Pushed the site to GitHub: `aimanrazazemi/Photo-Gallery`, branch `main`. |
 | 2026-10-28 | Switched the gallery to a collage grouped by category: photos packed edge to edge in rows of mixed heights, no cropping. Hover details adapt to photo size. |
