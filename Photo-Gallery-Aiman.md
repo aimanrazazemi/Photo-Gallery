@@ -38,7 +38,7 @@ This file is the project's working record. Every change to the site is noted in 
 
 ## 2. Features
 
-- **Clean layout:** plain background with thin lines only under the header and between the intro and the gallery.
+- **Clean layout:** faint vertical column lines run behind the page (12 on desktop, 6 on phones), with thin horizontal lines under the header and between the intro and the gallery.
 - **Collage by category:** each category is its own section with a large heading, a photo count and its years. Photos are packed edge to edge with thin gaps, so each group forms a solid block that's easy to scan.
 - **Automatic layout:** rows alternate between tall and short for a mix of sizes. Photos are never cropped, and the collage repacks itself to fit any screen width.
 - **Hover details:** a panel fades in over the photo with its number, title, location and date. Large photos also show the camera, lens, focal length, aperture, shutter speed, ISO and your note. Small photos show a one-line summary of the settings instead.
@@ -159,6 +159,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | Brought back the faint vertical column lines behind the page. The A–L letters stay removed. |
 | 2026-10-29 | Cleaner layout: removed the A–L column letters and the faint column lines behind the page. Changed all text to Montserrat (replacing Bebas Neue, Archivo and IBM Plex Mono). The "After Hours" heading is now semi-bold in title case. |
 | 2026-10-29 | Top-left name changed from "Off Hours" to "Aiman Razazemi". Large heading changed from "Off Hours" to "After Hours". Footer now shows "© Aiman Razazemi". Browser tab reads "After Hours · Aiman Razazemi". |
 | 2026-10-28 | This file became the project record (renamed from `Off-Hours-Project-Guide.md`). Added the GitHub details and this change log. |

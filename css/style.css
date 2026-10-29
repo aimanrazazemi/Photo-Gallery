@@ -1,4 +1,4 @@
-/* Layout: a quiet page in one typeface. Thin rules separate the header, intro and gallery;
+/* Layout: a quiet page in one typeface, over faint vertical column lines. Thin rules separate the header, intro and gallery;
    photos are grouped by category in edge-to-edge collages with generous space between groups. */
 :root {
   --paper: #e6e4e0;      /* light warm grey ground */
@@ -36,6 +36,19 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--umber); outline-offset: 3px; }
+
+/* Faint vertical column lines behind the page */
+.grid-lines {
+  position: fixed;
+  inset: 0 max(var(--gutter), env(safe-area-inset-right, 0px)) 0 max(var(--gutter), env(safe-area-inset-left, 0px));
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  column-gap: var(--gap);
+  border-right: 1px solid rgba(138, 123, 104, .10);
+  pointer-events: none;
+  z-index: 0;
+}
+.grid-lines span { border-left: 1px solid rgba(138, 123, 104, .10); }
 
 /* Header */
 body::before {
@@ -191,6 +204,7 @@ main { position: relative; z-index: 1; }
   .group-title, .group-meta { grid-column: 1 / -1; justify-self: start; text-align: left; }
   .group-meta { margin-top: 8px; }
   .counter { display: none; }
+  .grid-lines span:nth-child(n+7) { display: none; }
   .foot-hint::before { content: "Tap"; }
   .foot-hint { font-size: 0; }
   .foot-hint::before, .foot-hint::after { font-size: 10px; }
