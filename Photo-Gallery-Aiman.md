@@ -119,9 +119,6 @@ const SITE = {
 
 Every photo shows "Fujifilm X-E5" and "23mm" automatically. To add a photo's own settings, put them in its entry, e.g. `aperture: "f/2.8", shutter: "1/400s", iso: "2000"`. If you ever use a different camera or lens for a photo, set `camera` or `focal` in that photo's entry and it overrides the default.
 
-```
-```
-
 ---
 
 ## 6. Previewing on your computer
