@@ -129,29 +129,6 @@ const PHOTOS = [
     category: "People"
   },
   {
-    file: "images/city-klcc-park.webp",
-    title: "Park Skyline",
-    category: "City",
-    location: "KLCC Park, Kuala Lumpur"
-  },
-  {
-    file: "images/city-clouds-over-sapa.webp",
-    title: "Clouds over Sapa",
-    category: "City",
-    location: "Sa Pa, Vietnam"
-  },
-  {
-    file: "images/city-red-roofs.webp",
-    title: "Red Roofs",
-    category: "City",
-    location: "Sa Pa, Vietnam"
-  },
-  {
-    file: "images/city-corn-and-lanterns.webp",
-    title: "Corn & Lanterns",
-    category: "City"
-  },
-  {
     file: "images/nature-palm-beach.webp",
     title: "Palm Beach",
     category: "Nature"
@@ -175,6 +152,34 @@ const PHOTOS = [
   {
     file: "images/travel-beach-cafe.webp",
     title: "Beach Café",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-klcc-park.webp",
+    title: "Park Skyline",
+    category: "Travel",
+    location: "KLCC Park, Kuala Lumpur"
+  },
+  {
+    file: "images/travel-clouds-over-sapa.webp",
+    title: "Clouds over Sapa",
+    category: "Travel",
+    location: "Sa Pa, Vietnam"
+  },
+  {
+    file: "images/travel-red-roofs.webp",
+    title: "Red Roofs",
+    category: "Travel",
+    location: "Sa Pa, Vietnam"
+  },
+  {
+    file: "images/travel-corn-and-lanterns.webp",
+    title: "Corn & Lanterns",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-beach-ponies.webp",
+    title: "Beach Ponies",
     category: "Travel"
   }
 ];
