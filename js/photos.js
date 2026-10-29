@@ -21,6 +21,16 @@ const SITE = {
 
 const PHOTOS = [
   {
+    file: "images/interiors-lamplight.jpg",
+    title: "Lamplight",
+    category: "Interiors"
+  },
+  {
+    file: "images/interiors-yellow-kitchen.jpg",
+    title: "Yellow Kitchen",
+    category: "Interiors"
+  },
+  {
     file: "images/photo-01.jpg",
     title: "Stair Core",
     category: "Architecture",

@@ -76,6 +76,7 @@
     const rows = [];
     let cur = [], sum = 0;
     const height = (items, total) => (W - g * (items.length - 1)) / total;
+    const maxRow = Math.max(240, Math.min(W * (W < 600 ? 1 : 0.6), window.innerHeight * 0.9));
 
     shots.forEach((el) => {
       const ar = +el.dataset.ar;
@@ -106,7 +107,11 @@
     collage.replaceChildren(...rows.map(({ items, sum }) => {
       const row = document.createElement("div");
       row.className = "crow";
-      row.style.height = `${height(items, sum).toFixed(2)}px`;
+      // Cap the height so a short group (say, two portraits) doesn't stretch into giant tiles;
+      // a capped row keeps its natural width and sits on the left.
+      const h = Math.min(height(items, sum), maxRow);
+      row.style.height = `${h.toFixed(2)}px`;
+      if (h < height(items, sum)) row.style.width = `${(sum * h + g * (items.length - 1)).toFixed(2)}px`;
       row.append(...items);
       return row;
     }));
@@ -121,6 +126,8 @@
   const exifRow = (label, v) => v ? `<div><dt>${label}</dt><dd>${esc(v)}</dd></div>` : "";
   const shotHTML = (p, idx) => {
     const line = [p.aperture, p.shutter, p.iso && `ISO ${p.iso}`].filter(Boolean).join(" · ");
+    const exif = exifRow("Camera", p.camera) + exifRow("Lens", p.lens) + exifRow("Focal", p.focal) +
+      exifRow("Aperture", p.aperture) + exifRow("Shutter", p.shutter) + exifRow("ISO", p.iso);
     return `
     <figure class="shot" style="--ar:${(p.w / p.h).toFixed(4)}" data-ar="${p.w / p.h}" data-i="${idx}">
       <div class="frame" tabindex="0" aria-label="${esc(p.title)}, show details">
@@ -129,12 +136,9 @@
           <span class="d-no">No. ${pad(p.no)}</span>
           <span class="d-cat">${esc(p.category || "")}</span>
           <h3 class="d-title">${esc(p.title)}</h3>
-          <span class="d-place">${[p.location, fmtDate(p.date)].filter(Boolean).map(esc).join(" · ")}</span>
+          ${p.location || p.date ? `<span class="d-place">${[p.location, fmtDate(p.date)].filter(Boolean).map(esc).join(" · ")}</span>` : ""}
           ${line || p.camera ? `<span class="d-line">${esc([p.camera, line].filter(Boolean).join(" — "))}</span>` : ""}
-          <dl class="d-exif">
-            ${exifRow("Camera", p.camera)}${exifRow("Lens", p.lens)}${exifRow("Focal", p.focal)}
-            ${exifRow("Aperture", p.aperture)}${exifRow("Shutter", p.shutter)}${exifRow("ISO", p.iso)}
-          </dl>
+          ${exif ? `<dl class="d-exif">${exif}</dl>` : ""}
           ${p.note ? `<p class="d-note">${esc(p.note)}</p>` : ""}
         </figcaption>
       </div>

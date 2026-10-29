@@ -146,7 +146,7 @@ After that, every push to `main` updates the live site within a minute or two.
 
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
-- [ ] Replace the 30 sample images and their details with your own photos
+- [ ] Replace the 30 sample images and their details with your own photos (2 real photos added so far)
 - [x] Set the site name and heading in `SITE`
 - [ ] Write your own tagline in `SITE`
 - [ ] Rename or adjust the categories (currently Architecture, Street, Nature, Travel)
@@ -160,6 +160,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | Added the first two real photos in a new Interiors category: "Lamplight" (`images/interiors-lamplight.jpg`) and "Yellow Kitchen" (`images/interiors-yellow-kitchen.jpg`). Their camera data was removed during upload, so only titles are shown. A category with only a few tall photos no longer stretches into oversized tiles, and empty detail lines are hidden. The 30 samples stay until more real photos arrive. |
 | 2026-10-29 | Made the script "Hours" about 20% bigger and moved "by Aiman Razazemi" up so it sits directly under "Hours", right-aligned with its final stroke. |
 | 2026-10-29 | Refined the heading so it reads as one lockup: "Hours" moved down slightly so its H just touches the bottom of "After" instead of cutting through the letters, and "After" is now medium weight to sit better beside the fine script. "by Aiman Razazemi" moved under "Hours" and right-aligned with its last stroke. |
 | 2026-10-29 | Made "After Hours" bigger (about 30% larger) and moved the script "Hours" to the right and just below "After", like a signature, with the top of its H crossing the bottom of "After". |
