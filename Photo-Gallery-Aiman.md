@@ -146,11 +146,11 @@ After that, every push to `main` updates the live site within a minute or two.
 
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
-- [x] Replace the 30 sample images with your own photos (19 added)
+- [x] Replace the 30 sample images with your own photos (24 added)
 - [ ] Add camera details, locations and dates for your photos (optional)
 - [x] Set the site name and heading in `SITE`
 - [ ] Write your own tagline in `SITE`
-- [ ] Rename or adjust the categories (currently Interiors, Architecture, People, City and Nature)
+- [ ] Rename or adjust the categories (currently Interiors, Architecture, People, City, Nature and Travel)
 - [ ] Share reference layouts so the design can be fine-tuned
 
 ---
@@ -161,6 +161,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Added five more photos: "Sapa Station" (Architecture), "Clouds over Sapa", "Red Roofs" and "Corn & Lanterns" (City), and "Night Gate" in a new Travel category. Locations come from signs in the photos: Sun Plaza, Sa Pa; Sa Pa, Vietnam (twice); and Kuala Lumpur International Airport. 24 photos in 6 categories. |
 | 2026-10-30 | Added five more photos: "Hanging Letters" and "Open Doors" (Interiors), "Incense Wall" (People), and "Palm Beach" and "Mountain Mist" in a new Nature category. 19 photos in 5 categories. |
 | 2026-10-30 | Added five more photos: "Block C", "Steel Stair" and "Glass Lifts" (Architecture), "Terracotta Walk" (People) and "Park Skyline" in a new City category. "Glass Lifts" and "Park Skyline" have locations (Suria KLCC and KLCC Park, Kuala Lumpur), read from the signs in the photos. Improved the collage: when a group ends with a few leftover photos, they're now shared across two evenly sized rows instead of being squeezed into one thin row. 14 photos in total. |
 | 2026-10-30 | Added four more photos: "Café Corner" and "Rattan Lounge" (Interiors), "Spiral Stair" (Architecture) and "Brick Screen" in a new People category. Skipped one upload that was the same shot as "Blue Stripe". Category counts now say "photo" for a single photo. 9 photos in total. |

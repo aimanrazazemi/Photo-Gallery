@@ -87,6 +87,12 @@ const PHOTOS = [
     location: "Suria KLCC, Kuala Lumpur"
   },
   {
+    file: "images/architecture-sapa-station.webp",
+    title: "Sapa Station",
+    category: "Architecture",
+    location: "Sun Plaza, Sa Pa, Vietnam"
+  },
+  {
     file: "images/people-brick-screen.webp",
     title: "Brick Screen",
     category: "People"
@@ -108,6 +114,23 @@ const PHOTOS = [
     location: "KLCC Park, Kuala Lumpur"
   },
   {
+    file: "images/city-clouds-over-sapa.webp",
+    title: "Clouds over Sapa",
+    category: "City",
+    location: "Sa Pa, Vietnam"
+  },
+  {
+    file: "images/city-red-roofs.webp",
+    title: "Red Roofs",
+    category: "City",
+    location: "Sa Pa, Vietnam"
+  },
+  {
+    file: "images/city-corn-and-lanterns.webp",
+    title: "Corn & Lanterns",
+    category: "City"
+  },
+  {
     file: "images/nature-palm-beach.webp",
     title: "Palm Beach",
     category: "Nature"
@@ -116,5 +139,11 @@ const PHOTOS = [
     file: "images/nature-mountain-mist.webp",
     title: "Mountain Mist",
     category: "Nature"
+  },
+  {
+    file: "images/travel-night-gate.webp",
+    title: "Night Gate",
+    category: "Travel",
+    location: "Kuala Lumpur International Airport"
   }
 ];
