@@ -2,7 +2,7 @@
   Your photos live here.
 
   To add a photo:
-    1. Put the image file in the /images folder (JPG, about 2000px on the long edge is plenty).
+    1. Put the image file in the /images folder (WebP or JPG, about 2000px on the long edge is plenty).
     2. Copy one of the blocks below, paste it at the top of the list and fill it in.
        Only "file", "title" and "category" are required; leave out anything you don't know.
     3. Commit and push. The layout arranges itself, so you never have to place photos by hand.
@@ -20,16 +20,6 @@ const SITE = {
 };
 
 const PHOTOS = [
-  {
-    file: "images/interiors-lamplight.jpg",
-    title: "Lamplight",
-    category: "Interiors"
-  },
-  {
-    file: "images/interiors-yellow-kitchen.jpg",
-    title: "Yellow Kitchen",
-    category: "Interiors"
-  },
   {
     file: "images/photo-01.jpg",
     title: "Stair Core",

@@ -15,11 +15,12 @@ This file is the project's working record. Every change to the site is noted in 
 
 | Item | Choice |
 |---|---|
-| Theme | Simple, clean and architectural |
-| Colours | Light grey and warm neutrals |
-| Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
-| Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
-| Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
+| Theme | Retro pop: sunny cream page with a faint halftone dot texture, bold outlines, hard offset shadows and three-colour stripes, picking up the colours in the photos |
+| Colours | Cream background with aubergine text; mustard, tomato, teal and pink accents |
+| Heading typeface | Shrikhand (bold retro display): "After", category names, photo titles, numbers |
+| Script typeface | Yellowtail (retro brush script): "Hours" in the main heading |
+| Text typeface | Poppins: tagline, byline, menu, labels and camera details |
+| Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
 | Categories | Yes, with a filter menu |
 | Hosting | GitHub, published with GitHub Pages |
@@ -28,18 +29,20 @@ This file is the project's working record. Every change to the site is noted in 
 
 | Name | Hex | Used for |
 |---|---|---|
-| Paper | `#E6E4E0` | Page background |
-| Stone | `#D4CFC7` | Image backgrounds while photos load |
-| Sand | `#B9AFA1` | Lines and dividers |
-| Umber | `#8A7B68` | Accent and active menu item |
-| Ink | `#2A2723` | Main text |
-| Ink soft | `#6C655C` | Secondary text |
+| Paper | `#FBF1DC` | Page background |
+| Stone | `#F1DFBB` | Image backgrounds while photos load |
+| Ink | `#2B1B3D` | Main text, outlines and lines |
+| Ink soft | `#6B5A6E` | Secondary text |
+| Tomato | `#E8462A` | "Hours", photo numbers, menu counts, top stripe |
+| Mustard | `#F4B224` | Shadows behind headings, menu hover, middle stripe |
+| Teal | `#1F6F6A` | Small labels, bottom stripe |
+| Pink | `#F28AB2` | Heading shadow for every fourth category |
 
 ---
 
 ## 2. Features
 
-- **Clean layout:** faint vertical column lines run behind the page (12 on desktop, 6 on phones), with thin horizontal lines under the header and between the intro and the gallery.
+- **Retro pop styling:** faint vertical column lines run behind the page (12 on desktop, 6 on phones), over a faint halftone dot texture. A bold line runs under the header, and tomato, mustard and teal stripes separate the intro from the gallery. Category headings take turns casting a mustard, tomato, teal or pink shadow. Menu buttons are outlined pills. Photo corners are slightly rounded.
 - **Collage by category:** each category is its own section with a large heading, a photo count and its years. Photos are packed edge to edge with thin gaps, so each group forms a solid block that's easy to scan.
 - **Automatic layout:** rows alternate between tall and short for a mix of sizes. Photos are never cropped, and the collage repacks itself to fit any screen width.
 - **Hover details:** a panel fades in over the photo with its number, title, location and date. Large photos also show the camera, lens, focal length, aperture, shutter speed, ISO and your note. Small photos show a one-line summary of the settings instead.
@@ -68,7 +71,7 @@ Photo-Gallery/
 
 ## 4. Adding a photo
 
-1. Put the image in the `images/` folder. A JPG about 2000px on the long edge is plenty.
+1. Put the image in the `images/` folder. WebP or JPG, about 2000px on the long edge, is plenty.
 2. Open `js/photos.js`, copy one entry and paste it at the **top** of the `PHOTOS` list.
 3. Fill it in (photos appear in a category's collage in the order they're listed):
 
@@ -146,7 +149,7 @@ After that, every push to `main` updates the live site within a minute or two.
 
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
-- [ ] Replace the 30 sample images and their details with your own photos (2 real photos added so far)
+- [ ] Replace the 30 sample images and their details with your own photos (WebP versions coming)
 - [x] Set the site name and heading in `SITE`
 - [ ] Write your own tagline in `SITE`
 - [ ] Rename or adjust the categories (currently Architecture, Street, Nature, Travel)
@@ -160,6 +163,8 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Removed the two Interiors photos ("Lamplight" and "Yellow Kitchen"). WebP versions are coming. |
+| 2026-10-30 | New retro pop theme. Colours: cream, aubergine, mustard, tomato, teal and pink, taken from the photos. Fonts: Shrikhand for headings, Yellowtail script for "Hours" (in tomato), Poppins for text. Added a faint halftone texture, outlined pill menu buttons, offset shadows on headings, a three-colour stripe divider, rounded photo corners and a pill-shaped counter. The collage layout and hover details are unchanged. |
 | 2026-10-29 | Added the first two real photos in a new Interiors category: "Lamplight" (`images/interiors-lamplight.jpg`) and "Yellow Kitchen" (`images/interiors-yellow-kitchen.jpg`). Their camera data was removed during upload, so only titles are shown. A category with only a few tall photos no longer stretches into oversized tiles, and empty detail lines are hidden. The 30 samples stay until more real photos arrive. |
 | 2026-10-29 | Made the script "Hours" about 20% bigger and moved "by Aiman Razazemi" up so it sits directly under "Hours", right-aligned with its final stroke. |
 | 2026-10-29 | Refined the heading so it reads as one lockup: "Hours" moved down slightly so its H just touches the bottom of "After" instead of cutting through the letters, and "After" is now medium weight to sit better beside the fine script. "by Aiman Razazemi" moved under "Hours" and right-aligned with its last stroke. |

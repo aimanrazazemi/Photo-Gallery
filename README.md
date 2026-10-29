@@ -1,12 +1,12 @@
 # After Hours · Aiman Razazemi
 
-A personal photo portfolio: light warm-grey palette, Montserrat type, a collage layout grouped by category, and details for each photo on hover (or tap, on phones).
+A personal photo portfolio: retro pop palette, Shrikhand, Yellowtail and Poppins type, a collage layout grouped by category, and details for each photo on hover (or tap, on phones).
 
 No build step and no dependencies. It's plain HTML, CSS and JavaScript, so it runs on GitHub Pages as-is.
 
 ## Adding a photo
 
-1. Put the image in `images/` (JPG, around 2000px on the long edge).
+1. Put the image in `images/` (WebP or JPG, around 2000px on the long edge).
 2. Open `js/photos.js`, copy one entry, paste it at the **top** of the `PHOTOS` list and fill it in:
 
 ```js
