@@ -14,7 +14,7 @@
 const SITE = {
   name: "Photo Dump",              // small name at the top left of every page
   title: "After Hours",            // large heading at the top of the page
-  tagline: "Photographs taken on free days, long walks and the way home.",
+  tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office.",
   author: "Aiman Razazemi",
   instagram: "", // optional, e.g. "https://instagram.com/yourhandle"
 

@@ -105,7 +105,7 @@ Edit the `SITE` block at the top of `js/photos.js`:
 const SITE = {
   name: "Photo Dump",       // small name at the top left of every page
   title: "After Hours",     // large heading at the top of the page
-  tagline: "Photographs taken on free days, long walks and the way home.",
+  tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office.",
   author: "Aiman Razazemi", // name in the footer
   instagram: "",            // optional, e.g. "https://instagram.com/yourhandle"
 
@@ -170,6 +170,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | New tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office." |
 | 2026-10-30 | Removed the Photos / Categories counts under the tagline (the counts in the top menu stay). The hover panel now shows just the photo's number within its category, e.g. "03" next to "Interiors", with no "No." label. |
 | 2026-10-30 | Added five more photos: "Clay Bar" (Interiors), "Mosaic Stair" and "Twin Towers" (Architecture), and "Buddha in the Mist" and "Temple Guardian" (Travel). "Twin Towers" is tagged Petronas Twin Towers, Kuala Lumpur. 45 photos in 5 categories. |
 | 2026-10-30 | Added five more photos: "Copper Hearth", "Slate Bath" and "Night Table" (Interiors), and "Moss Garden" and "Chestnut Stall" (People). 40 photos in 5 categories. |
