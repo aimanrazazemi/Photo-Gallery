@@ -56,6 +56,16 @@ const PHOTOS = [
     category: "Interiors"
   },
   {
+    file: "images/interiors-paper-lantern.webp",
+    title: "Paper Lantern",
+    category: "Interiors"
+  },
+  {
+    file: "images/interiors-pizza-oven.webp",
+    title: "Pizza Oven",
+    category: "Interiors"
+  },
+  {
     file: "images/architecture-blue-stripe.webp",
     title: "Blue Stripe",
     category: "Architecture"
@@ -108,6 +118,11 @@ const PHOTOS = [
     category: "People"
   },
   {
+    file: "images/people-hanging-vines.webp",
+    title: "Hanging Vines",
+    category: "People"
+  },
+  {
     file: "images/city-klcc-park.webp",
     title: "Park Skyline",
     category: "City",
@@ -141,9 +156,19 @@ const PHOTOS = [
     category: "Nature"
   },
   {
+    file: "images/nature-beach-umbrellas.webp",
+    title: "Beach Umbrellas",
+    category: "Nature"
+  },
+  {
     file: "images/travel-night-gate.webp",
     title: "Night Gate",
     category: "Travel",
     location: "Kuala Lumpur International Airport"
+  },
+  {
+    file: "images/travel-beach-cafe.webp",
+    title: "Beach Café",
+    category: "Travel"
   }
 ];
