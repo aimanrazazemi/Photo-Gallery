@@ -171,7 +171,7 @@
       return `<section class="group" id="group-${slug(c)}">
         <div class="group-head">
           <h2 class="group-title">${esc(c)}</h2>
-          <p class="group-meta">${String(items.length).padStart(2, "0")} photos${yearSpan(items) ? " · " + yearSpan(items) : ""}</p>
+          <p class="group-meta">${String(items.length).padStart(2, "0")} ${items.length === 1 ? "photo" : "photos"}${yearSpan(items) ? " · " + yearSpan(items) : ""}</p>
         </div>
         <div class="collage">${items.map((p) => shotHTML(p, ++idx)).join("")}</div>
       </section>`;

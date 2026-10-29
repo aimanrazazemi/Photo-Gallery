@@ -36,6 +36,16 @@ const PHOTOS = [
     category: "Interiors"
   },
   {
+    file: "images/interiors-cafe-corner.webp",
+    title: "Café Corner",
+    category: "Interiors"
+  },
+  {
+    file: "images/interiors-rattan-lounge.webp",
+    title: "Rattan Lounge",
+    category: "Interiors"
+  },
+  {
     file: "images/architecture-blue-stripe.webp",
     title: "Blue Stripe",
     category: "Architecture"
@@ -44,5 +54,15 @@ const PHOTOS = [
     file: "images/architecture-terracotta-steps.webp",
     title: "Terracotta Steps",
     category: "Architecture"
+  },
+  {
+    file: "images/architecture-spiral-stair.webp",
+    title: "Spiral Stair",
+    category: "Architecture"
+  },
+  {
+    file: "images/people-brick-screen.webp",
+    title: "Brick Screen",
+    category: "People"
   }
 ];
