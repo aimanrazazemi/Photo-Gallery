@@ -146,11 +146,11 @@ After that, every push to `main` updates the live site within a minute or two.
 
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
-- [x] Replace the 30 sample images with your own photos (9 added)
+- [x] Replace the 30 sample images with your own photos (14 added)
 - [ ] Add camera details, locations and dates for your photos (optional)
 - [x] Set the site name and heading in `SITE`
 - [ ] Write your own tagline in `SITE`
-- [ ] Rename or adjust the categories (currently Interiors, Architecture and People)
+- [ ] Rename or adjust the categories (currently Interiors, Architecture, People and City)
 - [ ] Share reference layouts so the design can be fine-tuned
 
 ---
@@ -161,6 +161,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Added five more photos: "Block C", "Steel Stair" and "Glass Lifts" (Architecture), "Terracotta Walk" (People) and "Park Skyline" in a new City category. "Glass Lifts" and "Park Skyline" have locations (Suria KLCC and KLCC Park, Kuala Lumpur), read from the signs in the photos. Improved the collage: when a group ends with a few leftover photos, they're now shared across two evenly sized rows instead of being squeezed into one thin row. 14 photos in total. |
 | 2026-10-30 | Added four more photos: "Café Corner" and "Rattan Lounge" (Interiors), "Spiral Stair" (Architecture) and "Brick Screen" in a new People category. Skipped one upload that was the same shot as "Blue Stripe". Category counts now say "photo" for a single photo. 9 photos in total. |
 | 2026-10-30 | Added your first five WebP photos and removed all 30 sample photos. Interiors: "Lamplight", "Yellow Kitchen", "Wine Bar". Architecture: "Blue Stripe", "Terracotta Steps". The files had no camera data, so only titles show for now. The intro stats now spread evenly when there's no Years figure, and the footer hint reads correctly on phones. |
 | 2026-10-30 | Reverted the retro pop theme. The site is back to the warm grey look with Montserrat and the Mrs Saint Delafield script "Hours". The two Interiors photos stay removed. |

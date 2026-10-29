@@ -97,10 +97,23 @@
       }
     });
     if (cur.length) {
-      // A short leftover row would be stretched too tall, so fold it into the row above.
+      // A short leftover row would be stretched too tall, so share the photos of the
+      // last row and the leftovers between two rows of as-close-as-possible height.
       const target = Math.max(140, W * pattern[rows.length % pattern.length]);
       const last = rows[rows.length - 1];
-      if (last && height(cur, sum) > target * 1.5) { last.items.push(...cur); last.sum += sum; }
+      if (last && height(cur, sum) > target * 1.5) {
+        const all = [...last.items, ...cur];
+        const ars = all.map((el) => +el.dataset.ar);
+        let best = null;
+        for (let k = 1; k < all.length; k++) {
+          const s1 = ars.slice(0, k).reduce((a, b) => a + b, 0), s2 = sum + last.sum - s1;
+          const diff = Math.abs(height(all.slice(0, k), s1) - height(all.slice(k), s2));
+          if (!best || diff < best.diff) best = { k, s1, s2, diff };
+        }
+        rows.splice(-1, 1,
+          { items: all.slice(0, best.k), sum: best.s1 },
+          { items: all.slice(best.k), sum: best.s2 });
+      }
       else rows.push({ items: cur, sum });
     }
 

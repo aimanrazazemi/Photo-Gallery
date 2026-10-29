@@ -61,8 +61,35 @@ const PHOTOS = [
     category: "Architecture"
   },
   {
+    file: "images/architecture-block-c.webp",
+    title: "Block C",
+    category: "Architecture"
+  },
+  {
+    file: "images/architecture-steel-stair.webp",
+    title: "Steel Stair",
+    category: "Architecture"
+  },
+  {
+    file: "images/architecture-glass-lifts.webp",
+    title: "Glass Lifts",
+    category: "Architecture",
+    location: "Suria KLCC, Kuala Lumpur"
+  },
+  {
     file: "images/people-brick-screen.webp",
     title: "Brick Screen",
     category: "People"
+  },
+  {
+    file: "images/people-terracotta-walk.webp",
+    title: "Terracotta Walk",
+    category: "People"
+  },
+  {
+    file: "images/city-klcc-park.webp",
+    title: "Park Skyline",
+    category: "City",
+    location: "KLCC Park, Kuala Lumpur"
   }
 ];
