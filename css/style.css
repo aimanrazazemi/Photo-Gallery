@@ -6,6 +6,7 @@
   --sand: #b9afa1;       /* lines, frames */
   --umber: #8a7b68;      /* accent, active states */
   --ink: #2a2723;        /* text */
+  --navy: #1f3354;       /* dark blue, second line of the main heading */
   --ink-soft: #6c655c;   /* secondary text */
   --veil: rgba(230, 228, 224, 0.94);
 
@@ -85,29 +86,31 @@ main { position: relative; z-index: 1; }
   display: grid; grid-template-columns: repeat(var(--cols), 1fr); column-gap: var(--gap);
   padding-block: clamp(48px, 9vw, 140px) clamp(32px, 6vw, 90px);
   align-items: end;
-  --title-size: clamp(44px, 8.5vw, 132px);
+  --title-size: clamp(64px, 14vw, 216px);
 }
 .intro-title {
   grid-column: 1 / span 8; margin: 0;
-  font: 600 var(--title-size)/1 var(--display);
-  letter-spacing: -.03em; text-wrap: balance;
+  font: 600 var(--title-size)/.9 var(--display);
+  letter-spacing: -.04em;
   animation: rise 1.1s var(--ease) both;
 }
 .intro-meta {
   /* sits flush with the right edge and ends on the heading's baseline */
   grid-column: 9 / -1; display: grid; gap: 20px; min-width: 0;
-  padding-bottom: calc(var(--title-size) * .2);
+  padding-bottom: calc(var(--title-size) * .07);
   animation: rise 1.1s .15s var(--ease) both;
 }
 .intro-tagline { margin: 0; font-size: 15px; line-height: 1.65; color: var(--ink-soft); text-align: justify; hyphens: auto; }
 .intro-stats {
   margin: 0; display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 4px 16px;
-  border-top: 1px solid var(--sand); padding-top: 16px;
 }
 .intro-stats dt:last-of-type, .intro-stats dd:last-of-type { text-align: right; }
 .intro-stats dt { font: 500 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); grid-row: 1; }
 .intro-stats dt { margin-bottom: 4px; }
 .intro-stats dd { margin: 0; font: 500 24px/1 var(--display); letter-spacing: -.01em; font-variant-numeric: tabular-nums; grid-row: 2; }
+
+.intro-title span { display: block; }
+.intro-title .accent { color: var(--navy); }
 
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
 

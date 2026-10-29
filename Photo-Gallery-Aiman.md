@@ -33,6 +33,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Umber | `#8A7B68` | Accent and active menu item |
 | Ink | `#2A2723` | Main text |
 | Ink soft | `#6C655C` | Secondary text |
+| Navy | `#1F3354` | "Hours" in the main heading |
 
 ---
 
@@ -159,6 +160,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | Made the "After Hours" heading much bigger and set it on two lines: "After" on top, "Hours" below in dark blue (`#1F3354`). Removed the thin line between the tagline and the stats. |
 | 2026-10-29 | Tidied the intro block next to "After Hours": the tagline is now justified and spans the full right-hand column, a thin line separates it from the stats, the stats spread evenly with "Years" flush to the right edge, and the block ends level with the heading's baseline. |
 | 2026-10-29 | Brought back the faint vertical column lines behind the page. The A–L letters stay removed. |
 | 2026-10-29 | Cleaner layout: removed the A–L column letters and the faint column lines behind the page. Changed all text to Montserrat (replacing Bebas Neue, Archivo and IBM Plex Mono). The "After Hours" heading is now semi-bold in title case. |
