@@ -131,6 +131,27 @@ main { position: relative; z-index: 1; }
 /* A single rule between the intro and the gallery */
 .divider { border: 0; border-top: 1px solid var(--sand); margin: 0 0 clamp(48px, 7vw, 100px); }
 
+/* Grid bubbles on the divider, one where each column line meets it, like gridline tags on a plan */
+.divider {
+  --bubble: clamp(26px, 2.4vw, 34px);
+  position: relative; height: 0;
+  display: grid; grid-template-columns: repeat(var(--cols), 1fr); column-gap: var(--gap);
+  margin-top: calc(var(--bubble) / 2);
+  margin-bottom: calc(clamp(48px, 7vw, 100px) + var(--bubble) / 2);
+}
+.bubble {
+  position: relative; width: 0; height: 0;
+}
+.bubble span, .bubble-end {
+  position: absolute; top: 0; left: 0; transform: translate(-50%, -50%);
+  width: var(--bubble); height: var(--bubble); border-radius: 50%;
+  border: 1px solid var(--sand); background: var(--paper);
+  display: grid; place-items: center;
+  font: 500 clamp(8px, .7vw, 10px)/1 var(--mono); letter-spacing: .02em; color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.bubble-end { left: 100%; }
+
 /* Collage: photos grouped by category, packed into a dense grid of square cells */
 .gallery { display: grid; gap: clamp(72px, 9vw, 140px); padding-bottom: clamp(80px, 12vw, 180px); }
 

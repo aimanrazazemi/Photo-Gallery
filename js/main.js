@@ -36,6 +36,19 @@
 
   const categories = [...new Set(photos.map((p) => p.category).filter(Boolean))];
 
+  /* ---------- Grid bubbles on the divider: A1, B2, C3 ... one per column line ---------- */
+  const divider = document.getElementById("divider");
+  const drawBubbles = () => {
+    const cols = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--cols")) || 12;
+    if (divider.dataset.cols === String(cols)) return;
+    divider.dataset.cols = cols;
+    const tag = (i) => `${String.fromCharCode(65 + i)}${i + 1}`;
+    divider.innerHTML = Array.from({ length: cols }, (_, i) => `<div class="bubble"><span>${tag(i)}</span></div>`).join("") +
+      `<div class="bubble-end">${tag(cols)}</div>`;
+  };
+  drawBubbles();
+  window.addEventListener("resize", drawBubbles);
+
   /* ---------- Filters ---------- */
   const renderFilters = (active) => {
     const items = [["all", "All", photos.length], ...categories.map((c) => [slug(c), c, photos.filter((p) => p.category === c).length])];
