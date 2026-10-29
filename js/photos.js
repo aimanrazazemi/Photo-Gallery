@@ -72,6 +72,17 @@ const PHOTOS = [
     category: "Interiors"
   },
   {
+    file: "images/interiors-capulus-est-vita.webp",
+    title: "Capulus est Vita",
+    category: "Interiors"
+  },
+  {
+    file: "images/interiors-the-myst.webp",
+    title: "The Myst",
+    category: "Interiors",
+    location: "The Myst Sa Pa Resort, Vietnam"
+  },
+  {
     file: "images/architecture-blue-stripe.webp",
     title: "Blue Stripe",
     category: "Architecture"
@@ -109,6 +120,11 @@ const PHOTOS = [
     location: "Sun Plaza, Sa Pa, Vietnam"
   },
   {
+    file: "images/architecture-terrace-mosaic.webp",
+    title: "Terrace Mosaic",
+    category: "Architecture"
+  },
+  {
     file: "images/people-brick-screen.webp",
     title: "Brick Screen",
     category: "People"
@@ -129,6 +145,12 @@ const PHOTOS = [
     category: "People"
   },
   {
+    file: "images/people-play-festival.webp",
+    title: "Play Festival",
+    category: "People",
+    location: "Suria KLCC, Kuala Lumpur"
+  },
+  {
     file: "images/nature-palm-beach.webp",
     title: "Palm Beach",
     category: "Nature"
@@ -141,6 +163,11 @@ const PHOTOS = [
   {
     file: "images/nature-beach-umbrellas.webp",
     title: "Beach Umbrellas",
+    category: "Nature"
+  },
+  {
+    file: "images/nature-garden-cafe.webp",
+    title: "Garden Café",
     category: "Nature"
   },
   {
