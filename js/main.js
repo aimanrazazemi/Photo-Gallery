@@ -17,7 +17,7 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   // Number photos from the oldest (bottom of the list) so a photo keeps its number as new ones are added on top.
-  const photos = PHOTOS.map((p, i) => ({ ...p, no: PHOTOS.length - i }));
+  const photos = PHOTOS.map((p, i) => ({ ...(SITE.defaults || {}), ...p, no: PHOTOS.length - i }));
 
   /* ---------- Site text ---------- */
   const heading = SITE.title || SITE.name;
@@ -138,7 +138,7 @@
 
   const exifRow = (label, v) => v ? `<div><dt>${label}</dt><dd>${esc(v)}</dd></div>` : "";
   const shotHTML = (p, idx) => {
-    const line = [p.aperture, p.shutter, p.iso && `ISO ${p.iso}`].filter(Boolean).join(" · ");
+    const line = [p.focal, p.aperture, p.shutter, p.iso && `ISO ${p.iso}`].filter(Boolean).join(" · ");
     const exif = exifRow("Camera", p.camera) + exifRow("Lens", p.lens) + exifRow("Focal", p.focal) +
       exifRow("Aperture", p.aperture) + exifRow("Shutter", p.shutter) + exifRow("ISO", p.iso);
     return `

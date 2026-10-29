@@ -92,7 +92,7 @@ Photo-Gallery/
 4. Save, commit and push. The site updates on its own.
 
 **Tips**
-- Only `file`, `title` and `category` are required. Any field you leave out won't be shown.
+- Only `file`, `title` and `category` are required. Any field you leave out won't be shown. Camera and focal length come from `defaults` in the `SITE` block.
 - Dates use the format `YYYY-MM-DD`. They display as "Mar 2025".
 - A new category appears in the menu the first time you use it.
 - Photos are numbered from oldest to newest, so existing numbers don't change when you add new photos at the top.
@@ -107,8 +107,19 @@ const SITE = {
   title: "After Hours",     // large heading at the top of the page
   tagline: "Photographs taken on free days, long walks and the way home.",
   author: "Aiman Razazemi", // name in the footer
-  instagram: ""             // optional, e.g. "https://instagram.com/yourhandle"
+  instagram: "",            // optional, e.g. "https://instagram.com/yourhandle"
+
+  // Applied to every photo unless that photo sets its own value.
+  defaults: {
+    camera: "Fujifilm X-E5",
+    focal: "23mm"
+  }
 };
+```
+
+Every photo shows "Fujifilm X-E5" and "23mm" automatically. To add a photo's own settings, put them in its entry, e.g. `aperture: "f/2.8", shutter: "1/400s", iso: "2000"`. If you ever use a different camera or lens for a photo, set `camera` or `focal` in that photo's entry and it overrides the default.
+
+```
 ```
 
 ---
@@ -147,7 +158,8 @@ After that, every push to `main` updates the live site within a minute or two.
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
 - [x] Replace the 30 sample images with your own photos (29 added)
-- [ ] Add camera details, locations and dates for your photos (optional)
+- [x] Add the camera and lens to all photos (Fujifilm X-E5, 23mm)
+- [ ] Add aperture, shutter speed, ISO, locations and dates for individual photos (optional)
 - [x] Set the site name and heading in `SITE`
 - [ ] Write your own tagline in `SITE`
 - [ ] Rename or adjust the categories (currently Interiors, Architecture, People, City, Nature and Travel)
@@ -161,6 +173,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | All photos now show "Fujifilm X-E5" and "23mm" in their hover details, set once as `defaults` in the `SITE` block. Aperture, shutter speed and ISO vary from photo to photo and can be added per photo. |
 | 2026-10-30 | Added five more photos: "Paper Lantern" and "Pizza Oven" (Interiors), "Hanging Vines" (People), "Beach Umbrellas" (Nature) and "Beach Café" (Travel). 29 photos in 6 categories. |
 | 2026-10-30 | Added five more photos: "Sapa Station" (Architecture), "Clouds over Sapa", "Red Roofs" and "Corn & Lanterns" (City), and "Night Gate" in a new Travel category. Locations come from signs in the photos: Sun Plaza, Sa Pa; Sa Pa, Vietnam (twice); and Kuala Lumpur International Airport. 24 photos in 6 categories. |
 | 2026-10-30 | Added five more photos: "Hanging Letters" and "Open Doors" (Interiors), "Incense Wall" (People), and "Palm Beach" and "Mountain Mist" in a new Nature category. 19 photos in 5 categories. |

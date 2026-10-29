@@ -16,7 +16,13 @@ const SITE = {
   title: "After Hours",            // large heading at the top of the page
   tagline: "Photographs taken on free days, long walks and the way home.",
   author: "Aiman Razazemi",
-  instagram: "" // optional, e.g. "https://instagram.com/yourhandle"
+  instagram: "", // optional, e.g. "https://instagram.com/yourhandle"
+
+  // Applied to every photo unless that photo sets its own value.
+  defaults: {
+    camera: "Fujifilm X-E5",
+    focal: "23mm"
+  }
 };
 
 const PHOTOS = [
