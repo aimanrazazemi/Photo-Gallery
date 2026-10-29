@@ -7,7 +7,7 @@
   const touch = window.matchMedia("(hover: none)").matches;
 
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  const pad = (n) => String(n).padStart(3, "0");
+  const pad = (n) => String(n).padStart(2, "0");
   const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const fmtDate = (d) => {
     if (!d) return "";
@@ -35,12 +35,6 @@
     (SITE.instagram ? ` · <a href="${esc(SITE.instagram)}" target="_blank" rel="noopener">Instagram</a>` : "");
 
   const categories = [...new Set(photos.map((p) => p.category).filter(Boolean))];
-  const years = photos.map((p) => parseInt(p.date)).filter(Boolean);
-  const yMin = Math.min(...years), yMax = Math.max(...years);
-  document.getElementById("intro-stats").innerHTML =
-    `<dt>Photos</dt><dd>${photos.length}</dd>` +
-    `<dt>Categories</dt><dd>${categories.length}</dd>` +
-    (years.length ? `<dt>Years</dt><dd>${yMin === yMax ? yMin : `${yMin}–${String(yMax).slice(2)}`}</dd>` : "");
 
   /* ---------- Filters ---------- */
   const renderFilters = (active) => {
@@ -137,7 +131,7 @@
   }).observe(gallery);
 
   const exifRow = (label, v) => v ? `<div><dt>${label}</dt><dd>${esc(v)}</dd></div>` : "";
-  const shotHTML = (p, idx) => {
+  const shotHTML = (p, idx, n) => {
     const line = [p.focal, p.aperture, p.shutter, p.iso && `ISO ${p.iso}`].filter(Boolean).join(" · ");
     const exif = exifRow("Camera", p.camera) + exifRow("Lens", p.lens) + exifRow("Focal", p.focal) +
       exifRow("Aperture", p.aperture) + exifRow("Shutter", p.shutter) + exifRow("ISO", p.iso);
@@ -146,7 +140,7 @@
       <div class="frame" tabindex="0" aria-label="${esc(p.title)}, show details">
         <img src="${esc(p.file)}" alt="${esc(p.title)}${p.location ? ", " + esc(p.location) : ""}" decoding="async">
         <figcaption class="details">
-          <span class="d-no">No. ${pad(p.no)}</span>
+          <span class="d-no">${pad(n)}</span>
           <span class="d-cat">${esc(p.category || "")}</span>
           <h3 class="d-title">${esc(p.title)}</h3>
           ${p.location || p.date ? `<span class="d-place">${[p.location, fmtDate(p.date)].filter(Boolean).map(esc).join(" · ")}</span>` : ""}
@@ -186,7 +180,7 @@
           <h2 class="group-title">${esc(c)}</h2>
           <p class="group-meta">${String(items.length).padStart(2, "0")} ${items.length === 1 ? "photo" : "photos"}${yearSpan(items) ? " · " + yearSpan(items) : ""}</p>
         </div>
-        <div class="collage">${items.map((p) => shotHTML(p, ++idx)).join("")}</div>
+        <div class="collage">${items.map((p, j) => shotHTML(p, ++idx, j + 1)).join("")}</div>
       </section>`;
     }).join("");
     counterTotal.textContent = String(list.length).padStart(2, "0");

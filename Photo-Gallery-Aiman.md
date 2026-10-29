@@ -42,7 +42,7 @@ This file is the project's working record. Every change to the site is noted in 
 - **Clean layout:** faint vertical column lines run behind the page (12 on desktop, 6 on phones), with thin horizontal lines under the header and between the intro and the gallery.
 - **Collage by category:** each category is its own section with a large heading, a photo count and its years. Photos are packed edge to edge with thin gaps, so each group forms a solid block that's easy to scan.
 - **Automatic layout:** rows alternate between tall and short for a mix of sizes. Photos are never cropped, and the collage repacks itself to fit any screen width.
-- **Hover details:** a panel fades in over the photo with its number, title, location and date. Large photos also show the camera, lens, focal length, aperture, shutter speed, ISO and your note. Small photos show a one-line summary of the settings instead.
+- **Hover details:** a panel fades in over the photo with its number within its category, title, location and date. Large photos also show the camera, lens, focal length, aperture, shutter speed, ISO and your note. Small photos show a one-line summary of the settings instead.
 - **Scroll effects:** photos fade up as you reach them, and a counter in the corner shows your position (e.g. `06 / 30`).
 - **Categories:** a filter menu with photo counts. Each category has its own link, e.g. `#street`.
 - **Phones:** rows are taller with fewer photos in each, and you tap a photo to show or hide its details.
@@ -95,7 +95,7 @@ Photo-Gallery/
 - Only `file`, `title` and `category` are required. Any field you leave out won't be shown. Camera and focal length come from `defaults` in the `SITE` block.
 - Dates use the format `YYYY-MM-DD`. They display as "Mar 2025".
 - A new category appears in the menu the first time you use it.
-- Photos are numbered from oldest to newest, so existing numbers don't change when you add new photos at the top.
+- On hover, each photo shows its position within its category (01, 02, 03…), following the order in `js/photos.js`.
 
 ## 5. Changing the names and intro
 
@@ -170,6 +170,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Removed the Photos / Categories counts under the tagline (the counts in the top menu stay). The hover panel now shows just the photo's number within its category, e.g. "03" next to "Interiors", with no "No." label. |
 | 2026-10-30 | Added five more photos: "Clay Bar" (Interiors), "Mosaic Stair" and "Twin Towers" (Architecture), and "Buddha in the Mist" and "Temple Guardian" (Travel). "Twin Towers" is tagged Petronas Twin Towers, Kuala Lumpur. 45 photos in 5 categories. |
 | 2026-10-30 | Added five more photos: "Copper Hearth", "Slate Bath" and "Night Table" (Interiors), and "Moss Garden" and "Chestnut Stall" (People). 40 photos in 5 categories. |
 | 2026-10-30 | Added five more photos: "Capulus est Vita" and "The Myst" (Interiors), "Terrace Mosaic" (Architecture), "Play Festival" (People) and "Garden Café" (Nature). Locations from signs: The Myst Sa Pa Resort, Vietnam, and Suria KLCC, Kuala Lumpur. 35 photos in 5 categories. |
