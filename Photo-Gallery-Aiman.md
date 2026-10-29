@@ -18,7 +18,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Theme | Simple, clean and architectural |
 | Colours | Light grey and warm neutrals |
 | Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
-| Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
+| Script typeface | Mrs Saint Delafield, for "Hours" and "by Aiman Razazemi" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
 | Categories | Yes, with a filter menu |
@@ -170,6 +170,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Heading redesigned as one line: script "Hours" now sits to the right of "After" on the same baseline, sized larger (1.32×) so the script's small letters match the weight of "After". The whole lockup scales with the screen. "by Aiman Razazemi" is now in the same script as "Hours", right-aligned underneath it. |
 | 2026-10-30 | New tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office." |
 | 2026-10-30 | Removed the Photos / Categories counts under the tagline (the counts in the top menu stay). The hover panel now shows just the photo's number within its category, e.g. "03" next to "Interiors", with no "No." label. |
 | 2026-10-30 | Added five more photos: "Clay Bar" (Interiors), "Mosaic Stair" and "Twin Towers" (Architecture), and "Buddha in the Mist" and "Temple Guardian" (Travel). "Twin Towers" is tagged Petronas Twin Towers, Kuala Lumpur. 45 photos in 5 categories. |
