@@ -111,14 +111,14 @@ main { position: relative; z-index: 1; }
 
 .intro-title span { display: block; }
 .intro-title .script {
-  font: 400 calc(var(--title-size) * 1.2)/.9 var(--script);
+  font: 400 calc(var(--title-size) * 1.45)/.9 var(--script);
   letter-spacing: 0;
-  width: max-content; margin-left: auto; margin-right: -.55em; margin-top: .06em;
+  width: max-content; margin-left: auto; margin-right: -.46em; margin-top: .07em;
   position: relative;
 }
 .intro-by {
   /* right-aligned under "Hours", ending where its last stroke ends */
-  margin: .1em calc(var(--title-size) * -.74) 0 0; text-align: right;
+  margin: calc(var(--title-size) * -.3) calc(var(--title-size) * -.8) 0 0; text-align: right;
   font: 600 clamp(14px, 1.6vw, 22px)/1.2 var(--display); letter-spacing: .02em;
 }
 

@@ -160,6 +160,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | Made the script "Hours" about 20% bigger and moved "by Aiman Razazemi" up so it sits directly under "Hours", right-aligned with its final stroke. |
 | 2026-10-29 | Refined the heading so it reads as one lockup: "Hours" moved down slightly so its H just touches the bottom of "After" instead of cutting through the letters, and "After" is now medium weight to sit better beside the fine script. "by Aiman Razazemi" moved under "Hours" and right-aligned with its last stroke. |
 | 2026-10-29 | Made "After Hours" bigger (about 30% larger) and moved the script "Hours" to the right and just below "After", like a signature, with the top of its H crossing the bottom of "After". |
 | 2026-10-29 | "Hours" changed back to the dark text colour and set in a calligraphy script (Mrs Saint Delafield, the closest free match to Amsterdam). Added "by Aiman Razazemi" under the heading in Montserrat semi-bold, the same font as "After". The byline uses `author` from the `SITE` block. |
