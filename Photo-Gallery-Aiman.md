@@ -179,6 +179,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Gave "After Hours" a subtle 3D lift: a thin tan edge one step down and right of the letters, plus a soft brown shadow beneath. The effect scales with the heading size. |
 | 2026-10-30 | Added architectural grid bubbles on the line between the intro and the gallery: a small circle where each vertical column line crosses it, labelled A1, B2, C3 … M13 on desktop (13 lines) and A1 … G7 on phones (7 lines). |
 | 2026-10-30 | Portrait: the white highlights on the face are now cream (`#EFEACA`), the same as the page background. |
 | 2026-10-30 | Portrait: the blue on the face is now a warm mid-grey (`#9E9A95`), including the soft edges into the black and white areas. |

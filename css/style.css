@@ -94,6 +94,12 @@ main { position: relative; z-index: 1; }
   margin: 0; display: inline-block;
   font: 500 var(--title-size)/.9 var(--display);
   letter-spacing: -.04em;
+  /* subtle depth: a thin tan "extrusion" one step down-right, then a soft cast shadow.
+     Sizes are in em so the effect scales with the heading. */
+  text-shadow:
+    .006em .006em 0 rgba(199, 166, 143, .9),
+    .012em .012em 0 rgba(199, 166, 143, .55),
+    .03em .045em .07em rgba(70, 49, 34, .16);
 }
 .intro-meta {
   /* sits flush with the right edge and ends on the heading's baseline */
