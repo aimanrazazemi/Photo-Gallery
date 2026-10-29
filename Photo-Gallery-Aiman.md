@@ -17,7 +17,7 @@ This file is the project's working record. Every change to the site is noted in 
 |---|---|
 | Theme | Simple, clean and architectural |
 | Colours | Light grey and warm neutrals |
-| Typeface | Montserrat for everything: headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
+| Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
 | Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
@@ -160,6 +160,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | Refined the heading so it reads as one lockup: "Hours" moved down slightly so its H just touches the bottom of "After" instead of cutting through the letters, and "After" is now medium weight to sit better beside the fine script. "by Aiman Razazemi" moved under "Hours" and right-aligned with its last stroke. |
 | 2026-10-29 | Made "After Hours" bigger (about 30% larger) and moved the script "Hours" to the right and just below "After", like a signature, with the top of its H crossing the bottom of "After". |
 | 2026-10-29 | "Hours" changed back to the dark text colour and set in a calligraphy script (Mrs Saint Delafield, the closest free match to Amsterdam). Added "by Aiman Razazemi" under the heading in Montserrat semi-bold, the same font as "After". The byline uses `author` from the `SITE` block. |
 | 2026-10-29 | Top-left name changed from "Aiman Razazemi" to "Photo Dump". Browser tab now reads "After Hours · Photo Dump". The footer still shows "© Aiman Razazemi". |
