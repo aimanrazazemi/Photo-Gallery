@@ -102,7 +102,7 @@ main { position: relative; z-index: 1; }
 }
 .intro-tagline { margin: 0; font-size: 15px; line-height: 1.65; color: var(--ink-soft); text-align: justify; hyphens: auto; }
 .intro-stats {
-  margin: 0; display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 4px 16px;
+  margin: 0; display: grid; grid-auto-flow: column; grid-auto-columns: auto; justify-content: space-between; gap: 4px 16px;
 }
 .intro-stats dt:last-of-type, .intro-stats dd:last-of-type { text-align: right; }
 .intro-stats dt { font: 500 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); grid-row: 1; }
@@ -225,14 +225,14 @@ main { position: relative; z-index: 1; }
   .group-meta { margin-top: 8px; }
   .counter { display: none; }
   .grid-lines span:nth-child(n+7) { display: none; }
-  .foot-hint::before { content: "Tap"; }
-  .foot-hint { font-size: 0; }
-  .foot-hint::before, .foot-hint::after { font-size: 10px; }
-  .foot-hint::after { content: " a photo for details"; }
 }
 
 @media (hover: none) {
   .frame { cursor: pointer; }
+  .hint-desk { display: none; }
+}
+@media (hover: hover) {
+  .hint-touch { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

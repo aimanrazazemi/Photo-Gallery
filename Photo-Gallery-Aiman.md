@@ -146,10 +146,11 @@ After that, every push to `main` updates the live site within a minute or two.
 
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
-- [ ] Replace the 30 sample images and their details with your own photos (WebP versions coming)
+- [x] Replace the 30 sample images with your own photos (5 added)
+- [ ] Add camera details, locations and dates for your photos (optional)
 - [x] Set the site name and heading in `SITE`
 - [ ] Write your own tagline in `SITE`
-- [ ] Rename or adjust the categories (currently Architecture, Street, Nature, Travel)
+- [ ] Rename or adjust the categories (currently Interiors and Architecture)
 - [ ] Share reference layouts so the design can be fine-tuned
 
 ---
@@ -160,6 +161,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Added your first five WebP photos and removed all 30 sample photos. Interiors: "Lamplight", "Yellow Kitchen", "Wine Bar". Architecture: "Blue Stripe", "Terracotta Steps". The files had no camera data, so only titles show for now. The intro stats now spread evenly when there's no Years figure, and the footer hint reads correctly on phones. |
 | 2026-10-30 | Reverted the retro pop theme. The site is back to the warm grey look with Montserrat and the Mrs Saint Delafield script "Hours". The two Interiors photos stay removed. |
 | 2026-10-30 | Removed the two Interiors photos ("Lamplight" and "Yellow Kitchen"). WebP versions are coming. |
 | 2026-10-30 | Tried a retro pop theme (cream, mustard, tomato, teal and pink, with Shrikhand, Yellowtail and Poppins). Reverted the same day. |
