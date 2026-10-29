@@ -83,6 +83,21 @@ const PHOTOS = [
     location: "The Myst Sa Pa Resort, Vietnam"
   },
   {
+    file: "images/interiors-copper-hearth.webp",
+    title: "Copper Hearth",
+    category: "Interiors"
+  },
+  {
+    file: "images/interiors-slate-bath.webp",
+    title: "Slate Bath",
+    category: "Interiors"
+  },
+  {
+    file: "images/interiors-night-table.webp",
+    title: "Night Table",
+    category: "Interiors"
+  },
+  {
     file: "images/architecture-blue-stripe.webp",
     title: "Blue Stripe",
     category: "Architecture"
@@ -149,6 +164,16 @@ const PHOTOS = [
     title: "Play Festival",
     category: "People",
     location: "Suria KLCC, Kuala Lumpur"
+  },
+  {
+    file: "images/people-moss-garden.webp",
+    title: "Moss Garden",
+    category: "People"
+  },
+  {
+    file: "images/people-chestnut-stall.webp",
+    title: "Chestnut Stall",
+    category: "People"
   },
   {
     file: "images/nature-palm-beach.webp",

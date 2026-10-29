@@ -154,7 +154,7 @@ After that, every push to `main` updates the live site within a minute or two.
 
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
-- [x] Replace the 30 sample images with your own photos (35 added)
+- [x] Replace the 30 sample images with your own photos (40 added)
 - [x] Add the camera and lens to all photos (Fujifilm X-E5, 23mm)
 - [ ] Add aperture, shutter speed, ISO, locations and dates for individual photos (optional)
 - [x] Set the site name and heading in `SITE`
@@ -170,6 +170,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Added five more photos: "Copper Hearth", "Slate Bath" and "Night Table" (Interiors), and "Moss Garden" and "Chestnut Stall" (People). 40 photos in 5 categories. |
 | 2026-10-30 | Added five more photos: "Capulus est Vita" and "The Myst" (Interiors), "Terrace Mosaic" (Architecture), "Play Festival" (People) and "Garden Café" (Nature). Locations from signs: The Myst Sa Pa Resort, Vietnam, and Suria KLCC, Kuala Lumpur. 35 photos in 5 categories. |
 | 2026-10-30 | Removed the City category and moved its four photos into Travel: "Park Skyline", "Clouds over Sapa", "Red Roofs" and "Corn & Lanterns" (files renamed from `city-` to `travel-`). Added "Beach Ponies" to Travel. 30 photos in 5 categories. |
 | 2026-10-30 | All photos now show "Fujifilm X-E5" and "23mm" in their hover details, set once as `defaults` in the `SITE` block. Aperture, shutter speed and ISO vary from photo to photo and can be added per photo. |
