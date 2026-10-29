@@ -115,11 +115,10 @@ main { position: relative; z-index: 1; }
   justify-self: end; align-self: start;
   width: var(--size); aspect-ratio: 1; height: auto; max-width: 100%;
   border-radius: 50%; object-fit: cover; object-position: 50% 50%;
-  /* the same white lift as the heading */
+  /* a thin, even white rim all the way round, softened by a faint white halo */
   box-shadow:
-    .5vmin .5vmin 0 rgba(255, 255, 255, .95),
-    1vmin 1vmin 0 rgba(255, 255, 255, .6),
-    2vmin 3vmin 5vmin rgba(255, 255, 255, .55);
+    0 0 0 .35vmin rgba(255, 255, 255, .7),
+    0 0 3vmin rgba(255, 255, 255, .45);
 }
 .intro-tagline { margin: 0; font-size: 15px; line-height: 1.65; color: var(--ink-soft); text-align: justify; hyphens: auto; }
 
