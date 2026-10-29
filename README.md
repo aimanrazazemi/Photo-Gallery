@@ -1,6 +1,6 @@
 # After Hours · Aiman Razazemi
 
-A personal photo portfolio: retro pop palette, Shrikhand, Yellowtail and Poppins type, a collage layout grouped by category, and details for each photo on hover (or tap, on phones).
+A personal photo portfolio: light warm-grey palette, Montserrat type, a collage layout grouped by category, and details for each photo on hover (or tap, on phones).
 
 No build step and no dependencies. It's plain HTML, CSS and JavaScript, so it runs on GitHub Pages as-is.
 
