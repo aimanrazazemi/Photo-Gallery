@@ -1,7 +1,6 @@
 (() => {
   const gallery = document.getElementById("gallery");
   const filtersEl = document.getElementById("filters");
-  const axis = document.getElementById("axis");
   const counterNow = document.getElementById("counter-now");
   const counterTotal = document.getElementById("counter-total");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -37,11 +36,6 @@
     `<dt>Photos</dt><dd>${photos.length}</dd>` +
     `<dt>Categories</dt><dd>${categories.length}</dd>` +
     (years.length ? `<dt>Years</dt><dd>${yMin === yMax ? yMin : `${yMin}–${String(yMax).slice(2)}`}</dd>` : "");
-
-  /* ---------- Structural grid ---------- */
-  const LETTERS = "ABCDEFGHIJKL";
-  document.querySelector(".grid-lines").innerHTML = "<span></span>".repeat(12);
-  axis.innerHTML = [...LETTERS].map((l) => `<span>${l}</span>`).join("");
 
   /* ---------- Filters ---------- */
   const renderFilters = (active) => {
@@ -235,7 +229,7 @@
   };
   window.addEventListener("hashchange", () => {
     route();
-    document.querySelector(".axis").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    document.getElementById("divider").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
   });
 
   route();
