@@ -1,13 +1,13 @@
 /* Layout: a quiet page in one typeface, over faint vertical column lines. Thin rules separate the header, intro and gallery;
    photos are grouped by category in edge-to-edge collages with generous space between groups. */
 :root {
-  --paper: #e6e4e0;      /* light warm grey ground */
-  --stone: #d4cfc7;      /* secondary plane */
-  --sand: #b9afa1;       /* lines, frames */
-  --umber: #8a7b68;      /* accent, active states */
+  --paper: #efeaca;      /* cream ground */
+  --stone: #c7a68f;      /* tan: photo placeholder, portrait ground */
+  --sand: #c7a68f;       /* tan: lines, frames */
+  --umber: #463122;      /* dark brown: accent, active states */
   --ink: #2a2723;        /* text */
   --ink-soft: #6c655c;   /* secondary text */
-  --veil: rgba(230, 228, 224, 0.94);
+  --veil: rgba(255, 255, 255, 0.92);   /* white hover panel */
 
   --font: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --script: "Mrs Saint Delafield", "Brush Script MT", cursive;   /* "Hours" in the main heading */
@@ -45,11 +45,11 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: repeat(var(--cols), 1fr);
   column-gap: var(--gap);
-  border-right: 1px solid rgba(138, 123, 104, .10);
+  border-right: 1px solid rgba(199, 166, 143, .28);
   pointer-events: none;
   z-index: 0;
 }
-.grid-lines span { border-left: 1px solid rgba(138, 123, 104, .10); }
+.grid-lines span { border-left: 1px solid rgba(199, 166, 143, .28); }
 
 /* Header */
 body::before {

@@ -16,7 +16,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Item | Choice |
 |---|---|
 | Theme | Simple, clean and architectural |
-| Colours | Light grey and warm neutrals |
+| Colours | Cream, tan, white and dark brown, with the original dark text colours |
 | Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
 | Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
@@ -28,6 +28,14 @@ This file is the project's working record. Every change to the site is noted in 
 
 | Name | Hex | Used for |
 |---|---|---|
+| Cream | `#EFEACA` | Page background |
+| Tan | `#C7A68F` | Lines and dividers, column lines (faint), photo placeholders, portrait background |
+| White | `#FFFFFF` | Hover details panel (slightly see-through) |
+| Dark brown | `#463122` | Accent: active menu underline, focus outline |
+| Ink | `#2A2723` | Main text (unchanged) |
+| Ink soft | `#6C655C` | Secondary text (unchanged) |
+
+---|---|---|
 | Paper | `#E6E4E0` | Page background |
 | Stone | `#D4CFC7` | Image backgrounds while photos load |
 | Sand | `#B9AFA1` | Lines and dividers |
@@ -170,6 +178,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | New colour palette from your template: cream `#EFEACA` background, tan `#C7A68F` lines and portrait background, white hover panel, dark brown `#463122` accent. Text colours unchanged. The yellow behind the portrait is now tan. |
 | 2026-10-30 | Made the round portrait much bigger: it now fills the right-hand column (about 410px on desktop), its top lines up with the top of "After", and portrait plus tagline together span the same height as the two-line "After / Hours" heading. On phones it's up to 200px wide, above the tagline. |
 | 2026-10-30 | Added your illustrated portrait in a circle on the right, above the tagline (`images/portrait.webp`). The illustration is centred on the head with an even yellow margin so the whole head fits inside the circle. It's 140px wide on large screens and scales down to 88px on phones. (Later enlarged; see the newer entry.) |
 | 2026-10-30 | Reverted the one-line heading: "Hours" is back below and to the right of "After". "by Aiman Razazemi" now uses the tagline's font (Montserrat regular, soft grey) instead of the script. |
