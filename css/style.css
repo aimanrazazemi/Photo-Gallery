@@ -86,11 +86,12 @@ main { position: relative; z-index: 1; }
   display: grid; grid-template-columns: repeat(var(--cols), 1fr); column-gap: var(--gap);
   padding-block: clamp(48px, 9vw, 140px) clamp(32px, 6vw, 90px);
   align-items: end;
-  --title-size: clamp(64px, 14vw, 216px);
+  --title-size: clamp(76px, 18vw, 280px);
 }
 .intro-head { grid-column: 1 / span 8; min-width: 0; animation: rise 1.1s var(--ease) both; }
 .intro-title {
-  margin: 0;
+  /* "After" on top; "Hours" in script tucked below it and pushed to the right */
+  margin: 0; display: inline-block;
   font: 600 var(--title-size)/.9 var(--display);
   letter-spacing: -.04em;
 }
@@ -110,8 +111,10 @@ main { position: relative; z-index: 1; }
 
 .intro-title span { display: block; }
 .intro-title .script {
-  font: 400 calc(var(--title-size) * 1.3)/.95 var(--script);
-  letter-spacing: 0; padding-left: .06em; margin-top: .14em;
+  font: 400 calc(var(--title-size) * 1.2)/.9 var(--script);
+  letter-spacing: 0;
+  width: max-content; margin-left: auto; margin-right: -.55em; margin-top: -.1em;
+  position: relative;
 }
 .intro-by {
   margin: .1em 0 0;

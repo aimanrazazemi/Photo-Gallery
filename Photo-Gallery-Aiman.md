@@ -160,6 +160,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | Made "After Hours" bigger (about 30% larger) and moved the script "Hours" to the right and just below "After", like a signature, with the top of its H crossing the bottom of "After". |
 | 2026-10-29 | "Hours" changed back to the dark text colour and set in a calligraphy script (Mrs Saint Delafield, the closest free match to Amsterdam). Added "by Aiman Razazemi" under the heading in Montserrat semi-bold, the same font as "After". The byline uses `author` from the `SITE` block. |
 | 2026-10-29 | Top-left name changed from "Aiman Razazemi" to "Photo Dump". Browser tab now reads "After Hours · Photo Dump". The footer still shows "© Aiman Razazemi". |
 | 2026-10-29 | Made the "After Hours" heading much bigger and set it on two lines: "After" on top, "Hours" below in dark blue (`#1F3354`). Removed the thin line between the tagline and the stats. |
