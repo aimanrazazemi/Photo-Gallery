@@ -23,11 +23,12 @@
   const heading = SITE.title || SITE.name;
   document.title = heading === SITE.name ? SITE.name : `${heading} · ${SITE.name}`;
   document.getElementById("brand").textContent = SITE.name;
-  // The heading is set on two lines; the last word goes on the second line in dark blue.
+  // The heading is set on two lines; the last word goes on the second line in a calligraphy script.
   const split = heading.lastIndexOf(" ");
   document.getElementById("intro-title").innerHTML = split > 0
-    ? `<span>${esc(heading.slice(0, split))}</span><span class="accent">${esc(heading.slice(split + 1))}</span>`
+    ? `<span>${esc(heading.slice(0, split))}</span><span class="script">${esc(heading.slice(split + 1))}</span>`
     : esc(heading);
+  document.getElementById("intro-by").textContent = SITE.author ? `by ${SITE.author}` : "";
   document.getElementById("intro-tagline").textContent = SITE.tagline;
   const foot = document.getElementById("foot-author");
   foot.innerHTML = `© ${new Date().getFullYear()} ${esc(SITE.author)}` +

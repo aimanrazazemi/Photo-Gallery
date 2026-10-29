@@ -18,6 +18,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Theme | Simple, clean and architectural |
 | Colours | Light grey and warm neutrals |
 | Typeface | Montserrat for everything: headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
+| Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
 | Categories | Yes, with a filter menu |
@@ -33,7 +34,6 @@ This file is the project's working record. Every change to the site is noted in 
 | Umber | `#8A7B68` | Accent and active menu item |
 | Ink | `#2A2723` | Main text |
 | Ink soft | `#6C655C` | Secondary text |
-| Navy | `#1F3354` | "Hours" in the main heading |
 
 ---
 
@@ -160,6 +160,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | "Hours" changed back to the dark text colour and set in a calligraphy script (Mrs Saint Delafield, the closest free match to Amsterdam). Added "by Aiman Razazemi" under the heading in Montserrat semi-bold, the same font as "After". The byline uses `author` from the `SITE` block. |
 | 2026-10-29 | Top-left name changed from "Aiman Razazemi" to "Photo Dump". Browser tab now reads "After Hours · Photo Dump". The footer still shows "© Aiman Razazemi". |
 | 2026-10-29 | Made the "After Hours" heading much bigger and set it on two lines: "After" on top, "Hours" below in dark blue (`#1F3354`). Removed the thin line between the tagline and the stats. |
 | 2026-10-29 | Tidied the intro block next to "After Hours": the tagline is now justified and spans the full right-hand column, a thin line separates it from the stats, the stats spread evenly with "Years" flush to the right edge, and the block ends level with the heading's baseline. |
