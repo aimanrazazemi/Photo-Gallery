@@ -30,7 +30,7 @@ This file is the project's working record. Every change to the site is noted in 
 |---|---|---|
 | Cream | `#EFEACA` | Page background, highlights on the portrait's face |
 | Tan | `#C7A68F` | Lines and dividers, column lines (faint), photo placeholders, portrait background |
-| White | `#FFFFFF` | Hover details panel (slightly see-through) |
+| White | `#FFFFFF` | Hover details panel (slightly see-through), the 3D edge and glow on the heading and portrait |
 | Warm grey | `#9E9A95` | Face colour in the round portrait |
 | Dark brown | `#463122` | Accent: active menu underline, focus outline |
 | Ink | `#2A2723` | Main text (unchanged) |
@@ -179,6 +179,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | The 3D effect is now white: a thin white edge down and right of the letters plus a soft white glow, on both "After Hours" and the round portrait. |
 | 2026-10-30 | Gave "After Hours" a subtle 3D lift: a thin tan edge one step down and right of the letters, plus a soft brown shadow beneath. The effect scales with the heading size. |
 | 2026-10-30 | Added architectural grid bubbles on the line between the intro and the gallery: a small circle where each vertical column line crosses it, labelled A1, B2, C3 … M13 on desktop (13 lines) and A1 … G7 on phones (7 lines). |
 | 2026-10-30 | Portrait: the white highlights on the face are now cream (`#EFEACA`), the same as the page background. |
