@@ -31,6 +31,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Cream | `#EFEACA` | Page background |
 | Tan | `#C7A68F` | Lines and dividers, column lines (faint), photo placeholders, portrait background |
 | White | `#FFFFFF` | Hover details panel (slightly see-through) |
+| Warm grey | `#9E9A95` | Face colour in the round portrait |
 | Dark brown | `#463122` | Accent: active menu underline, focus outline |
 | Ink | `#2A2723` | Main text (unchanged) |
 | Ink soft | `#6C655C` | Secondary text (unchanged) |
@@ -178,6 +179,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Portrait: the blue on the face is now a warm mid-grey (`#9E9A95`), including the soft edges into the black and white areas. |
 | 2026-10-30 | New colour palette from your template: cream `#EFEACA` background, tan `#C7A68F` lines and portrait background, white hover panel, dark brown `#463122` accent. Text colours unchanged. The yellow behind the portrait is now tan. |
 | 2026-10-30 | Made the round portrait much bigger: it now fills the right-hand column (about 410px on desktop), its top lines up with the top of "After", and portrait plus tagline together span the same height as the two-line "After / Hours" heading. On phones it's up to 200px wide, above the tagline. |
 | 2026-10-30 | Added your illustrated portrait in a circle on the right, above the tagline (`images/portrait.webp`). The illustration is centred on the head with an even yellow margin so the whole head fits inside the circle. It's 140px wide on large screens and scales down to 88px on phones. (Later enlarged; see the newer entry.) |
