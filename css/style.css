@@ -100,6 +100,13 @@ main { position: relative; z-index: 1; }
   grid-column: 9 / -1; display: grid; gap: 20px; min-width: 0;
   animation: rise 1.1s .15s var(--ease) both;
 }
+/* Round portrait above the tagline; the illustration is square with the head centred, so it fills the circle whole */
+.intro-portrait {
+  --size: clamp(88px, 9vw, 140px);
+  justify-self: end; align-self: start;
+  width: var(--size); height: var(--size); max-width: 100%;
+  border-radius: 50%; object-fit: cover; object-position: 50% 50%;
+}
 .intro-tagline { margin: 0; font-size: 15px; line-height: 1.65; color: var(--ink-soft); text-align: justify; hyphens: auto; }
 
 .intro-title span { display: block; }

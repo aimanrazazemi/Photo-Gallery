@@ -58,7 +58,7 @@ Photo-Gallery/
 ├── css/style.css       Colours, fonts, layout
 ├── js/photos.js        YOUR PHOTOS AND SITE TEXT (the only file you normally edit)
 ├── js/main.js          Layout and interactions
-├── images/             Photo files
+├── images/             Photo files (plus portrait.webp, the round portrait in the intro)
 ├── README.md           Short instructions
 ├── Photo-Gallery-Aiman.md   This file: project record and change log
 └── .nojekyll           Tells GitHub Pages to serve the files as-is
@@ -170,6 +170,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | Added your illustrated portrait in a circle on the right, above the tagline (`images/portrait.webp`). The illustration is centred on the head with an even yellow margin so the whole head fits inside the circle. It's 140px wide on large screens and scales down to 88px on phones. |
 | 2026-10-30 | Reverted the one-line heading: "Hours" is back below and to the right of "After". "by Aiman Razazemi" now uses the tagline's font (Montserrat regular, soft grey) instead of the script. |
 | 2026-10-30 | Heading redesigned as one line: script "Hours" now sits to the right of "After" on the same baseline, sized larger (1.32×) so the script's small letters match the weight of "After". The whole lockup scales with the screen. "by Aiman Razazemi" is now in the same script as "Hours", right-aligned underneath it. |
 | 2026-10-30 | New tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office." |
