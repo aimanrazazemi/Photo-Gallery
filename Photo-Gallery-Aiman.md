@@ -103,7 +103,7 @@ Edit the `SITE` block at the top of `js/photos.js`:
 
 ```js
 const SITE = {
-  name: "Aiman Razazemi",   // small name at the top left of every page
+  name: "Photo Dump",       // small name at the top left of every page
   title: "After Hours",     // large heading at the top of the page
   tagline: "Photographs taken on free days, long walks and the way home.",
   author: "Aiman Razazemi", // name in the footer
@@ -160,6 +160,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-29 | Top-left name changed from "Aiman Razazemi" to "Photo Dump". Browser tab now reads "After Hours · Photo Dump". The footer still shows "© Aiman Razazemi". |
 | 2026-10-29 | Made the "After Hours" heading much bigger and set it on two lines: "After" on top, "Hours" below in dark blue (`#1F3354`). Removed the thin line between the tagline and the stats. |
 | 2026-10-29 | Tidied the intro block next to "After Hours": the tagline is now justified and spans the full right-hand column, a thin line separates it from the stats, the stats spread evenly with "Years" flush to the right edge, and the block ends level with the heading's baseline. |
 | 2026-10-29 | Brought back the faint vertical column lines behind the page. The A–L letters stay removed. |

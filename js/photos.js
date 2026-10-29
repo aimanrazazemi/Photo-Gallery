@@ -12,7 +12,7 @@
 */
 
 const SITE = {
-  name: "Aiman Razazemi",          // small name at the top left of every page
+  name: "Photo Dump",              // small name at the top left of every page
   title: "After Hours",            // large heading at the top of the page
   tagline: "Photographs taken on free days, long walks and the way home.",
   author: "Aiman Razazemi",
