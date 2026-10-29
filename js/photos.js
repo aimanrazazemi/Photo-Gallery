@@ -98,6 +98,11 @@ const PHOTOS = [
     category: "Interiors"
   },
   {
+    file: "images/interiors-clay-bar.webp",
+    title: "Clay Bar",
+    category: "Interiors"
+  },
+  {
     file: "images/architecture-blue-stripe.webp",
     title: "Blue Stripe",
     category: "Architecture"
@@ -138,6 +143,17 @@ const PHOTOS = [
     file: "images/architecture-terrace-mosaic.webp",
     title: "Terrace Mosaic",
     category: "Architecture"
+  },
+  {
+    file: "images/architecture-mosaic-stair.webp",
+    title: "Mosaic Stair",
+    category: "Architecture"
+  },
+  {
+    file: "images/architecture-twin-towers.webp",
+    title: "Twin Towers",
+    category: "Architecture",
+    location: "Petronas Twin Towers, Kuala Lumpur"
   },
   {
     file: "images/people-brick-screen.webp",
@@ -232,6 +248,16 @@ const PHOTOS = [
   {
     file: "images/travel-beach-ponies.webp",
     title: "Beach Ponies",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-buddha-in-mist.webp",
+    title: "Buddha in the Mist",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-temple-guardian.webp",
+    title: "Temple Guardian",
     category: "Travel"
   }
 ];
