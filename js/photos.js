@@ -46,6 +46,16 @@ const PHOTOS = [
     category: "Interiors"
   },
   {
+    file: "images/interiors-hanging-letters.webp",
+    title: "Hanging Letters",
+    category: "Interiors"
+  },
+  {
+    file: "images/interiors-open-doors.webp",
+    title: "Open Doors",
+    category: "Interiors"
+  },
+  {
     file: "images/architecture-blue-stripe.webp",
     title: "Blue Stripe",
     category: "Architecture"
@@ -87,9 +97,24 @@ const PHOTOS = [
     category: "People"
   },
   {
+    file: "images/people-incense-wall.webp",
+    title: "Incense Wall",
+    category: "People"
+  },
+  {
     file: "images/city-klcc-park.webp",
     title: "Park Skyline",
     category: "City",
     location: "KLCC Park, Kuala Lumpur"
+  },
+  {
+    file: "images/nature-palm-beach.webp",
+    title: "Palm Beach",
+    category: "Nature"
+  },
+  {
+    file: "images/nature-mountain-mist.webp",
+    title: "Mountain Mist",
+    category: "Nature"
   }
 ];
