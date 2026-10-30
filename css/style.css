@@ -1,12 +1,12 @@
 /* Layout: a quiet page in one typeface, over faint vertical column lines. Thin rules separate the header, intro and gallery;
    photos are grouped by category in edge-to-edge collages with generous space between groups. */
 :root {
-  --paper: #efeaca;      /* cream ground */
-  --stone: #c7a68f;      /* tan: photo placeholder, portrait ground */
-  --sand: #c7a68f;       /* tan: lines, frames */
-  --umber: #463122;      /* dark brown: accent, active states */
-  --ink: #2a2723;        /* text */
-  --ink-soft: #6c655c;   /* secondary text */
+  --paper: #ffffff;      /* white ground */
+  --stone: #f0f0f0;      /* photo placeholder while loading */
+  --sand: #cfcfcf;       /* lines, frames */
+  --umber: #111111;      /* black: accent, active states */
+  --ink: #111111;        /* black text */
+  --ink-soft: #5c5c5c;   /* secondary text */
   --veil: rgba(255, 255, 255, 0.92);   /* white hover panel */
 
   --font: "Montserrat", "Helvetica Neue", Arial, sans-serif;
@@ -45,11 +45,11 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: repeat(var(--cols), 1fr);
   column-gap: var(--gap);
-  border-right: 1px solid rgba(199, 166, 143, .28);
+  border-right: 1px solid rgba(0, 0, 0, .07);
   pointer-events: none;
   z-index: 0;
 }
-.grid-lines span { border-left: 1px solid rgba(199, 166, 143, .28); }
+.grid-lines span { border-left: 1px solid rgba(0, 0, 0, .07); }
 
 /* Header */
 body::before {
@@ -94,12 +94,9 @@ main { position: relative; z-index: 1; }
   margin: 0; display: inline-block;
   font: 500 var(--title-size)/.9 var(--display);
   letter-spacing: -.04em;
-  /* subtle depth in white: a thin white edge one step down-right, then a soft white glow.
+  /* subtle depth on white: a soft, faint shadow just beneath the letters.
      Sizes are in em so the effect scales with the heading. */
-  text-shadow:
-    .006em .006em 0 rgba(255, 255, 255, .95),
-    .012em .012em 0 rgba(255, 255, 255, .6),
-    .03em .045em .07em rgba(255, 255, 255, .55);
+  text-shadow: 0 .02em .05em rgba(0, 0, 0, .16);
 }
 .intro-meta {
   /* sits flush with the right edge and ends on the heading's baseline */
@@ -115,10 +112,10 @@ main { position: relative; z-index: 1; }
   justify-self: end; align-self: start;
   width: var(--size); aspect-ratio: 1; height: auto; max-width: 100%;
   border-radius: 50%; object-fit: cover; object-position: 50% 50%;
-  /* a thin, even white rim all the way round, softened by a faint white halo */
+  /* a thin black outline all the way round, with the same soft shadow as the heading */
   box-shadow:
-    0 0 0 .35vmin rgba(255, 255, 255, .7),
-    0 0 3vmin rgba(255, 255, 255, .45);
+    0 0 0 1px var(--ink),
+    0 .6vmin 2.4vmin rgba(0, 0, 0, .14);
 }
 .intro-tagline { margin: 0; font-size: 15px; line-height: 1.65; color: var(--ink-soft); text-align: justify; hyphens: auto; }
 

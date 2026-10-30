@@ -16,7 +16,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Item | Choice |
 |---|---|
 | Theme | Simple, clean and architectural |
-| Colours | Cream, tan, white and dark brown, with the original dark text colours |
+| Colours | Black and white; only the photos are in colour |
 | Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
 | Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
@@ -26,8 +26,18 @@ This file is the project's working record. Every change to the site is noted in 
 
 ### Colour palette
 
+Black and white throughout; only the photos are in colour.
+
 | Name | Hex | Used for |
 |---|---|---|
+| White | `#FFFFFF` | Page background, portrait background, hover panel (slightly see-through) |
+| Light grey | `#F0F0F0` | Photo placeholders while loading |
+| Line grey | `#CFCFCF` | Lines, dividers, grid bubble outlines (column lines are black at 7%) |
+| Black | `#111111` | Text, headings, accent, portrait outline |
+| Dark grey | `#5C5C5C` | Secondary text |
+| Portrait grey | `#CCCCCC` | Face shading in the portrait |
+
+---|---|---|
 | Cream | `#EFEACA` | Page background, highlights on the portrait's face |
 | Tan | `#C7A68F` | Lines and dividers, column lines (faint), photo placeholders, portrait background |
 | White | `#FFFFFF` | Hover details panel (slightly see-through), the 3D edge and glow on the heading and portrait |
@@ -179,6 +189,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-10-30 | New black-and-white theme: white background, black text and accents, light grey lines. Portrait redone in greyscale (white background, black hair, light grey face, white highlights) with a thin black outline. The heading's white effect is now a faint soft shadow, the same as under the portrait. Photos keep their colour. |
 | 2026-10-30 | Portrait: the white effect is now subtler and even all the way round: a thin white rim plus a faint white halo, instead of the offset lower-right edge. |
 | 2026-10-30 | The 3D effect is now white: a thin white edge down and right of the letters plus a soft white glow, on both "After Hours" and the round portrait. |
 | 2026-10-30 | Gave "After Hours" a subtle 3D lift: a thin tan edge one step down and right of the letters, plus a soft brown shadow beneath. The effect scales with the heading size. |
