@@ -180,7 +180,7 @@ After that, every push to `main` updates the live site within a minute or two.
 
 - [x] Connect GitHub and push the site
 - [ ] Turn on GitHub Pages
-- [x] Replace the 30 sample images with your own photos (45 added)
+- [x] Replace the 30 sample images with your own photos (50 added)
 - [x] Add the camera and lens to all photos (Fujifilm X-E5, 23mm)
 - [ ] Add aperture, shutter speed, ISO, locations and dates for individual photos (optional)
 - [x] Set the site name and heading in `SITE`
@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Added five photos: "Espresso Bar" and "Shophouse Night" (Architecture), and "Drip Crew", "Jellyfish Kitchen" and "Red Curtain" (People). Now 50 photos: Architecture 21, People 10, Nature 4, Travel 15. |
 | 2026-11-02 | Removed the hatch (and with it the Shuffle feature; tile sizes are still mixed, but fixed). "| SHOT ON FUJIFILM" now follows the categories on the left of the band. "Hours" made slightly smaller so it clears the divider in the signature line. Moved "Park Skyline" from Travel to Architecture, and "The Myst", "Copper Hearth", "Night Table", "Clay Bar", "Sapa Station", "Terrace Mosaic" and "Mosaic Stair" from Architecture to Travel (files renamed to match). Now Architecture 19, People 7, Nature 4, Travel 15. |
 | 2026-11-02 | Menu band rearranged: the category titles now start from the left, and "Shot on Fujifilm" moved to the right in a smaller size, sitting just above the shuffle hatch. On phones the categories are on top with "Shot on Fujifilm" and the hatch below. |
 | 2026-11-02 | "Hours" changed to Birthstone Bounce, a free cursive with a tall looping H and bouncing letters; the doubled outline and grey fill are kept. |

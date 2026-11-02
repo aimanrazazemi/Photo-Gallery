@@ -126,6 +126,16 @@ const PHOTOS = [
     location: "KLCC Park, Kuala Lumpur"
   },
   {
+    file: "images/architecture-espresso-bar.webp",
+    title: "Espresso Bar",
+    category: "Architecture"
+  },
+  {
+    file: "images/architecture-shophouse-night.webp",
+    title: "Shophouse Night",
+    category: "Architecture"
+  },
+  {
     file: "images/people-brick-screen.webp",
     title: "Brick Screen",
     category: "People"
@@ -159,6 +169,21 @@ const PHOTOS = [
   {
     file: "images/people-chestnut-stall.webp",
     title: "Chestnut Stall",
+    category: "People"
+  },
+  {
+    file: "images/people-drip-crew.webp",
+    title: "Drip Crew",
+    category: "People"
+  },
+  {
+    file: "images/people-jellyfish-kitchen.webp",
+    title: "Jellyfish Kitchen",
+    category: "People"
+  },
+  {
+    file: "images/people-red-curtain.webp",
+    title: "Red Curtain",
     category: "People"
   },
   {
