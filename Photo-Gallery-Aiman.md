@@ -198,6 +198,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Portrait reshaped: the white ink now hugs the head as an uneven organic rim (no large pool, so no leftover white areas), and the portrait ends just below the mouth with a wavy cut and white drips. The ink stroke from "Hours" runs into the rim. The head is sized to the title's height so it no longer overlaps the header or tagline. |
 | 2026-11-02 | Byline now reads "Shots on Fujifilm, by Aiman Razazemi", set like Apple's "Shot on iPhone" line: Apple's own San Francisco font on Apple devices, Inter (its closest free match) everywhere else, medium weight, slightly smaller than before. |
 | 2026-11-02 | Round dots in the splatter replaced with small irregular ink flecks to match the larger splats. Portrait re-exported at 1400px (was 600px) for sharper detail on large and high-resolution screens. "After Hours" now has a doubled background: a thin outlined copy of each word set just behind and below-right of it. |
 | 2026-11-02 | Byline now reads "Shots by Aiman Razazemi on Fujifilm". The portrait is now painted inside the splash: cropped by the ink edge at a much larger size (hair and chin run off the edges), with a fine white outline, a more random splash shape with 14 runs, and drips falling from under it. The gallery is now a mosaic of four random tile sizes (S, M, L, XL) chosen to suit each photo's shape, packed with no gaps; each category opens on a large tile. A new Shuffle button next to the tags re-deals the sizes and tiles fade back in. Tiles lift slightly on hover. |
