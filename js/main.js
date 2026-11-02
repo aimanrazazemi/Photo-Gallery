@@ -47,6 +47,11 @@
       `<button class="filter" type="button" data-cat="${id}" aria-pressed="${id === active}"><span class="tag">${gridTag(i)}</span><span class="name">${esc(label)}</span><span class="n">${n}</span></button>`
     ).join("");
   };
+  document.getElementById("shuffle").addEventListener("click", () => {
+    seed = (seed * 1103515245 + 12345) >>> 0;
+    gallery.classList.remove("shuffled"); void gallery.offsetWidth; gallery.classList.add("shuffled");
+    route();
+  });
   filtersEl.addEventListener("click", (e) => {
     const b = e.target.closest(".filter");
     if (!b) return;
@@ -62,86 +67,81 @@
     img.onerror = () => resolve({ ...p, w: 4, h: 3 });
     img.src = p.file;
   });
-  // Justified collage: photos are packed edge to edge in rows that alternate between tall and short,
-  // so each group forms a solid block without cropping anyone's photo.
-  const ROW_HEIGHTS = { wide: [0.40, 0.24, 0.31], narrow: [0.62, 0.42] };
-
-  const pack = (collage) => {
-    const shots = collage._shots || (collage._shots = [...collage.querySelectorAll(".shot")]);
-    const W = collage.clientWidth;
-    if (!W) return;
-    const g = parseFloat(getComputedStyle(collage).rowGap) || 0;
-    const pattern = W < 600 ? ROW_HEIGHTS.narrow : ROW_HEIGHTS.wide;
-    const rows = [];
-    let cur = [], sum = 0;
-    const height = (items, total) => (W - g * (items.length - 1)) / total;
-    const maxRow = Math.max(240, Math.min(W * (W < 600 ? 1 : 0.6), window.innerHeight * 0.9));
-
-    shots.forEach((el) => {
-      const ar = +el.dataset.ar;
-      const target = Math.max(140, W * pattern[rows.length % pattern.length]);
-      // Close the row early if adding this photo would squeeze it further from the target height.
-      if (cur.length) {
-        const without = height(cur, sum), withIt = height([...cur, el], sum + ar);
-        if (without <= target * 1.35 && Math.abs(without - target) < Math.abs(withIt - target)) {
-          rows.push({ items: cur, sum });
-          cur = []; sum = 0;
-        }
+  // Mosaic: every photo gets one of four tile sizes (S, M, L, XL), picked at random but suited to
+  // its shape. Tiles are measured in square cells on a 12-column grid (6 on phones) and packed densely.
+  const shape = (p) => { const r = p.w / p.h; return r > 1.15 ? "land" : r < .87 ? "port" : "square"; };
+  const SIZES = {            // [columns, rows] on desktop, then on phones
+    port:   { S: [2, 3, 2, 3], M: [3, 4, 3, 4], L: [4, 6, 3, 5], XL: [5, 7, 4, 6] },
+    land:   { S: [3, 2, 3, 2], M: [4, 3, 4, 3], L: [6, 4, 6, 4], XL: [8, 5, 6, 4] },
+    square: { S: [3, 3, 2, 2], M: [4, 4, 3, 3], L: [5, 5, 4, 4], XL: [6, 6, 6, 6] },
+  };
+  const WEIGHTS = [["S", .3], ["M", .35], ["L", .22], ["XL", .13]];
+  let seed = 20261102;
+  const rng = (s) => () => { s |= 0; s = s + 0x6D2B79F5 | 0; let t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  // Place tiles first-fit on the grid, then let tiles grow right/down/left/up into any empty cells,
+  // so every group ends up as a solid block with no holes.
+  const packGrid = (tiles, cols) => {
+    const grid = [];   // grid[row][col] = tile index, or undefined
+    const free = (r, c) => c >= 0 && c < cols && r >= 0 && (grid[r] === undefined || grid[r][c] === undefined);
+    const fits = (r, c, h, w) => { for (let y = r; y < r + h; y++) for (let x = c; x < c + w; x++) if (!free(y, x)) return false; return true; };
+    const mark = (t, i) => { for (let y = t.r; y < t.r + t.h; y++) { grid[y] = grid[y] || []; for (let x = t.c; x < t.c + t.w; x++) grid[y][x] = i; } };
+    tiles.forEach((t, i) => {
+      t.w = Math.min(t.w, cols);
+      for (let r = 0; ; r++) {
+        let placed = false;
+        for (let c = 0; c + t.w <= cols; c++) if (fits(r, c, t.h, t.w)) { t.r = r; t.c = c; placed = true; break; }
+        if (placed) break;
       }
-      cur.push(el);
-      sum += ar;
-      if (height(cur, sum) <= target) {
-        rows.push({ items: cur, sum });
-        cur = []; sum = 0;
-      }
+      mark(t, i);
     });
-    if (cur.length) {
-      // A short leftover row would be stretched too tall, so share the photos of the
-      // last row and the leftovers between two rows of as-close-as-possible height.
-      const target = Math.max(140, W * pattern[rows.length % pattern.length]);
-      const last = rows[rows.length - 1];
-      if (last && height(cur, sum) > target * 1.5) {
-        const all = [...last.items, ...cur];
-        const ars = all.map((el) => +el.dataset.ar);
-        let best = null;
-        for (let k = 1; k < all.length; k++) {
-          const s1 = ars.slice(0, k).reduce((a, b) => a + b, 0), s2 = sum + last.sum - s1;
-          const diff = Math.abs(height(all.slice(0, k), s1) - height(all.slice(k), s2));
-          if (!best || diff < best.diff) best = { k, s1, s2, diff };
-        }
-        rows.splice(-1, 1,
-          { items: all.slice(0, best.k), sum: best.s1 },
-          { items: all.slice(best.k), sum: best.s2 });
-      }
-      else rows.push({ items: cur, sum });
+    const bottom = Math.max(...tiles.map((t) => t.r + t.h));
+    const empty = (r, c) => r < bottom && c >= 0 && c < cols && r >= 0 && free(r, c);
+    let grew = true;
+    while (grew) {
+      grew = false;
+      tiles.forEach((t, i) => {
+        const colFree = (x) => { for (let y = t.r; y < t.r + t.h; y++) if (!empty(y, x)) return false; return true; };
+        const rowFree = (y) => { for (let x = t.c; x < t.c + t.w; x++) if (!empty(y, x)) return false; return true; };
+        if (colFree(t.c + t.w)) { t.w++; grew = true; }
+        else if (rowFree(t.r + t.h)) { t.h++; grew = true; }
+        else if (colFree(t.c - 1)) { t.c--; t.w++; grew = true; }
+        else if (rowFree(t.r - 1)) { t.r--; t.h++; grew = true; }
+        mark(t, i);
+      });
     }
-
-    collage.replaceChildren(...rows.map(({ items, sum }) => {
-      const row = document.createElement("div");
-      row.className = "crow";
-      // Cap the height so a short group (say, two portraits) doesn't stretch into giant tiles;
-      // a capped row keeps its natural width and sits on the left.
-      const h = Math.min(height(items, sum), maxRow);
-      row.style.height = `${h.toFixed(2)}px`;
-      if (h < height(items, sum)) row.style.width = `${(sum * h + g * (items.length - 1)).toFixed(2)}px`;
-      row.append(...items);
-      return row;
-    }));
+    return tiles;
+  };
+  // Deal sizes for a group; try a few deals and keep the first that packs with no holes (or the best one).
+  const bestDeal = (items, cols, rand) => {
+    let best = null;
+    for (let attempt = 0; attempt < 80; attempt++) {
+      const tiles = packGrid(items.map((p, j) => {
+        const size = pickSize(rand, j === 0), s = SIZES[shape(p)][size], phone = cols < 12;
+        return { p, size, w: phone ? s[2] : s[0], h: phone ? s[3] : s[1] };
+      }), cols);
+      const bottom = Math.max(...tiles.map((t) => t.r + t.h));
+      const holes = cols * bottom - tiles.reduce((a, t) => a + t.w * t.h, 0);
+      // how far tiles were stretched from each photo's real shape (crop), plus any tile wider than 2/3 of the row
+      const stretch = tiles.reduce((a, t) => a + Math.abs(Math.log((t.w / t.h) / (t.p.w / t.p.h))) + (t.w > cols * .67 ? 2 : 0), 0);
+      const score = holes * 100 + stretch;
+      if (!best || score < best.score) best = { tiles, score };
+    }
+    return best.tiles;
+  };
+  const pickSize = (rand, first) => {
+    if (first) return rand() < .5 ? "L" : "XL";      // each group opens on a big one
+    let x = rand();
+    for (const [k, w] of WEIGHTS) { if ((x -= w) < 0) return k; }
+    return "M";
   };
 
-  const packAll = () => gallery.querySelectorAll(".collage").forEach(pack);
-  let lastWidth = 0;
-  new ResizeObserver(() => {
-    if (gallery.clientWidth !== lastWidth) { lastWidth = gallery.clientWidth; packAll(); }
-  }).observe(gallery);
-
   const exifRow = (label, v) => v ? `<div><dt>${label}</dt><dd>${esc(v)}</dd></div>` : "";
-  const shotHTML = (p, idx, n) => {
+  const shotHTML = (p, idx, n, t) => {
     const line = [p.focal, p.aperture, p.shutter, p.iso && `ISO ${p.iso}`].filter(Boolean).join(" · ");
     const exif = exifRow("Camera", p.camera) + exifRow("Lens", p.lens) + exifRow("Focal", p.focal) +
       exifRow("Aperture", p.aperture) + exifRow("Shutter", p.shutter) + exifRow("ISO", p.iso);
     return `
-    <figure class="shot" style="--ar:${(p.w / p.h).toFixed(4)}" data-ar="${p.w / p.h}" data-i="${idx}">
+    <figure class="shot size-${t.size.toLowerCase()}" style="grid-area:${t.r + 1} / ${t.c + 1} / span ${t.h} / span ${t.w};--d:${(idx % 12) * 45}" data-i="${idx}">
       <div class="frame" tabindex="0" aria-label="${esc(p.title)}, show details">
         <img src="${esc(p.file)}" alt="${esc(p.title)}${p.location ? ", " + esc(p.location) : ""}" decoding="async">
         <figcaption class="details">
@@ -165,6 +165,9 @@
   };
 
   /* ---------- Render ---------- */
+  const currentCols = () => parseInt(getComputedStyle(document.documentElement).getPropertyValue("--cols")) || 12;
+  let renderedCols = 0;
+  window.addEventListener("resize", () => { if (currentCols() !== renderedCols && measured.length) route(); });
   let measured = [];
   let revealObs, countObs;
 
@@ -177,6 +180,9 @@
     }
     const groups = cat === "all" ? categories : categories.filter((c) => slug(c) === cat);
     let idx = 0;
+    const rand = rng(seed);
+    const cols = currentCols();
+    renderedCols = cols;
     gallery.innerHTML = groups.map((c) => {
       const items = list.filter((p) => p.category === c);
       if (!items.length) return "";
@@ -185,12 +191,11 @@
           <h2 class="group-title"><span class="tag">${gridTag(categories.indexOf(c))}</span>${esc(c)}</h2>
           <p class="group-meta">${String(items.length).padStart(2, "0")} ${items.length === 1 ? "photo" : "photos"}${yearSpan(items) ? " · " + yearSpan(items) : ""}</p>
         </div>
-        <div class="collage">${items.map((p, j) => shotHTML(p, ++idx, j + 1)).join("")}</div>
+        <div class="collage-wrap"><div class="collage">${bestDeal(items, cols, rand).map((t, j) => shotHTML(t.p, ++idx, j + 1, t)).join("")}</div></div>
       </section>`;
     }).join("");
     counterTotal.textContent = String(list.length).padStart(2, "0");
     counterNow.textContent = "01";
-    packAll();
     observe();
   };
 

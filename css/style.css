@@ -58,13 +58,13 @@ main { position: relative; z-index: 1; }
    the tail of "Hours" into a pool that holds the round portrait. */
 .hero {
   /* on phones the piece fills the screen width; on large screens it tops out */
-  --t: min(calc((100vw - 2 * max(var(--gutter), 16px)) / 5.45), 236px);
+  --t: min(calc((100vw - 2 * max(var(--gutter), 16px)) / 5.65), 236px);
   padding-block: clamp(36px, 7vw, 110px) clamp(40px, 6vw, 90px);
   display: grid; grid-template-columns: minmax(0, 1fr); justify-items: start;
 }
 .hero-art {
   position: relative; font-size: var(--t);
-  width: 5.4em; height: 2.45em;
+  width: 5.6em; height: 2.45em;
   animation: rise 1.1s var(--ease) both;
 }
 .hero-title {
@@ -78,18 +78,13 @@ main { position: relative; z-index: 1; }
   font: 400 1.45em/1 var(--script); letter-spacing: 0;
 }
 .spill { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 1; }
-.spill path, .spill circle { fill: var(--ink); }
-.portrait {
-  position: absolute; z-index: 3;
-  left: 3.39em; top: .15em; width: 1.94em; height: 1.94em; max-width: none;
-  /* no frame: the head sits straight in the white ink pool */
-  object-fit: contain;
-}
+.spill > path, .spill > circle { fill: var(--ink); }
+.spill > path.edge { fill: none; stroke: var(--ink); stroke-width: 2.4; }
 /* the byline is signed under "Hours", right-aligned so it ends just before the ink pool */
 .intro-by {
   position: absolute; z-index: 2; margin: 0;
-  right: calc(var(--t) * 1.95); top: calc(var(--t) * 1.97);
-  max-width: calc(var(--t) * 3.45); text-align: right;
+  right: calc(var(--t) * 2.4); top: calc(var(--t) * 1.97);
+  max-width: calc(var(--t) * 3.2); text-align: right;
   /* same face as "After", small and quiet */
   font: 500 max(calc(var(--t) * .085), 11px)/1.3 var(--display); letter-spacing: .02em; color: var(--ink);
 }
@@ -108,7 +103,18 @@ main { position: relative; z-index: 1; }
   padding: 14px max(var(--gutter), env(safe-area-inset-right, 0px)) 14px max(var(--gutter), env(safe-area-inset-left, 0px));
   background: var(--paper);
 }
-.filters { position: relative; display: flex; justify-content: flex-start; gap: 12px; }
+.index { display: flex; align-items: center; gap: 16px; }
+.filters { position: relative; display: flex; justify-content: flex-start; gap: 12px; flex: 1; min-width: 0; }
+.shuffle {
+  appearance: none; cursor: pointer; flex: none; position: relative;
+  padding: 0 16px; height: 38px; border-radius: 999px;
+  border: 1px solid var(--sand); background: var(--paper); color: var(--ink);
+  font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  transition: border-color .2s, background-color .2s, color .2s;
+}
+.shuffle::before { content: "↻"; margin-right: 8px; font-size: 13px; }
+.shuffle:hover { border-color: var(--ink); }
+.shuffle:active { background: var(--ink); color: var(--paper); }
 .filters::before {           /* the rule the tags sit on */
   content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--sand); z-index: -1;
 }
@@ -149,9 +155,22 @@ main { position: relative; z-index: 1; }
   font: 500 10px/1.6 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
 }
 
-.collage { --cgap: clamp(6px, .7vw, 10px); display: grid; row-gap: var(--cgap); }
-.crow { display: flex; gap: var(--cgap); }
-.shot { flex: var(--ar) 1 0; margin: 0; min-width: 0; position: relative; }
+.collage-wrap { container-type: inline-size; }
+.collage {
+  --cgap: clamp(6px, .7vw, 10px);
+  display: grid; gap: var(--cgap);
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  grid-auto-rows: calc((100cqw - (var(--cols) - 1) * var(--cgap)) / var(--cols));   /* square cells */
+  grid-auto-flow: dense;
+}
+.shot {
+  margin: 0; min-width: 0; position: relative;
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.shot:hover { z-index: 2; transform: scale(1.012); box-shadow: 0 18px 40px rgba(0, 0, 0, .55); }
+/* a shuffle re-deals the tiles; they settle back in with a short fade */
+.gallery.shuffled .shot { animation: deal .7s var(--ease) both; animation-delay: calc(var(--d, 0) * 1ms); }
+@keyframes deal { from { opacity: 0; transform: scale(.96); } }
 
 .frame {
   position: relative; overflow: hidden; cursor: default;
@@ -234,8 +253,8 @@ main { position: relative; z-index: 1; }
 
 @media (max-width: 1100px) {
   /* the index scrolls sideways as one row */
-  .filters { justify-content: flex-start; overflow-x: auto; scrollbar-width: none; gap: 10px;
-    margin-right: calc(-1 * max(var(--gutter), env(safe-area-inset-right, 0px))); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+  .filters { justify-content: flex-start; overflow-x: auto; scrollbar-width: none; gap: 10px; }
+  .shuffle { padding: 0 12px; }
   .filters::-webkit-scrollbar { display: none; }
   .filters::before { right: auto; width: 100%; min-width: max-content; }
 }
