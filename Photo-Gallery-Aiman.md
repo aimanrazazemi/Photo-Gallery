@@ -17,7 +17,7 @@ This file is the project's working record. Every change to the site is noted in 
 |---|---|
 | Theme | Simple, clean and architectural |
 | Colours | Black background, white text and ink; only the photos are in colour |
-| Typeface | "After": Agraham (look-alike Gloock). "Hours": Lust (look-alike Mr Dafoe). Name signature: Bastliga One (look-alike Herr Von Muellerhoff). Titles, byline, tagline: Eden Meadow (look-alike Gilda Display). Menu and small labels: Montserrat. |
+| Typeface | "After": Agraham (look-alike Gloock). "Hours": Lust (look-alike Mr Dafoe). Name: your own signature image. Titles, byline, tagline: Eden Meadow (look-alike Gilda Display). Menu and small labels: Montserrat. |
 | Layout | Mosaic per category: tiles in four random sizes (S, M, L, XL) on a square-cell grid, packed with no gaps; Shuffle re-deals them |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
 | Categories | Four tags on a line, plan-style: A1 Architecture, B2 People, C3 Nature, D4 Travel. Clicking a selected tag again shows all photos. Sticks to the top while scrolling. |
@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | "Aiman Razazemi" in the byline is now your own signature (`images/signature.webp`, cut out as white ink on a transparent background) instead of a signature-style font. |
 | 2026-11-02 | "Photo Dump" (now in normal capitalisation), the category tags (A1 Architecture, B2 People, C3 Nature, D4 Travel) and the Shuffle button are now set in Gilda Display. Removed the "Hover or tap a photo for details" note from the footer. |
 | 2026-11-02 | New fonts: "After" in Agraham style (free look-alike Gloock), title "Photo Dump", byline, tagline, category headings and photo titles in Eden Meadow style (look-alike Gilda Display), and the name "Aiman Razazemi" as a Bastliga One-style signature (look-alike Herr Von Muellerhoff). "Hours" keeps the Lust style. Removed the underline under the byline. "After" is larger and its baseline now sits on the portrait's eye line, reaching close to the face, with "Hours" tucked across its lower right. On phones the byline sits just below the artwork. `css/fonts.css` has slots for all four licensed fonts. |
 | 2026-11-02 | New fonts. "Hours": Lust style (free look-alike Mr Dafoe). "After": Oldport Script style (free look-alike Pacifico). Title "Photo Dump", byline, tagline, category headings and photo titles: Freiburg style in capitals (free look-alike Saira Condensed). The licensed fonts are paid; `css/fonts.css` has ready slots so their web font files can be dropped into `/fonts` later and the site switches to them automatically. |

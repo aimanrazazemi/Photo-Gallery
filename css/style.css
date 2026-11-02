@@ -102,8 +102,9 @@ main { position: relative; z-index: 1; }
   letter-spacing: .02em; color: var(--ink-soft); white-space: nowrap;
 }
 .intro-by .sig {
-  font: 400 2.6em/0 var(--sign); color: var(--ink); letter-spacing: 0;
-  margin-left: .12em; vertical-align: -.12em;
+  /* Aiman's own signature, cut out as white ink */
+  display: inline-block; height: 3.6em; width: auto; max-width: none;
+  margin: -1.4em 0 -1.1em .25em; vertical-align: -.7em;
 }
 .intro-tagline {
   margin: clamp(20px, 3vw, 40px) 0 0; max-width: 34rem;

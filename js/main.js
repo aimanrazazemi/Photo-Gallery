@@ -32,7 +32,7 @@
   const byline = SITE.byline || (SITE.author ? `by ${SITE.author}` : "");
   const at = SITE.author ? byline.lastIndexOf(SITE.author) : -1;
   document.getElementById("intro-by").innerHTML = at >= 0
-    ? `${esc(byline.slice(0, at))}<span class="sig">${esc(SITE.author)}</span>${esc(byline.slice(at + SITE.author.length))}`
+    ? `${esc(byline.slice(0, at))}<img class="sig" src="images/signature.webp" alt="${esc(SITE.author)}" width="1400" height="392">${esc(byline.slice(at + SITE.author.length))}`
     : esc(byline);
   document.getElementById("intro-tagline").textContent = SITE.tagline;
   const foot = document.getElementById("foot-author");
