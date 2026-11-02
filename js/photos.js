@@ -318,9 +318,7 @@ const PHOTOS = [
   {
     file: "images/travel-moom-coffee.webp",
     title: "Moom Coffee",
-    category: "Travel",
-    camera: "Fujifilm X-half",
-    focal: "10.8mm (32mm equiv.)"
+    category: "Travel"
   },
   {
     file: "images/travel-arched-lounge.webp",
