@@ -44,7 +44,17 @@ img { max-width: 100%; display: block; }
 /* film grain over the whole page */
 .grain {              /* textured charcoal vignette, fixed behind everything */
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background: #0a0a0a url("../images/background.webp") center / cover no-repeat;
+  background:
+    url("../images/bg-edge-left.webp") left top / var(--edge) 100% no-repeat,
+    url("../images/bg-edge-right.webp") right top / var(--edge) 100% no-repeat,
+    #0a0a0a url("../images/background.webp") center / cover no-repeat;
+  /* the textured edges stay visible at any screen shape, including tall phone screens */
+  --edge: clamp(44px, 9vw, 150px);
+}
+.grain::after {             /* deepen the vignette toward the left and right edges */
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.35), transparent 22%, transparent 78%, rgba(0,0,0,.35));
+  mix-blend-mode: multiply;
 }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--umber); outline-offset: 3px; }
