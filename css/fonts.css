@@ -1,6 +1,6 @@
 /*
   Licensed fonts. The site currently uses free look-alikes:
-    "Hours"                     -> Lust (faptype.com)           look-alike: Mr Dafoe
+    "Hours"                     -> Birthstone Bounce (free, Google Fonts)
     "After"                     -> Agraham (Hishand Studio)     look-alike: Gloock
     Titles, byline, tagline     -> Eden Meadow                  look-alike: Gilda Display
     "Aiman Razazemi" signature  -> Bastliga One                 look-alike: Herr Von Muellerhoff
@@ -9,10 +9,6 @@
     1. Put its .woff2 file in the /fonts folder with the name used below.
     2. Remove the /* and */ around its block.
   The site switches to it automatically; nothing else needs changing.
-*/
-
-/*
-@font-face { font-family: "Lust"; src: url("../fonts/lust.woff2") format("woff2"); font-display: swap; }
 */
 
 /*

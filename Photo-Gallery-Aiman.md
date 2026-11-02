@@ -17,7 +17,7 @@ This file is the project's working record. Every change to the site is noted in 
 |---|---|
 | Theme | Simple, clean and architectural |
 | Colours | Black background, white text and ink; only the photos are in colour |
-| Typeface | "After": Agraham (look-alike Gloock). "Hours": Lust (look-alike Mr Dafoe). Name: your own signature image. Titles, byline, tagline: Eden Meadow (look-alike Gilda Display). Menu and small labels: Montserrat. |
+| Typeface | "After": Agraham (look-alike Gloock). "Hours": Birthstone Bounce. Name: your own signature image. Titles, byline, tagline: Eden Meadow (look-alike Gilda Display). Menu and small labels: Montserrat. |
 | Layout | Mosaic per category: tiles in four random sizes (S, M, L, XL) on a square-cell grid, packed with no gaps; Shuffle re-deals them |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
 | Categories | Spaced capitals in a band between two white lines: ARCHITECTURE / PEOPLE / NATURE / TRAVEL, next to "Shot on Fujifilm"; the hatch on the right shuffles. Sticks to the top while scrolling. |
@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | "Hours" changed to Birthstone Bounce, a free cursive with a tall looping H and bouncing letters; the doubled outline and grey fill are kept. |
 | 2026-11-02 | Stronger vignette on the left and right: textured edge strips cut from your background (`images/bg-edge-left.webp`, `bg-edge-right.webp`) now sit on both sides at every screen size, so the edges show on tall phone screens too, with a soft darkening toward each side. |
 | 2026-11-02 | Background is now your textured charcoal vignette image (`images/background.webp`), fixed behind the whole page; the menu band is slightly see-through over it. Removed the brush swoosh under "Hours". "After" and "Hours" are doubled again: an outlined copy offset behind each word, with a light grey fill on the "Hours" copy. The title and portrait are about 10% bigger and the spacing tightened, with the "s" of "Hours" just touching the cheek. |
 | 2026-11-02 | Redesigned the top of the page to match your mockup. Black background with a soft vignette and film grain across the whole page. "PHOTO DUMP" in spaced capitals over a thin white line. A corner bracket, "After" in warm off-white high-contrast serif, the brush-script "Hours" crossing its lower half and running into the portrait's cheek, and a tapering brush swoosh under "Hours". The portrait is larger, with its drips. Below: "A PHOTO COLLECTION BY" in spaced capitals, a thin divider, your signature, then the description in serif. The menu is now a band between two white lines: "SHOT ON FUJIFILM" on the left, the categories as spaced capitals separated by slashes in the middle (click to filter, click again for all), and a diagonal hatch on the right that shuffles the photos (it shows "Shuffle" on hover). The band sticks to the top while scrolling. The outlined doubles behind the title, the ink flecks and the A1–D4 tags are removed. |
