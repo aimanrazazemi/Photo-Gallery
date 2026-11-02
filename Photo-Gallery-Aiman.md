@@ -18,7 +18,6 @@ This file is the project's working record. Every change to the site is noted in 
 | Theme | Simple, clean and architectural |
 | Colours | Black background, white text and ink; only the photos are in colour |
 | Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
-| Signature typeface | Herr Von Muellerhoff, for "by Aiman Razazemi" |
 | Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
@@ -134,6 +133,7 @@ const SITE = {
   title: "After Hours",     // large heading at the top of the page
   tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office.",
   author: "Aiman Razazemi", // name in the footer
+  byline: "Shots from Aiman Razazemi Fujifilm", // line under "Hours", beside the portrait
   instagram: "",            // optional, e.g. "https://instagram.com/yourhandle"
 
   // Applied to every photo unless that photo sets its own value.
@@ -197,6 +197,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Portrait: removed the round black disc, so the head sits straight in the white ink spill, now in black and greys (black hair, mid-grey face, light grey highlights, transparent background). The line under "Hours" now reads "Shots from Aiman Razazemi Fujifilm" in Montserrat, the same font as "After"; it's set as `byline` in the `SITE` block. The signature font is no longer used. |
 | 2026-11-02 | Black theme: black background, white text, white ink spill; the portrait is inverted to suit (white hair and linework on black). The signature "by Aiman Razazemi" now sits under "Hours" on the right, just left of the portrait. The category menu moved out of the header onto the line above the gallery as grid-tag pills (A1 All, B2 Interiors, C3 Architecture, D4 People, E5 Nature, F6 Travel); it sticks to the top while scrolling and swipes sideways on phones and tablets. Each category heading carries its matching tag. The header is now just "Photo Dump" plus "Photographs · Fujifilm X-E5". The separate A1–M13 bubble row is replaced by the menu. |
 | 2026-11-02 | Hero made horizontal: the ink pool and portrait now sit to the right of the title, centred level with "After / Hours", with the spill running sideways from the tail of "Hours". The signature and tagline sit on one line below (stacked on phones). "by Aiman Razazemi" is now in a handwritten signature font, Herr Von Muellerhoff. |
 | 2026-11-02 | Redesigned the opening section as one composition. The vertical column lines are removed. The tail of the script "Hours" now spills as ink into a lopsided pool with drips and droplets, and the round portrait sits in that pool, overlapping the end of "Hours". On larger screens the byline and tagline tuck under "After"; on phones they sit below. The whole piece scales as one to fill the phone screen. On phones the category menu is a single swipeable row with larger tap targets. |

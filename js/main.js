@@ -28,7 +28,7 @@
   document.getElementById("intro-title").innerHTML = split > 0
     ? `<span class="after">${esc(heading.slice(0, split))}</span><span class="script">${esc(heading.slice(split + 1))}</span>`
     : esc(heading);
-  document.getElementById("intro-by").textContent = SITE.author ? `by ${SITE.author}` : "";
+  document.getElementById("intro-by").textContent = SITE.byline || (SITE.author ? `by ${SITE.author}` : "");
   document.getElementById("intro-tagline").textContent = SITE.tagline;
   const foot = document.getElementById("foot-author");
   foot.innerHTML = `© ${new Date().getFullYear()} ${esc(SITE.author)}` +
