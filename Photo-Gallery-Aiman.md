@@ -20,7 +20,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Typeface | "After": Agraham (look-alike Gloock). "Hours": Lust (look-alike Mr Dafoe). Name: your own signature image. Titles, byline, tagline: Eden Meadow (look-alike Gilda Display). Menu and small labels: Montserrat. |
 | Layout | Mosaic per category: tiles in four random sizes (S, M, L, XL) on a square-cell grid, packed with no gaps; Shuffle re-deals them |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
-| Categories | Four tags on a line, plan-style: A1 Architecture, B2 People, C3 Nature, D4 Travel. Clicking a selected tag again shows all photos. Sticks to the top while scrolling. |
+| Categories | Spaced capitals in a band between two white lines: ARCHITECTURE / PEOPLE / NATURE / TRAVEL, next to "Shot on Fujifilm"; the hatch on the right shuffles. Sticks to the top while scrolling. |
 | Hosting | GitHub, published with GitHub Pages |
 
 ### Colour palette
@@ -132,7 +132,7 @@ const SITE = {
   title: "After Hours",     // large heading at the top of the page
   tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office.",
   author: "Aiman Razazemi", // name in the footer
-  byline: "Shots on Fujifilm, by Aiman Razazemi", // line under "Hours", beside the portrait
+  byline: "A photo collection by", // small label before the signature
   instagram: "",            // optional, e.g. "https://instagram.com/yourhandle"
 
   // Applied to every photo unless that photo sets its own value.
@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Redesigned the top of the page to match your mockup. Black background with a soft vignette and film grain across the whole page. "PHOTO DUMP" in spaced capitals over a thin white line. A corner bracket, "After" in warm off-white high-contrast serif, the brush-script "Hours" crossing its lower half and running into the portrait's cheek, and a tapering brush swoosh under "Hours". The portrait is larger, with its drips. Below: "A PHOTO COLLECTION BY" in spaced capitals, a thin divider, your signature, then the description in serif. The menu is now a band between two white lines: "SHOT ON FUJIFILM" on the left, the categories as spaced capitals separated by slashes in the middle (click to filter, click again for all), and a diagonal hatch on the right that shuffles the photos (it shows "Shuffle" on hover). The band sticks to the top while scrolling. The outlined doubles behind the title, the ink flecks and the A1–D4 tags are removed. |
 | 2026-11-02 | "Aiman Razazemi" in the byline is now your own signature (`images/signature.webp`, cut out as white ink on a transparent background) instead of a signature-style font. |
 | 2026-11-02 | "Photo Dump" (now in normal capitalisation), the category tags (A1 Architecture, B2 People, C3 Nature, D4 Travel) and the Shuffle button are now set in Gilda Display. Removed the "Hover or tap a photo for details" note from the footer. |
 | 2026-11-02 | New fonts: "After" in Agraham style (free look-alike Gloock), title "Photo Dump", byline, tagline, category headings and photo titles in Eden Meadow style (look-alike Gilda Display), and the name "Aiman Razazemi" as a Bastliga One-style signature (look-alike Herr Von Muellerhoff). "Hours" keeps the Lust style. Removed the underline under the byline. "After" is larger and its baseline now sits on the portrait's eye line, reaching close to the face, with "Hours" tucked across its lower right. On phones the byline sits just below the artwork. `css/fonts.css` has slots for all four licensed fonts. |

@@ -5,6 +5,7 @@
   --stone: #1a1a1a;      /* photo placeholder while loading */
   --sand: #3a3a3a;       /* lines, outlines */
   --umber: #f2f2f2;      /* white: accent, active states */
+  --cream: #f3efe6;      /* warm off-white for the title */
   --ink: #f2f2f2;        /* white text and ink */
   --ink-soft: #9a9a9a;   /* secondary text */
   --veil: rgba(11, 11, 11, 0.86);      /* dark hover panel */
@@ -32,7 +33,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--paper);
+  background: radial-gradient(120% 90% at 50% 35%, #1d1d1d 0%, #111 45%, #050505 100%) fixed var(--paper);
   color: var(--ink);
   font: 400 15px/1.6 var(--body);
   -webkit-font-smoothing: antialiased;
@@ -40,6 +41,11 @@ body {
   padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
 }
 img { max-width: 100%; display: block; }
+/* film grain over the whole page */
+.grain {
+  position: fixed; inset: -50%; z-index: 20; pointer-events: none; opacity: .16; mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--umber); outline-offset: 3px; }
 
@@ -50,110 +56,98 @@ body::before {
 }
 .bar {
   display: flex; align-items: baseline; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap;
-  padding-block: 22px 18px;
-  border-bottom: 1px solid var(--sand);
+  padding-block: 26px 20px;
+  border-bottom: 1px solid rgba(242, 242, 242, .7);
 }
-.brand { font: 400 22px/1 "Gilda Display", var(--poster); letter-spacing: .01em; text-decoration: none; }
+.brand { font: 600 15px/1 var(--mono); letter-spacing: .28em; text-transform: uppercase; text-decoration: none; }
 
 main { position: relative; z-index: 1; }
 
 /* Hero: one composition sized in em from --t, so it scales as a single piece.
-   "After" sits top-left, the script "Hours" overlaps below it, and ink spills from
-   the tail of "Hours" into a pool that holds the round portrait. */
+   A corner bracket, "After" in a high-contrast serif, the brush-script "Hours" crossing it and running
+   into the portrait, and a tapering brush swoosh under "Hours". */
 .hero {
-  /* on phones the piece fills the screen width; on large screens it tops out */
-  --t: min(calc((100vw - 2 * max(var(--gutter), 16px)) / 5.65), 236px);
-  padding-block: clamp(36px, 7vw, 110px) clamp(40px, 6vw, 90px);
-  display: grid; grid-template-columns: minmax(0, 1fr); justify-items: start;
+  --t: min(calc((100vw - 2 * max(var(--gutter), 16px)) / 6.7), 228px);
+  padding-block: clamp(28px, 4vw, 60px) clamp(32px, 4vw, 56px);
 }
 .hero-art {
   position: relative; font-size: var(--t);
-  width: 5.6em; height: 2.45em;
+  width: 6.7em; height: 2.2em; max-width: 100%;
   animation: rise 1.1s var(--ease) both;
 }
-.hero-title {
-  margin: 0; font-size: 1em; font-weight: 500; line-height: .9;
-  position: absolute; inset: 0;
+.hero-art::before {             /* corner bracket, top left */
+  content: ""; position: absolute; left: .13em; top: .05em; width: .21em; height: .21em;
+  border-left: max(1px, .008em) solid var(--ink); border-top: max(1px, .008em) solid var(--ink);
 }
+.hero-title { margin: 0; font-size: 1em; font-weight: 400; line-height: 1; position: absolute; inset: 0; z-index: 2; }
 .hero-title span { position: absolute; white-space: nowrap; }
-/* "After" sits on the portrait's eye line and runs up close to the face */
-.hero-title .after { left: -.03em; top: .2em; font: 400 1.3em/1 var(--after); letter-spacing: -.015em; }
+.hero-title .after {
+  left: .56em; top: -.2em; font: 400 1.45em/1 var(--after); letter-spacing: -.02em; color: var(--cream);
+  text-shadow: 0 .02em .06em rgba(0, 0, 0, .6);
+}
 .hero-title .script {
-  left: .95em; top: 1.08em; z-index: 2;
-  font: 400 1.1em/1 var(--script); letter-spacing: 0;
+  left: .98em; top: .42em; z-index: 3;
+  font: 400 1.5em/1 var(--script); letter-spacing: 0; color: #fbfbf8;
+  text-shadow: 0 .015em .05em rgba(0, 0, 0, .55);
 }
 .spill { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 1; }
-.spill > path, .spill > circle { fill: var(--ink); }
-/* a doubled, outlined echo of each word, set just behind and below-right of it */
-.hero-title [data-echo]::before {
-  content: attr(data-echo); position: absolute; left: .045em; top: .05em; z-index: -1;
-  color: transparent; -webkit-text-stroke: max(1px, .006em) rgba(242, 242, 242, .55);
-  pointer-events: none;
+.spill .swoosh { fill: #fbfbf8; }
+.hero-meta { margin-left: calc(var(--t) * .66); width: min(calc(var(--t) * 3.6), 100%); display: grid; gap: 22px; margin-top: calc(var(--t) * .02); position: relative; z-index: 2; }
+.intro-by { margin: 0; display: flex; align-items: center; gap: clamp(16px, 2.6vw, 52px); }
+.by-label {
+  font: 500 clamp(11px, 1vw, 14px)/1.7 var(--mono); letter-spacing: .32em; text-transform: uppercase; color: var(--ink);
+  padding-right: clamp(16px, 2.6vw, 52px); border-right: 1px solid rgba(242, 242, 242, .6);
 }
-.hero-title .after::before { left: .025em; top: .03em; }
-.hero-title .script::before { left: .03em; top: .035em; color: rgba(200, 200, 200, .4); }   /* light grey fill between the two layers */
-.spill > path.edge { fill: none; stroke: var(--ink); stroke-width: 2.4; }
-/* the byline is signed under "Hours", right-aligned so it ends just before the ink pool */
-.intro-by {
-  position: absolute; z-index: 2; margin: 0;
-  right: calc(var(--t) * 2.3); top: calc(var(--t) * 2.2);
-  max-width: calc(var(--t) * 3.2); text-align: right;
-  font: 400 max(calc(var(--t) * .085), 12px)/1.2 var(--poster);
-  letter-spacing: .02em; color: var(--ink-soft); white-space: nowrap;
-}
-.intro-by .sig {
-  /* Aiman's own signature, cut out as white ink */
-  display: inline-block; height: 3.6em; width: auto; max-width: none;
-  margin: -1.4em 0 -1.1em .25em; vertical-align: -.7em;
-}
+.intro-by .sig { height: clamp(48px, 5.2vw, 96px); width: auto; max-width: none; }
 .intro-tagline {
-  margin: clamp(20px, 3vw, 40px) 0 0; max-width: 34rem;
-  font: 400 18px/1.55 var(--poster); letter-spacing: .01em; color: var(--ink-soft);
-  animation: rise 1.1s .15s var(--ease) both;
+  margin: 0; max-width: 40rem;
+  font: 400 clamp(15px, 1.25vw, 19px)/1.55 var(--poster); letter-spacing: .06em; color: var(--ink);
 }
 
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
 
-/* Index: the category menu, set on a single rule as plan-style grid tags. It sticks to the top while scrolling. */
+/* Band: "Shot on Fujifilm", the categories set like a caption, and a hatch that shuffles the photos.
+   It sticks to the top while scrolling. */
 .index {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  margin: 0 calc(-1 * max(var(--gutter), env(safe-area-inset-left, 0px))) clamp(40px, 6vw, 84px);
-  padding: 14px max(var(--gutter), env(safe-area-inset-right, 0px)) 14px max(var(--gutter), env(safe-area-inset-left, 0px));
-  background: var(--paper);
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+  margin: clamp(8px, 2vw, 24px) 0 clamp(40px, 6vw, 84px);
+  border-block: 1px solid rgba(242, 242, 242, .7);
+  background: radial-gradient(120% 300% at 50% 50%, #151515, #0b0b0b);
 }
-.index { display: flex; align-items: center; gap: 16px; }
-.filters { position: relative; display: flex; justify-content: flex-start; gap: 12px; flex: 1; min-width: 0; }
-.shuffle {
-  appearance: none; cursor: pointer; flex: none; position: relative;
-  padding: 0 16px; height: 38px; border-radius: 999px;
-  border: 1px solid var(--sand); background: var(--paper); color: var(--ink);
-  font: 400 16px/1 "Gilda Display", var(--poster); letter-spacing: .01em;
-  transition: border-color .2s, background-color .2s, color .2s;
+.shot-on {
+  display: grid; gap: 6px; padding: 18px clamp(20px, 3vw, 44px) 18px clamp(12px, 2.4vw, 40px);
+  border-right: 1px solid rgba(242, 242, 242, .7);
+  font: 600 11px/1 var(--mono); letter-spacing: .26em; text-transform: uppercase;
 }
-.shuffle::before { content: "↻"; margin-right: 8px; font-size: 13px; }
-.shuffle:hover { border-color: var(--ink); }
-.shuffle:active { background: var(--ink); color: var(--paper); }
-.filters::before {           /* the rule the tags sit on */
-  content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--sand); z-index: -1;
-}
+.fuji { font: 800 clamp(20px, 1.8vw, 26px)/1 var(--mono); letter-spacing: .02em; }
+.fuji-i { position: relative; }
+.fuji-i::before { content: ""; position: absolute; left: 50%; top: -.06em; width: .2em; height: .2em; translate: -50% 0; background: #e60012; }
+.fuji-i { color: transparent; -webkit-text-stroke: 0; }
+.fuji-i::after { content: "I"; position: absolute; left: 0; top: .14em; color: var(--ink); clip-path: inset(.12em 0 0 0); }
+.filters { display: flex; justify-content: center; align-items: center; gap: clamp(14px, 3.4vw, 54px); min-width: 0; padding-inline: 16px; }
 .filter {
-  appearance: none; cursor: pointer; flex: none;
-  display: inline-flex; align-items: center; gap: 9px;
-  /* every tag is the same width, so the row reads as an even set from the left */
-  width: 196px; justify-content: flex-start;
-  padding: 4px 14px 4px 4px; border: 1px solid var(--sand); border-radius: 999px;
-  background: var(--paper); color: var(--ink-soft);
-  font: 400 16px/1 "Gilda Display", var(--poster); letter-spacing: .01em;
-  transition: color .2s, border-color .2s, background-color .2s;
+  appearance: none; cursor: pointer; flex: none; border: 0; background: none; padding: 10px 0; position: relative;
+  font: 500 clamp(11px, 1vw, 14px)/1 var(--mono); letter-spacing: .32em; text-transform: uppercase; color: var(--ink);
+  opacity: .8; transition: opacity .2s;
 }
-.tag {
-  display: inline-grid; place-items: center; flex: none;
-  width: 28px; height: 28px; border-radius: 50%; border: 1px solid currentColor;
-  font: 400 11px/1 "Gilda Display", var(--poster); letter-spacing: .02em; font-variant-numeric: tabular-nums;
+.filter::after { content: ""; position: absolute; left: 0; right: .32em; bottom: 2px; border-bottom: 1px solid var(--ink); scale: 0 1; transition: scale .3s var(--ease); }
+.filter:hover { opacity: 1; }
+.filter[aria-pressed="true"] { opacity: 1; }
+.filter[aria-pressed="true"]::after { scale: 1 1; }
+.slash { color: var(--ink); opacity: .8; font: 400 14px/1 var(--mono); }
+.shuffle {
+  appearance: none; cursor: pointer; border: 0; background: none; color: var(--ink);
+  width: clamp(110px, 12vw, 190px); height: 42px; margin-right: clamp(12px, 2.4vw, 40px); position: relative;
+  background-image: repeating-linear-gradient(-60deg, transparent 0 9px, var(--ink) 9px 10.5px);
+  -webkit-mask: linear-gradient(#000 0 0); opacity: .85;
 }
-.filter .n { margin-left: auto; font-size: 12px; letter-spacing: .06em; opacity: .6; font-variant-numeric: tabular-nums; }
-.filter:hover { color: var(--ink); border-color: var(--ink-soft); }
-.filter[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.shuffle span {             /* the hatch shows its job on hover */
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font: 600 11px/1 var(--mono); letter-spacing: .3em; text-transform: uppercase;
+  background: #0b0b0b; opacity: 0; transition: opacity .2s;
+}
+.shuffle:hover span, .shuffle:focus-visible span { opacity: 1; }
 
 /* Collage: photos grouped by category, packed into a dense grid of square cells */
 .gallery { display: grid; gap: clamp(72px, 9vw, 140px); padding-bottom: clamp(80px, 12vw, 180px); }
@@ -167,7 +161,6 @@ main { position: relative; z-index: 1; }
   display: flex; align-items: center; gap: 14px;
   font: 400 clamp(28px, 3.4vw, 46px)/1 var(--poster); letter-spacing: 0;
 }
-.group-title .tag { width: 34px; height: 34px; font-size: 10px; color: var(--ink-soft); }
 .group-meta {
   grid-column: 9 / -1; justify-self: end; text-align: right;
   font: 500 10px/1.6 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
@@ -265,18 +258,15 @@ main { position: relative; z-index: 1; }
   .group-title, .group-meta { grid-column: 1 / -1; justify-self: start; text-align: left; }
   .group-meta { margin-top: 8px; }
   .counter { display: none; }
-  .hero { padding-block: 28px 36px; }
-  /* phones: the signed byline sits just under the artwork, left-aligned */
-  .intro-by { right: auto; left: 0; top: calc(var(--t) * 2.5); font-size: 14px; }
-  .intro-tagline { margin-top: 64px; }
-}
-
-@media (max-width: 1100px) {
-  /* the index scrolls sideways as one row */
-  .filters { justify-content: flex-start; overflow-x: auto; scrollbar-width: none; gap: 10px; }
-  .shuffle { padding: 0 12px; }
+  .hero-meta { margin-left: calc(var(--t) * .3); width: auto; margin-top: calc(var(--t) * .5); }
+  .index { grid-template-columns: auto 1fr; }
+  .filters { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; overflow-x: auto; scrollbar-width: none;
+    border-top: 1px solid rgba(242, 242, 242, .35); padding: 4px 16px; }
   .filters::-webkit-scrollbar { display: none; }
-  .filters::before { right: auto; width: 100%; min-width: max-content; }
+  .shot-on { border-right: 0; }
+  .by-label { font-size: 10px; letter-spacing: .22em; white-space: nowrap; }
+  .shuffle { justify-self: end; }
+}
 }
 
 @media (hover: none) {

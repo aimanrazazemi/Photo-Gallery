@@ -16,7 +16,7 @@ const SITE = {
   title: "After Hours",            // large heading at the top of the page
   tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office.",
   author: "Aiman Razazemi",
-  byline: "Shots on Fujifilm, by Aiman Razazemi",   // line under "Hours", beside the portrait
+  byline: "A photo collection by",   // small label before the signature
   instagram: "", // optional, e.g. "https://instagram.com/yourhandle"
 
   // Applied to every photo unless that photo sets its own value.

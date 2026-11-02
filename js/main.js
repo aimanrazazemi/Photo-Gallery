@@ -28,12 +28,10 @@
   document.getElementById("intro-title").innerHTML = split > 0
     ? `<span class="after" data-echo="${esc(heading.slice(0, split))}">${esc(heading.slice(0, split))}</span><span class="script" data-echo="${esc(heading.slice(split + 1))}">${esc(heading.slice(split + 1))}</span>`
     : esc(heading);
-  // The author's name inside the byline is set as a signature
-  const byline = SITE.byline || (SITE.author ? `by ${SITE.author}` : "");
-  const at = SITE.author ? byline.lastIndexOf(SITE.author) : -1;
-  document.getElementById("intro-by").innerHTML = at >= 0
-    ? `${esc(byline.slice(0, at))}<img class="sig" src="images/signature.webp" alt="${esc(SITE.author)}" width="1400" height="392">${esc(byline.slice(at + SITE.author.length))}`
-    : esc(byline);
+  // "A photo collection by" | signature
+  const label = (SITE.byline || "A photo collection by").replace(/ (collection)/i, "<br>$1");
+  document.getElementById("intro-by").innerHTML =
+    `<span class="by-label">${label}</span><img class="sig" src="images/signature.webp" alt="${esc(SITE.author || "")}" width="1400" height="392">`;
   document.getElementById("intro-tagline").textContent = SITE.tagline;
   const foot = document.getElementById("foot-author");
   foot.innerHTML = `© ${new Date().getFullYear()} ${esc(SITE.author)}` +
@@ -41,15 +39,13 @@
 
   const categories = [...new Set(photos.map((p) => p.category).filter(Boolean))];
 
-  // Plan-style grid tags: A1, B2, C3 ... used on the menu and on each category heading
-  const gridTag = (i) => `${String.fromCharCode(65 + i)}${i + 1}`;
 
   /* ---------- Filters ---------- */
   const renderFilters = (active) => {
     // One tag per category. Clicking the selected tag again shows every photo.
     const items = categories.map((c) => [slug(c), c, photos.filter((p) => p.category === c).length]);
     filtersEl.innerHTML = items.map(([id, label, n], i) =>
-      `<button class="filter" type="button" data-cat="${id}" aria-pressed="${id === active}"><span class="tag">${gridTag(i)}</span><span class="name">${esc(label)}</span><span class="n">${n}</span></button>`
+      `${i ? '<span class="slash" aria-hidden="true">/</span>' : ""}<button class="filter" type="button" data-cat="${id}" aria-pressed="${id === active}" title="${n} photos">${esc(label)}</button>`
     ).join("");
   };
   document.getElementById("shuffle").addEventListener("click", () => {
@@ -193,7 +189,7 @@
       if (!items.length) return "";
       return `<section class="group" id="group-${slug(c)}">
         <div class="group-head">
-          <h2 class="group-title"><span class="tag">${gridTag(categories.indexOf(c))}</span>${esc(c)}</h2>
+          <h2 class="group-title">${esc(c)}</h2>
           <p class="group-meta">${String(items.length).padStart(2, "0")} ${items.length === 1 ? "photo" : "photos"}${yearSpan(items) ? " · " + yearSpan(items) : ""}</p>
         </div>
         <div class="collage-wrap"><div class="collage">${bestDeal(items, cols, rand).map((t, j) => shotHTML(t.p, ++idx, j + 1, t)).join("")}</div></div>
