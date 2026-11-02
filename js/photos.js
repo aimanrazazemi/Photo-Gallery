@@ -136,6 +136,11 @@ const PHOTOS = [
     category: "Architecture"
   },
   {
+    file: "images/architecture-wall-bike.webp",
+    title: "Wall Bike",
+    category: "Architecture"
+  },
+  {
     file: "images/people-brick-screen.webp",
     title: "Brick Screen",
     category: "People"
@@ -187,6 +192,11 @@ const PHOTOS = [
     category: "People"
   },
   {
+    file: "images/people-mural.webp",
+    title: "The Mural",
+    category: "People"
+  },
+  {
     file: "images/nature-palm-beach.webp",
     title: "Palm Beach",
     category: "Nature"
@@ -204,6 +214,11 @@ const PHOTOS = [
   {
     file: "images/nature-garden-cafe.webp",
     title: "Garden Café",
+    category: "Nature"
+  },
+  {
+    file: "images/nature-beach-tables.webp",
+    title: "Beach Tables",
     category: "Nature"
   },
   {
@@ -284,6 +299,16 @@ const PHOTOS = [
   {
     file: "images/travel-mosaic-stair.webp",
     title: "Mosaic Stair",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-moom-coffee.webp",
+    title: "Moom Coffee",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-arched-lounge.webp",
+    title: "Arched Lounge",
     category: "Travel"
   }
 ];
