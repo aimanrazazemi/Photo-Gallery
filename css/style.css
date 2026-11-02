@@ -53,7 +53,7 @@ body::before {
   padding-block: 22px 18px;
   border-bottom: 1px solid var(--sand);
 }
-.brand { font: 400 16px/1 var(--poster); letter-spacing: .2em; text-transform: uppercase; text-decoration: none; }
+.brand { font: 400 22px/1 "Gilda Display", var(--poster); letter-spacing: .01em; text-decoration: none; }
 
 main { position: relative; z-index: 1; }
 
@@ -126,7 +126,7 @@ main { position: relative; z-index: 1; }
   appearance: none; cursor: pointer; flex: none; position: relative;
   padding: 0 16px; height: 38px; border-radius: 999px;
   border: 1px solid var(--sand); background: var(--paper); color: var(--ink);
-  font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  font: 400 16px/1 "Gilda Display", var(--poster); letter-spacing: .01em;
   transition: border-color .2s, background-color .2s, color .2s;
 }
 .shuffle::before { content: "↻"; margin-right: 8px; font-size: 13px; }
@@ -142,15 +142,15 @@ main { position: relative; z-index: 1; }
   width: 196px; justify-content: flex-start;
   padding: 4px 14px 4px 4px; border: 1px solid var(--sand); border-radius: 999px;
   background: var(--paper); color: var(--ink-soft);
-  font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  font: 400 16px/1 "Gilda Display", var(--poster); letter-spacing: .01em;
   transition: color .2s, border-color .2s, background-color .2s;
 }
 .tag {
   display: inline-grid; place-items: center; flex: none;
   width: 28px; height: 28px; border-radius: 50%; border: 1px solid currentColor;
-  font: 500 9px/1 var(--mono); letter-spacing: .02em; font-variant-numeric: tabular-nums;
+  font: 400 11px/1 "Gilda Display", var(--poster); letter-spacing: .02em; font-variant-numeric: tabular-nums;
 }
-.filter .n { margin-left: auto; font-size: 9px; letter-spacing: .06em; opacity: .6; font-variant-numeric: tabular-nums; }
+.filter .n { margin-left: auto; font-size: 12px; letter-spacing: .06em; opacity: .6; font-variant-numeric: tabular-nums; }
 .filter:hover { color: var(--ink); border-color: var(--ink-soft); }
 .filter[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
@@ -280,10 +280,6 @@ main { position: relative; z-index: 1; }
 
 @media (hover: none) {
   .frame { cursor: pointer; }
-  .hint-desk { display: none; }
-}
-@media (hover: hover) {
-  .hint-touch { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
