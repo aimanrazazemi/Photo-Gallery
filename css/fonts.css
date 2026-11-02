@@ -1,8 +1,9 @@
 /*
   Licensed fonts. The site currently uses free look-alikes:
-    "Hours"  -> Lust (faptype.com)            look-alike: Mr Dafoe
-    "After"  -> Oldport Script (Creacy Studio) look-alike: Pacifico
-    Titles, byline, tagline -> Freiburg        look-alike: Saira Condensed
+    "Hours"                     -> Lust (faptype.com)           look-alike: Mr Dafoe
+    "After"                     -> Agraham (Hishand Studio)     look-alike: Gloock
+    Titles, byline, tagline     -> Eden Meadow                  look-alike: Gilda Display
+    "Aiman Razazemi" signature  -> Bastliga One                 look-alike: Herr Von Muellerhoff
 
   Once you have bought a WEB licence for a font:
     1. Put its .woff2 file in the /fonts folder with the name used below.
@@ -15,9 +16,13 @@
 */
 
 /*
-@font-face { font-family: "Oldport Script"; src: url("../fonts/oldport-script.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Agraham"; src: url("../fonts/agraham.woff2") format("woff2"); font-display: swap; }
 */
 
 /*
-@font-face { font-family: "Freiburg"; src: url("../fonts/freiburg.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Eden Meadow"; src: url("../fonts/eden-meadow.woff2") format("woff2"); font-display: swap; }
+*/
+
+/*
+@font-face { font-family: "Bastliga One"; src: url("../fonts/bastliga-one.woff2") format("woff2"); font-display: swap; }
 */

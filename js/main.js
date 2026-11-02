@@ -28,9 +28,12 @@
   document.getElementById("intro-title").innerHTML = split > 0
     ? `<span class="after" data-echo="${esc(heading.slice(0, split))}">${esc(heading.slice(0, split))}</span><span class="script" data-echo="${esc(heading.slice(split + 1))}">${esc(heading.slice(split + 1))}</span>`
     : esc(heading);
-  // The whole byline gets a hand-drawn underline
+  // The author's name inside the byline is set as a signature
   const byline = SITE.byline || (SITE.author ? `by ${SITE.author}` : "");
-  document.getElementById("intro-by").innerHTML = `<span class="scribble">${esc(byline)}</span>`;
+  const at = SITE.author ? byline.lastIndexOf(SITE.author) : -1;
+  document.getElementById("intro-by").innerHTML = at >= 0
+    ? `${esc(byline.slice(0, at))}<span class="sig">${esc(SITE.author)}</span>${esc(byline.slice(at + SITE.author.length))}`
+    : esc(byline);
   document.getElementById("intro-tagline").textContent = SITE.tagline;
   const foot = document.getElementById("foot-author");
   foot.innerHTML = `© ${new Date().getFullYear()} ${esc(SITE.author)}` +
