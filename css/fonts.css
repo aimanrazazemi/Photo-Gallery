@@ -1,0 +1,23 @@
+/*
+  Licensed fonts. The site currently uses free look-alikes:
+    "Hours"  -> Lust (faptype.com)            look-alike: Mr Dafoe
+    "After"  -> Oldport Script (Creacy Studio) look-alike: Pacifico
+    Titles, byline, tagline -> Freiburg        look-alike: Saira Condensed
+
+  Once you have bought a WEB licence for a font:
+    1. Put its .woff2 file in the /fonts folder with the name used below.
+    2. Remove the /* and */ around its block.
+  The site switches to it automatically; nothing else needs changing.
+*/
+
+/*
+@font-face { font-family: "Lust"; src: url("../fonts/lust.woff2") format("woff2"); font-display: swap; }
+*/
+
+/*
+@font-face { font-family: "Oldport Script"; src: url("../fonts/oldport-script.woff2") format("woff2"); font-display: swap; }
+*/
+
+/*
+@font-face { font-family: "Freiburg"; src: url("../fonts/freiburg.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+*/

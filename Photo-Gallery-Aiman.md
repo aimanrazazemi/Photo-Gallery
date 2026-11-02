@@ -17,9 +17,7 @@ This file is the project's working record. Every change to the site is noted in 
 |---|---|
 | Theme | Simple, clean and architectural |
 | Colours | Black background, white text and ink; only the photos are in colour |
-| Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
-| Byline typeface | San Francisco (Apple devices) / Inter elsewhere, like Apple's "Shot on iPhone" ads |
-| Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
+| Typeface | "After": Oldport Script (look-alike Pacifico). "Hours": Lust (look-alike Mr Dafoe). Titles, byline, tagline: Freiburg (look-alike Saira Condensed). Menu and small labels: Montserrat. |
 | Layout | Mosaic per category: tiles in four random sizes (S, M, L, XL) on a square-cell grid, packed with no gaps; Shuffle re-deals them |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
 | Categories | Four tags on a line, plan-style: A1 Architecture, B2 People, C3 Nature, D4 Travel. Clicking a selected tag again shows all photos. Sticks to the top while scrolling. |
@@ -198,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | New fonts. "Hours": Lust style (free look-alike Mr Dafoe). "After": Oldport Script style (free look-alike Pacifico). Title "Photo Dump", byline, tagline, category headings and photo titles: Freiburg style in capitals (free look-alike Saira Condensed). The licensed fonts are paid; `css/fonts.css` has ready slots so their web font files can be dropped into `/fonts` later and the site switches to them automatically. |
 | 2026-11-02 | Removed "Photographs · Fujifilm X-E5" from the top bar; it now shows only "Photo Dump". |
 | 2026-11-02 | The hand-drawn underline now runs under the whole line, "Shots on Fujifilm, by Aiman Razazemi", and is straighter, with just a slight lift at the end. |
 | 2026-11-02 | Added a hand-drawn pen underline under "Shots on Fujifilm" (the part of the byline before the comma). The outlined double behind "Hours" is now filled with light grey at 40% opacity. |
