@@ -92,8 +92,9 @@ main { position: relative; z-index: 1; }
   position: absolute; z-index: 2; margin: 0;
   right: calc(var(--t) * 2.4); top: calc(var(--t) * 1.97);
   max-width: calc(var(--t) * 3.2); text-align: right;
-  /* same face as "After", small and quiet */
-  font: 500 max(calc(var(--t) * .085), 11px)/1.3 var(--display); letter-spacing: .02em; color: var(--ink);
+  /* set like Apple's "Shot on iPhone" line: San Francisco where available (Apple devices), Inter elsewhere */
+  font: 500 max(calc(var(--t) * .07), 10px)/1.3 -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -.01em; color: var(--ink);
 }
 .intro-tagline {
   margin: clamp(20px, 3vw, 40px) 0 0; max-width: 34rem;

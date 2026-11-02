@@ -18,6 +18,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Theme | Simple, clean and architectural |
 | Colours | Black background, white text and ink; only the photos are in colour |
 | Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
+| Byline typeface | San Francisco (Apple devices) / Inter elsewhere, like Apple's "Shot on iPhone" ads |
 | Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Mosaic per category: tiles in four random sizes (S, M, L, XL) on a square-cell grid, packed with no gaps; Shuffle re-deals them |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
@@ -133,7 +134,7 @@ const SITE = {
   title: "After Hours",     // large heading at the top of the page
   tagline: "A personal collection, exploration of light, vibe and scale through a lens. Taken on free days, long walks and away from the office.",
   author: "Aiman Razazemi", // name in the footer
-  byline: "Shots by Aiman Razazemi on Fujifilm", // line under "Hours", beside the portrait
+  byline: "Shots on Fujifilm, by Aiman Razazemi", // line under "Hours", beside the portrait
   instagram: "",            // optional, e.g. "https://instagram.com/yourhandle"
 
   // Applied to every photo unless that photo sets its own value.
@@ -197,6 +198,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Byline now reads "Shots on Fujifilm, by Aiman Razazemi", set like Apple's "Shot on iPhone" line: Apple's own San Francisco font on Apple devices, Inter (its closest free match) everywhere else, medium weight, slightly smaller than before. |
 | 2026-11-02 | Round dots in the splatter replaced with small irregular ink flecks to match the larger splats. Portrait re-exported at 1400px (was 600px) for sharper detail on large and high-resolution screens. "After Hours" now has a doubled background: a thin outlined copy of each word set just behind and below-right of it. |
 | 2026-11-02 | Byline now reads "Shots by Aiman Razazemi on Fujifilm". The portrait is now painted inside the splash: cropped by the ink edge at a much larger size (hair and chin run off the edges), with a fine white outline, a more random splash shape with 14 runs, and drips falling from under it. The gallery is now a mosaic of four random tile sizes (S, M, L, XL) chosen to suit each photo's shape, packed with no gaps; each category opens on a large tile. A new Shuffle button next to the tags re-deals the sizes and tiles fade back in. Tiles lift slightly on hover. |
 | 2026-11-02 | Category tags now sit together on the left, all the same width (196px) and evenly spaced; inside each, the count is right-aligned so the tags line up. |
