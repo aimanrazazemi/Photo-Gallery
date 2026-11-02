@@ -20,7 +20,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Typeface | "After": Agraham (look-alike Gloock). "Hours": Birthstone Bounce. Name: your own signature image. Titles, byline, tagline: Eden Meadow (look-alike Gilda Display). Menu and small labels: Montserrat. |
 | Layout | Mosaic per category: tiles in four sizes (S, M, L, XL) on a square-cell grid, packed with no gaps |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
-| Categories | Spaced capitals in a band between two white lines, from the left: ARCHITECTURE / PEOPLE / NATURE / TRAVEL \| SHOT ON FUJIFILM. Sticks to the top while scrolling. |
+| Categories | Band between two white lines: ARCHITECTURE / PEOPLE / NATURE / TRAVEL on the left; ↻ SHUFFLE \| SHOT ON FUJIFILM on the right. Sticks to the top while scrolling. |
 | Hosting | GitHub, published with GitHub Pages |
 
 ### Colour palette
@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Shuffle is back: a "↻ SHUFFLE" button in the band, just before "| SHOT ON FUJIFILM", which now closes the band at the right end. Each press re-deals the four tile sizes and the photos fade back in, always with no gaps. |
 | 2026-11-02 | "Moom Coffee" corrected back to Fujifilm X-E5, 23mm. Eight photos are now marked as X-half. |
 | 2026-11-02 | "Espresso Bar", "Shophouse Night", "Drip Crew", "Jellyfish Kitchen" and "Red Curtain" also now show Fujifilm X-half, 10.8mm (32mm equiv.). Nine photos in total are marked as X-half; the rest use the X-E5 default. |
 | 2026-11-02 | "Wall Bike", "Moom Coffee", "The Mural" and "Arched Lounge" now show Fujifilm X-half, 10.8mm (32mm equiv.) on hover instead of the default X-E5 23mm. "Beach Tables" stays on the X-E5. |
