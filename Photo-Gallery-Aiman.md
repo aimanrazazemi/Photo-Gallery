@@ -18,6 +18,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Theme | Simple, clean and architectural |
 | Colours | Black and white; only the photos are in colour |
 | Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
+| Signature typeface | Herr Von Muellerhoff, for "by Aiman Razazemi" |
 | Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
@@ -189,6 +190,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Hero made horizontal: the ink pool and portrait now sit to the right of the title, centred level with "After / Hours", with the spill running sideways from the tail of "Hours". The signature and tagline sit on one line below (stacked on phones). "by Aiman Razazemi" is now in a handwritten signature font, Herr Von Muellerhoff. |
 | 2026-11-02 | Redesigned the opening section as one composition. The vertical column lines are removed. The tail of the script "Hours" now spills as ink into a lopsided pool with drips and droplets, and the round portrait sits in that pool, overlapping the end of "Hours". On larger screens the byline and tagline tuck under "After"; on phones they sit below. The whole piece scales as one to fill the phone screen. On phones the category menu is a single swipeable row with larger tap targets. |
 | 2026-10-30 | New black-and-white theme: white background, black text and accents, light grey lines. Portrait redone in greyscale (white background, black hair, light grey face, white highlights) with a thin black outline. The heading's white effect is now a faint soft shadow, the same as under the portrait. Photos keep their colour. |
 | 2026-10-30 | Portrait: the white effect is now subtler and even all the way round: a thin white rim plus a faint white halo, instead of the offset lower-right edge. |
