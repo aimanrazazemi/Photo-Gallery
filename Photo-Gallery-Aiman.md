@@ -198,6 +198,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Added a hand-drawn pen underline under "Shots on Fujifilm" (the part of the byline before the comma). The outlined double behind "Hours" is now filled with light grey at 40% opacity. |
 | 2026-11-02 | Removed the ink stroke joining "Hours" to the portrait, so the title and the head stand apart. The sharp, tailed droplets are replaced by soft clusters of ink flecks thrown off the head's rim (bigger near the edge, finer further out), plus a light dusting over the title. |
 | 2026-11-02 | Portrait reshaped: the white ink now hugs the head as an uneven organic rim (no large pool, so no leftover white areas), and the portrait ends just below the mouth with a wavy cut and white drips. The ink stroke from "Hours" runs into the rim. The head is sized to the title's height so it no longer overlaps the header or tagline. |
 | 2026-11-02 | Byline now reads "Shots on Fujifilm, by Aiman Razazemi", set like Apple's "Shot on iPhone" line: Apple's own San Francisco font on Apple devices, Inter (its closest free match) everywhere else, medium weight, slightly smaller than before. |

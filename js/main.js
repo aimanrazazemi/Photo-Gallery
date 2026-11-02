@@ -28,7 +28,12 @@
   document.getElementById("intro-title").innerHTML = split > 0
     ? `<span class="after" data-echo="${esc(heading.slice(0, split))}">${esc(heading.slice(0, split))}</span><span class="script" data-echo="${esc(heading.slice(split + 1))}">${esc(heading.slice(split + 1))}</span>`
     : esc(heading);
-  document.getElementById("intro-by").textContent = SITE.byline || (SITE.author ? `by ${SITE.author}` : "");
+  // The part of the byline before the first comma gets a hand-drawn underline
+  const byline = SITE.byline || (SITE.author ? `by ${SITE.author}` : "");
+  const comma = byline.indexOf(",");
+  document.getElementById("intro-by").innerHTML = comma > 0
+    ? `<span class="scribble">${esc(byline.slice(0, comma))}</span>${esc(byline.slice(comma))}`
+    : esc(byline);
   document.getElementById("intro-tagline").textContent = SITE.tagline;
   const foot = document.getElementById("foot-author");
   foot.innerHTML = `© ${new Date().getFullYear()} ${esc(SITE.author)}` +
