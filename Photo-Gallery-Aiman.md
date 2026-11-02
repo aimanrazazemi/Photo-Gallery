@@ -58,7 +58,7 @@ Black and white throughout; only the photos are in colour.
 
 ## 2. Features
 
-- **Clean layout:** faint vertical column lines run behind the page (12 on desktop, 6 on phones), with thin horizontal lines under the header and between the intro and the gallery. Where the column lines cross that second line, round grid bubbles label them A1, B2, C3 and so on, like gridline tags on an architectural plan.
+- **Ink-spill hero:** "After" in Montserrat, "Hours" in script, and ink running off the end of "Hours" into a pool that holds the round portrait. It's all drawn to one scale, so it looks the same on any screen. Round grid bubbles (A1, B2, C3…) sit on the line between the intro and the gallery.
 - **Collage by category:** each category is its own section with a large heading, a photo count and its years. Photos are packed edge to edge with thin gaps, so each group forms a solid block that's easy to scan.
 - **Automatic layout:** rows alternate between tall and short for a mix of sizes. Photos are never cropped, and the collage repacks itself to fit any screen width.
 - **Hover details:** a panel fades in over the photo with its number within its category, title, location and date. Large photos also show the camera, lens, focal length, aperture, shutter speed, ISO and your note. Small photos show a one-line summary of the settings instead.
@@ -189,6 +189,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Redesigned the opening section as one composition. The vertical column lines are removed. The tail of the script "Hours" now spills as ink into a lopsided pool with drips and droplets, and the round portrait sits in that pool, overlapping the end of "Hours". On larger screens the byline and tagline tuck under "After"; on phones they sit below. The whole piece scales as one to fill the phone screen. On phones the category menu is a single swipeable row with larger tap targets. |
 | 2026-10-30 | New black-and-white theme: white background, black text and accents, light grey lines. Portrait redone in greyscale (white background, black hair, light grey face, white highlights) with a thin black outline. The heading's white effect is now a faint soft shadow, the same as under the portrait. Photos keep their colour. |
 | 2026-10-30 | Portrait: the white effect is now subtler and even all the way round: a thin white rim plus a faint white halo, instead of the offset lower-right edge. |
 | 2026-10-30 | The 3D effect is now white: a thin white edge down and right of the letters plus a soft white glow, on both "After Hours" and the round portrait. |
