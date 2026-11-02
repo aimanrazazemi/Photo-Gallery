@@ -21,7 +21,7 @@ This file is the project's working record. Every change to the site is noted in 
 | Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
-| Categories | Menu set on a line as plan-style grid tags (A1 All, B2 Interiors, C3 Architecture …); it sticks to the top while scrolling |
+| Categories | Four tags on a line, plan-style: A1 Architecture, B2 People, C3 Nature, D4 Travel. Clicking a selected tag again shows all photos. Sticks to the top while scrolling. |
 | Hosting | GitHub, published with GitHub Pages |
 
 ### Colour palette
@@ -186,7 +186,7 @@ After that, every push to `main` updates the live site within a minute or two.
 - [ ] Add aperture, shutter speed, ISO, locations and dates for individual photos (optional)
 - [x] Set the site name and heading in `SITE`
 - [ ] Write your own tagline in `SITE`
-- [ ] Rename or adjust the categories (currently Interiors, Architecture, People, Nature and Travel)
+- [x] Categories set to Architecture, People, Nature and Travel
 - [ ] Share reference layouts so the design can be fine-tuned
 
 ---
@@ -197,6 +197,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Interiors merged into Architecture: its 15 photos are now Architecture (files renamed from `interiors-` to `architecture-`), giving 25 Architecture, 7 People, 4 Nature and 9 Travel. The menu now has just four tags (A1 Architecture, B2 People, C3 Nature, D4 Travel) with no "All" tag: clicking a selected tag again, or "Photo Dump", shows every photo. The portrait is cropped tight to the head and enlarged so it fills the spill. The spill is more organic: a larger pool with finger-like runs, droplets with tails flung outward, three drips, and splashes and fine spray across the title (kept clear of the line of text). |
 | 2026-11-02 | Portrait: removed the round black disc, so the head sits straight in the white ink spill, now in black and greys (black hair, mid-grey face, light grey highlights, transparent background). The line under "Hours" now reads "Shots from Aiman Razazemi Fujifilm" in Montserrat, the same font as "After"; it's set as `byline` in the `SITE` block. The signature font is no longer used. |
 | 2026-11-02 | Black theme: black background, white text, white ink spill; the portrait is inverted to suit (white hair and linework on black). The signature "by Aiman Razazemi" now sits under "Hours" on the right, just left of the portrait. The category menu moved out of the header onto the line above the gallery as grid-tag pills (A1 All, B2 Interiors, C3 Architecture, D4 People, E5 Nature, F6 Travel); it sticks to the top while scrolling and swipes sideways on phones and tablets. Each category heading carries its matching tag. The header is now just "Photo Dump" plus "Photographs · Fujifilm X-E5". The separate A1–M13 bubble row is replaced by the menu. |
 | 2026-11-02 | Hero made horizontal: the ink pool and portrait now sit to the right of the title, centred level with "After / Hours", with the spill running sideways from the tail of "Hours". The signature and tagline sit on one line below (stacked on phones). "by Aiman Razazemi" is now in a handwritten signature font, Herr Von Muellerhoff. |

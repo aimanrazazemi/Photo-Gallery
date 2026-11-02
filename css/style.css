@@ -81,7 +81,7 @@ main { position: relative; z-index: 1; }
 .spill path, .spill circle { fill: var(--ink); }
 .portrait {
   position: absolute; z-index: 3;
-  left: 3.62em; top: .38em; width: 1.48em; height: 1.48em; max-width: none;
+  left: 3.39em; top: .15em; width: 1.94em; height: 1.94em; max-width: none;
   /* no frame: the head sits straight in the white ink pool */
   object-fit: contain;
 }

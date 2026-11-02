@@ -41,7 +41,8 @@
 
   /* ---------- Filters ---------- */
   const renderFilters = (active) => {
-    const items = [["all", "All", photos.length], ...categories.map((c) => [slug(c), c, photos.filter((p) => p.category === c).length])];
+    // One tag per category. Clicking the selected tag again shows every photo.
+    const items = categories.map((c) => [slug(c), c, photos.filter((p) => p.category === c).length]);
     filtersEl.innerHTML = items.map(([id, label, n], i) =>
       `<button class="filter" type="button" data-cat="${id}" aria-pressed="${id === active}"><span class="tag">${gridTag(i)}</span><span class="name">${esc(label)}</span><span class="n">${n}</span></button>`
     ).join("");
@@ -49,8 +50,9 @@
   filtersEl.addEventListener("click", (e) => {
     const b = e.target.closest(".filter");
     if (!b) return;
-    location.hash = b.dataset.cat === "all" ? "" : b.dataset.cat;
-    if (b.dataset.cat === "all") route();
+    const showAll = b.getAttribute("aria-pressed") === "true";
+    if (showAll) { history.replaceState(null, "", location.pathname + location.search); route(); }
+    else location.hash = b.dataset.cat;
   });
 
   /* ---------- Measure each photo once, so the layout knows its shape ---------- */
@@ -180,7 +182,7 @@
       if (!items.length) return "";
       return `<section class="group" id="group-${slug(c)}">
         <div class="group-head">
-          <h2 class="group-title"><span class="tag">${gridTag(categories.indexOf(c) + 1)}</span>${esc(c)}</h2>
+          <h2 class="group-title"><span class="tag">${gridTag(categories.indexOf(c))}</span>${esc(c)}</h2>
           <p class="group-meta">${String(items.length).padStart(2, "0")} ${items.length === 1 ? "photo" : "photos"}${yearSpan(items) ? " · " + yearSpan(items) : ""}</p>
         </div>
         <div class="collage">${items.map((p, j) => shotHTML(p, ++idx, j + 1)).join("")}</div>

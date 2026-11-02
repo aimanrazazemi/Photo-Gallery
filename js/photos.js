@@ -28,80 +28,80 @@ const SITE = {
 
 const PHOTOS = [
   {
-    file: "images/interiors-lamplight.webp",
+    file: "images/architecture-lamplight.webp",
     title: "Lamplight",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-yellow-kitchen.webp",
+    file: "images/architecture-yellow-kitchen.webp",
     title: "Yellow Kitchen",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-wine-bar.webp",
+    file: "images/architecture-wine-bar.webp",
     title: "Wine Bar",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-cafe-corner.webp",
+    file: "images/architecture-cafe-corner.webp",
     title: "Café Corner",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-rattan-lounge.webp",
+    file: "images/architecture-rattan-lounge.webp",
     title: "Rattan Lounge",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-hanging-letters.webp",
+    file: "images/architecture-hanging-letters.webp",
     title: "Hanging Letters",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-open-doors.webp",
+    file: "images/architecture-open-doors.webp",
     title: "Open Doors",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-paper-lantern.webp",
+    file: "images/architecture-paper-lantern.webp",
     title: "Paper Lantern",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-pizza-oven.webp",
+    file: "images/architecture-pizza-oven.webp",
     title: "Pizza Oven",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-capulus-est-vita.webp",
+    file: "images/architecture-capulus-est-vita.webp",
     title: "Capulus est Vita",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-the-myst.webp",
+    file: "images/architecture-the-myst.webp",
     title: "The Myst",
-    category: "Interiors",
+    category: "Architecture",
     location: "The Myst Sa Pa Resort, Vietnam"
   },
   {
-    file: "images/interiors-copper-hearth.webp",
+    file: "images/architecture-copper-hearth.webp",
     title: "Copper Hearth",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-slate-bath.webp",
+    file: "images/architecture-slate-bath.webp",
     title: "Slate Bath",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-night-table.webp",
+    file: "images/architecture-night-table.webp",
     title: "Night Table",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
-    file: "images/interiors-clay-bar.webp",
+    file: "images/architecture-clay-bar.webp",
     title: "Clay Bar",
-    category: "Interiors"
+    category: "Architecture"
   },
   {
     file: "images/architecture-blue-stripe.webp",
