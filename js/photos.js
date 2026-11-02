@@ -128,12 +128,16 @@ const PHOTOS = [
   {
     file: "images/architecture-espresso-bar.webp",
     title: "Espresso Bar",
-    category: "Architecture"
+    category: "Architecture",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   },
   {
     file: "images/architecture-shophouse-night.webp",
     title: "Shophouse Night",
-    category: "Architecture"
+    category: "Architecture",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   },
   {
     file: "images/architecture-wall-bike.webp",
@@ -181,17 +185,23 @@ const PHOTOS = [
   {
     file: "images/people-drip-crew.webp",
     title: "Drip Crew",
-    category: "People"
+    category: "People",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   },
   {
     file: "images/people-jellyfish-kitchen.webp",
     title: "Jellyfish Kitchen",
-    category: "People"
+    category: "People",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   },
   {
     file: "images/people-red-curtain.webp",
     title: "Red Curtain",
-    category: "People"
+    category: "People",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   },
   {
     file: "images/people-mural.webp",

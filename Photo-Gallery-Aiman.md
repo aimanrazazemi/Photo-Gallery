@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | "Espresso Bar", "Shophouse Night", "Drip Crew", "Jellyfish Kitchen" and "Red Curtain" also now show Fujifilm X-half, 10.8mm (32mm equiv.). Nine photos in total are marked as X-half; the rest use the X-E5 default. |
 | 2026-11-02 | "Wall Bike", "Moom Coffee", "The Mural" and "Arched Lounge" now show Fujifilm X-half, 10.8mm (32mm equiv.) on hover instead of the default X-E5 23mm. "Beach Tables" stays on the X-E5. |
 | 2026-11-02 | Added five photos: "Wall Bike" (Architecture), "The Mural" (People), "Beach Tables" (Nature), and "Moom Coffee" and "Arched Lounge" (Travel). Now 55 photos: Architecture 22, People 11, Nature 5, Travel 17. |
 | 2026-11-02 | Added five photos: "Espresso Bar" and "Shophouse Night" (Architecture), and "Drip Crew", "Jellyfish Kitchen" and "Red Curtain" (People). Now 50 photos: Architecture 21, People 10, Nature 4, Travel 15. |
