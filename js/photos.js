@@ -138,7 +138,9 @@ const PHOTOS = [
   {
     file: "images/architecture-wall-bike.webp",
     title: "Wall Bike",
-    category: "Architecture"
+    category: "Architecture",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   },
   {
     file: "images/people-brick-screen.webp",
@@ -194,7 +196,9 @@ const PHOTOS = [
   {
     file: "images/people-mural.webp",
     title: "The Mural",
-    category: "People"
+    category: "People",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   },
   {
     file: "images/nature-palm-beach.webp",
@@ -304,11 +308,15 @@ const PHOTOS = [
   {
     file: "images/travel-moom-coffee.webp",
     title: "Moom Coffee",
-    category: "Travel"
+    category: "Travel",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   },
   {
     file: "images/travel-arched-lounge.webp",
     title: "Arched Lounge",
-    category: "Travel"
+    category: "Travel",
+    camera: "Fujifilm X-half",
+    focal: "10.8mm (32mm equiv.)"
   }
 ];
