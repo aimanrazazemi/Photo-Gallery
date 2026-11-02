@@ -198,6 +198,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Removed "Photographs · Fujifilm X-E5" from the top bar; it now shows only "Photo Dump". |
 | 2026-11-02 | The hand-drawn underline now runs under the whole line, "Shots on Fujifilm, by Aiman Razazemi", and is straighter, with just a slight lift at the end. |
 | 2026-11-02 | Added a hand-drawn pen underline under "Shots on Fujifilm" (the part of the byline before the comma). The outlined double behind "Hours" is now filled with light grey at 40% opacity. |
 | 2026-11-02 | Removed the ink stroke joining "Hours" to the portrait, so the title and the head stand apart. The sharp, tailed droplets are replaced by soft clusters of ink flecks thrown off the head's rim (bigger near the edge, finer further out), plus a light dusting over the title. |

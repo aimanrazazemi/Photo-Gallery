@@ -49,7 +49,6 @@ body::before {
   border-bottom: 1px solid var(--sand);
 }
 .brand { font: 600 13px/1 var(--display); letter-spacing: .18em; text-transform: uppercase; text-decoration: none; }
-.bar-note { font: 500 10px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
 
 main { position: relative; z-index: 1; }
 
@@ -260,7 +259,6 @@ main { position: relative; z-index: 1; }
   .group-title, .group-meta { grid-column: 1 / -1; justify-self: start; text-align: left; }
   .group-meta { margin-top: 8px; }
   .counter { display: none; }
-  .bar-note { display: none; }
   .hero { padding-block: 28px 36px; }
 }
 
