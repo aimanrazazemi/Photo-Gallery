@@ -33,7 +33,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: radial-gradient(120% 90% at 50% 35%, #1d1d1d 0%, #111 45%, #050505 100%) fixed var(--paper);
+  background: #0a0a0a;
   color: var(--ink);
   font: 400 15px/1.6 var(--body);
   -webkit-font-smoothing: antialiased;
@@ -42,9 +42,9 @@ body {
 }
 img { max-width: 100%; display: block; }
 /* film grain over the whole page */
-.grain {
-  position: fixed; inset: -50%; z-index: 20; pointer-events: none; opacity: .16; mix-blend-mode: screen;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.grain {              /* textured charcoal vignette, fixed behind everything */
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: #0a0a0a url("../images/background.webp") center / cover no-repeat;
 }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--umber); outline-offset: 3px; }
@@ -67,32 +67,39 @@ main { position: relative; z-index: 1; }
    A corner bracket, "After" in a high-contrast serif, the brush-script "Hours" crossing it and running
    into the portrait, and a tapering brush swoosh under "Hours". */
 .hero {
-  --t: min(calc((100vw - 2 * max(var(--gutter), 16px)) / 6.7), 228px);
+  --t: min(calc((100vw - 2 * max(var(--gutter), 16px)) / 6.4), 242px);
   padding-block: clamp(28px, 4vw, 60px) clamp(32px, 4vw, 56px);
 }
 .hero-art {
   position: relative; font-size: var(--t);
-  width: 6.7em; height: 2.2em; max-width: 100%;
+  width: 6.4em; height: 2.25em; max-width: 100%;
   animation: rise 1.1s var(--ease) both;
 }
 .hero-art::before {             /* corner bracket, top left */
-  content: ""; position: absolute; left: .13em; top: .05em; width: .21em; height: .21em;
+  content: ""; position: absolute; left: .02em; top: .04em; width: .21em; height: .21em;
   border-left: max(1px, .008em) solid var(--ink); border-top: max(1px, .008em) solid var(--ink);
 }
 .hero-title { margin: 0; font-size: 1em; font-weight: 400; line-height: 1; position: absolute; inset: 0; z-index: 2; }
 .hero-title span { position: absolute; white-space: nowrap; }
 .hero-title .after {
-  left: .56em; top: -.2em; font: 400 1.45em/1 var(--after); letter-spacing: -.02em; color: var(--cream);
+  left: .36em; top: -.22em; font: 400 1.52em/1 var(--after); letter-spacing: -.02em; color: var(--cream);
   text-shadow: 0 .02em .06em rgba(0, 0, 0, .6);
 }
 .hero-title .script {
-  left: .98em; top: .42em; z-index: 3;
-  font: 400 1.5em/1 var(--script); letter-spacing: 0; color: #fbfbf8;
+  left: .76em; top: .44em; z-index: 3;
+  font: 400 1.58em/1 var(--script); letter-spacing: 0; color: #fbfbf8;
   text-shadow: 0 .015em .05em rgba(0, 0, 0, .55);
 }
 .spill { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 1; }
 .spill .swoosh { fill: #fbfbf8; }
-.hero-meta { margin-left: calc(var(--t) * .66); width: min(calc(var(--t) * 3.6), 100%); display: grid; gap: 22px; margin-top: calc(var(--t) * .02); position: relative; z-index: 2; }
+/* doubled type: an outlined copy of each word, offset down and right behind it */
+.hero-title [data-echo]::before {
+  content: attr(data-echo); position: absolute; left: .03em; top: .035em; z-index: -1;
+  color: transparent; -webkit-text-stroke: max(1px, .007em) rgba(243, 239, 230, .55); text-shadow: none;
+  pointer-events: none;
+}
+.hero-title .script::before { left: .025em; top: .03em; color: rgba(200, 200, 200, .4); }
+.hero-meta { margin-left: calc(var(--t) * .5); width: min(calc(var(--t) * 3.6), 100%); display: grid; gap: 22px; margin-top: calc(var(--t) * .02); position: relative; z-index: 2; }
 .intro-by { margin: 0; display: flex; align-items: center; gap: clamp(16px, 2.6vw, 52px); }
 .by-label {
   font: 500 clamp(11px, 1vw, 14px)/1.7 var(--mono); letter-spacing: .32em; text-transform: uppercase; color: var(--ink);
@@ -113,7 +120,7 @@ main { position: relative; z-index: 1; }
   display: grid; grid-template-columns: auto 1fr auto; align-items: center;
   margin: clamp(8px, 2vw, 24px) 0 clamp(40px, 6vw, 84px);
   border-block: 1px solid rgba(242, 242, 242, .7);
-  background: radial-gradient(120% 300% at 50% 50%, #151515, #0b0b0b);
+  background: rgba(10, 10, 10, .88); backdrop-filter: blur(6px);
 }
 .shot-on {
   display: grid; gap: 6px; padding: 18px clamp(20px, 3vw, 44px) 18px clamp(12px, 2.4vw, 40px);

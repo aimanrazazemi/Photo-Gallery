@@ -83,7 +83,7 @@ Photo-Gallery/
 ├── css/style.css       Colours, fonts, layout
 ├── js/photos.js        YOUR PHOTOS AND SITE TEXT (the only file you normally edit)
 ├── js/main.js          Layout and interactions
-├── images/             Photo files (plus portrait.webp, the round portrait in the intro)
+├── images/             Photo files, plus portrait.webp, signature.webp and background.webp
 ├── README.md           Short instructions
 ├── Photo-Gallery-Aiman.md   This file: project record and change log
 └── .nojekyll           Tells GitHub Pages to serve the files as-is
@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Background is now your textured charcoal vignette image (`images/background.webp`), fixed behind the whole page; the menu band is slightly see-through over it. Removed the brush swoosh under "Hours". "After" and "Hours" are doubled again: an outlined copy offset behind each word, with a light grey fill on the "Hours" copy. The title and portrait are about 10% bigger and the spacing tightened, with the "s" of "Hours" just touching the cheek. |
 | 2026-11-02 | Redesigned the top of the page to match your mockup. Black background with a soft vignette and film grain across the whole page. "PHOTO DUMP" in spaced capitals over a thin white line. A corner bracket, "After" in warm off-white high-contrast serif, the brush-script "Hours" crossing its lower half and running into the portrait's cheek, and a tapering brush swoosh under "Hours". The portrait is larger, with its drips. Below: "A PHOTO COLLECTION BY" in spaced capitals, a thin divider, your signature, then the description in serif. The menu is now a band between two white lines: "SHOT ON FUJIFILM" on the left, the categories as spaced capitals separated by slashes in the middle (click to filter, click again for all), and a diagonal hatch on the right that shuffles the photos (it shows "Shuffle" on hover). The band sticks to the top while scrolling. The outlined doubles behind the title, the ink flecks and the A1–D4 tags are removed. |
 | 2026-11-02 | "Aiman Razazemi" in the byline is now your own signature (`images/signature.webp`, cut out as white ink on a transparent background) instead of a signature-style font. |
 | 2026-11-02 | "Photo Dump" (now in normal capitalisation), the category tags (A1 Architecture, B2 People, C3 Nature, D4 Travel) and the Shuffle button are now set in Gilda Display. Removed the "Hover or tap a photo for details" note from the footer. |
