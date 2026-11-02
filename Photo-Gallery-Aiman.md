@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Menu band rearranged: the category titles now start from the left, and "Shot on Fujifilm" moved to the right in a smaller size, sitting just above the shuffle hatch. On phones the categories are on top with "Shot on Fujifilm" and the hatch below. |
 | 2026-11-02 | "Hours" changed to Birthstone Bounce, a free cursive with a tall looping H and bouncing letters; the doubled outline and grey fill are kept. |
 | 2026-11-02 | Stronger vignette on the left and right: textured edge strips cut from your background (`images/bg-edge-left.webp`, `bg-edge-right.webp`) now sit on both sides at every screen size, so the edges show on tall phone screens too, with a soft darkening toward each side. |
 | 2026-11-02 | Background is now your textured charcoal vignette image (`images/background.webp`), fixed behind the whole page; the menu band is slightly see-through over it. Removed the brush swoosh under "Hours". "After" and "Hours" are doubled again: an outlined copy offset behind each word, with a light grey fill on the "Hours" copy. The title and portrait are about 10% bigger and the spacing tightened, with the "s" of "Hours" just touching the cheek. |
