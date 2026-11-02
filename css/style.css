@@ -96,8 +96,8 @@ main { position: relative; z-index: 1; }
   text-shadow: 0 .02em .06em rgba(0, 0, 0, .6);
 }
 .hero-title .script {
-  left: .78em; top: .5em; z-index: 3;
-  font: 500 1.5em/1 var(--script); letter-spacing: 0; color: #fbfbf8;
+  left: .82em; top: .52em; z-index: 3;
+  font: 500 1.36em/1 var(--script); letter-spacing: 0; color: #fbfbf8;
   text-shadow: 0 .015em .05em rgba(0, 0, 0, .55);
 }
 .spill { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 1; }
@@ -123,26 +123,28 @@ main { position: relative; z-index: 1; }
 
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
 
-/* Band: "Shot on Fujifilm", the categories set like a caption, and a hatch that shuffles the photos.
+/* Band: the categories set like a caption, followed by "| Shot on Fujifilm".
    It sticks to the top while scrolling. */
 .index {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  display: grid; grid-template-columns: 1fr auto; align-items: center;
+  display: flex; align-items: center; flex-wrap: nowrap;
   margin: clamp(8px, 2vw, 24px) 0 clamp(40px, 6vw, 84px);
   border-block: 1px solid rgba(242, 242, 242, .7);
   background: rgba(10, 10, 10, .88); backdrop-filter: blur(6px);
 }
 .shot-on {
-  display: flex; align-items: baseline; justify-content: flex-end; gap: 8px;
+  /* "| SHOT ON FUJIFILM" follows the categories */
+  display: flex; align-items: baseline; gap: 8px; flex: none;
+  margin-left: clamp(14px, 3.4vw, 54px); padding-left: clamp(14px, 3.4vw, 54px);
+  border-left: 1px solid rgba(242, 242, 242, .6); line-height: 1;
   font: 600 9px/1 var(--mono); letter-spacing: .24em; text-transform: uppercase;
 }
 .fuji { font: 800 14px/1 var(--mono); letter-spacing: .02em; }
-.band-end { display: grid; gap: 8px; justify-items: end; padding-block: 12px; margin-right: clamp(12px, 2.4vw, 40px); }
 .fuji-i { position: relative; }
 .fuji-i::before { content: ""; position: absolute; left: 50%; top: -.06em; width: .2em; height: .2em; translate: -50% 0; background: #e60012; }
 .fuji-i { color: transparent; -webkit-text-stroke: 0; }
 .fuji-i::after { content: "I"; position: absolute; left: 0; top: .14em; color: var(--ink); clip-path: inset(.12em 0 0 0); }
-.filters { display: flex; justify-content: flex-start; align-items: center; gap: clamp(14px, 3.4vw, 54px); min-width: 0; padding-inline: clamp(12px, 2.4vw, 40px) 16px; }
+.filters { display: flex; justify-content: flex-start; align-items: center; gap: clamp(14px, 3.4vw, 54px); min-width: 0; padding-block: 14px; padding-inline: clamp(12px, 2.4vw, 40px) 0; }
 .filter {
   appearance: none; cursor: pointer; flex: none; border: 0; background: none; padding: 10px 0; position: relative;
   font: 500 clamp(11px, 1vw, 14px)/1 var(--mono); letter-spacing: .32em; text-transform: uppercase; color: var(--ink);
@@ -153,18 +155,7 @@ main { position: relative; z-index: 1; }
 .filter[aria-pressed="true"] { opacity: 1; }
 .filter[aria-pressed="true"]::after { scale: 1 1; }
 .slash { color: var(--ink); opacity: .8; font: 400 14px/1 var(--mono); }
-.shuffle {
-  appearance: none; cursor: pointer; border: 0; background: none; color: var(--ink);
-  width: clamp(110px, 12vw, 190px); height: 30px; position: relative;
-  background-image: repeating-linear-gradient(-60deg, transparent 0 9px, var(--ink) 9px 10.5px);
-  -webkit-mask: linear-gradient(#000 0 0); opacity: .85;
-}
-.shuffle span {             /* the hatch shows its job on hover */
-  position: absolute; inset: 0; display: grid; place-items: center;
-  font: 600 11px/1 var(--mono); letter-spacing: .3em; text-transform: uppercase;
-  background: #0b0b0b; opacity: 0; transition: opacity .2s;
-}
-.shuffle:hover span, .shuffle:focus-visible span { opacity: 1; }
+
 
 /* Collage: photos grouped by category, packed into a dense grid of square cells */
 .gallery { display: grid; gap: clamp(72px, 9vw, 140px); padding-bottom: clamp(80px, 12vw, 180px); }
@@ -196,8 +187,6 @@ main { position: relative; z-index: 1; }
   transition: transform .5s var(--ease), box-shadow .5s var(--ease);
 }
 .shot:hover { z-index: 2; transform: scale(1.012); box-shadow: 0 18px 40px rgba(0, 0, 0, .55); }
-/* a shuffle re-deals the tiles; they settle back in with a short fade */
-.gallery.shuffled .shot { animation: deal .7s var(--ease) both; animation-delay: calc(var(--d, 0) * 1ms); }
 @keyframes deal { from { opacity: 0; transform: scale(.96); } }
 
 .frame {
@@ -276,9 +265,9 @@ main { position: relative; z-index: 1; }
   .group-meta { margin-top: 8px; }
   .counter { display: none; }
   .hero-meta { margin-left: calc(var(--t) * .3); width: auto; margin-top: calc(var(--t) * .5); }
-  .index { grid-template-columns: 1fr; }
-  .band-end { grid-row: 2; justify-self: end; padding-block: 10px; }
-  .filters { grid-column: 1 / -1; grid-row: 1; justify-content: flex-start; overflow-x: auto; scrollbar-width: none;
+  .index { flex-direction: column; align-items: stretch; }
+  .shot-on { margin: 0; border-left: 0; padding: 10px 16px; }
+  .filters { justify-content: flex-start; overflow-x: auto; scrollbar-width: none;
     border-bottom: 1px solid rgba(242, 242, 242, .35); padding: 4px 16px; }
   .filters::-webkit-scrollbar { display: none; }
   .by-label { font-size: 10px; letter-spacing: .22em; white-space: nowrap; }

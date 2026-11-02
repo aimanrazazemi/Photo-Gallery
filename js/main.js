@@ -48,11 +48,6 @@
       `${i ? '<span class="slash" aria-hidden="true">/</span>' : ""}<button class="filter" type="button" data-cat="${id}" aria-pressed="${id === active}" title="${n} photos">${esc(label)}</button>`
     ).join("");
   };
-  document.getElementById("shuffle").addEventListener("click", () => {
-    seed = (seed * 1103515245 + 12345) >>> 0;
-    gallery.classList.remove("shuffled"); void gallery.offsetWidth; gallery.classList.add("shuffled");
-    route();
-  });
   filtersEl.addEventListener("click", (e) => {
     const b = e.target.closest(".filter");
     if (!b) return;

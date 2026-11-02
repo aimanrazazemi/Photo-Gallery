@@ -78,29 +78,8 @@ const PHOTOS = [
     category: "Architecture"
   },
   {
-    file: "images/architecture-the-myst.webp",
-    title: "The Myst",
-    category: "Architecture",
-    location: "The Myst Sa Pa Resort, Vietnam"
-  },
-  {
-    file: "images/architecture-copper-hearth.webp",
-    title: "Copper Hearth",
-    category: "Architecture"
-  },
-  {
     file: "images/architecture-slate-bath.webp",
     title: "Slate Bath",
-    category: "Architecture"
-  },
-  {
-    file: "images/architecture-night-table.webp",
-    title: "Night Table",
-    category: "Architecture"
-  },
-  {
-    file: "images/architecture-clay-bar.webp",
-    title: "Clay Bar",
     category: "Architecture"
   },
   {
@@ -135,26 +114,16 @@ const PHOTOS = [
     location: "Suria KLCC, Kuala Lumpur"
   },
   {
-    file: "images/architecture-sapa-station.webp",
-    title: "Sapa Station",
-    category: "Architecture",
-    location: "Sun Plaza, Sa Pa, Vietnam"
-  },
-  {
-    file: "images/architecture-terrace-mosaic.webp",
-    title: "Terrace Mosaic",
-    category: "Architecture"
-  },
-  {
-    file: "images/architecture-mosaic-stair.webp",
-    title: "Mosaic Stair",
-    category: "Architecture"
-  },
-  {
     file: "images/architecture-twin-towers.webp",
     title: "Twin Towers",
     category: "Architecture",
     location: "Petronas Twin Towers, Kuala Lumpur"
+  },
+  {
+    file: "images/architecture-klcc-park.webp",
+    title: "Park Skyline",
+    category: "Architecture",
+    location: "KLCC Park, Kuala Lumpur"
   },
   {
     file: "images/people-brick-screen.webp",
@@ -224,12 +193,6 @@ const PHOTOS = [
     category: "Travel"
   },
   {
-    file: "images/travel-klcc-park.webp",
-    title: "Park Skyline",
-    category: "Travel",
-    location: "KLCC Park, Kuala Lumpur"
-  },
-  {
     file: "images/travel-clouds-over-sapa.webp",
     title: "Clouds over Sapa",
     category: "Travel",
@@ -259,6 +222,43 @@ const PHOTOS = [
   {
     file: "images/travel-temple-guardian.webp",
     title: "Temple Guardian",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-the-myst.webp",
+    title: "The Myst",
+    category: "Travel",
+    location: "The Myst Sa Pa Resort, Vietnam"
+  },
+  {
+    file: "images/travel-copper-hearth.webp",
+    title: "Copper Hearth",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-night-table.webp",
+    title: "Night Table",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-clay-bar.webp",
+    title: "Clay Bar",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-sapa-station.webp",
+    title: "Sapa Station",
+    category: "Travel",
+    location: "Sun Plaza, Sa Pa, Vietnam"
+  },
+  {
+    file: "images/travel-terrace-mosaic.webp",
+    title: "Terrace Mosaic",
+    category: "Travel"
+  },
+  {
+    file: "images/travel-mosaic-stair.webp",
+    title: "Mosaic Stair",
     category: "Travel"
   }
 ];

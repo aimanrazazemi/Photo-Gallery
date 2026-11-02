@@ -18,9 +18,9 @@ This file is the project's working record. Every change to the site is noted in 
 | Theme | Simple, clean and architectural |
 | Colours | Black background, white text and ink; only the photos are in colour |
 | Typeface | "After": Agraham (look-alike Gloock). "Hours": Birthstone Bounce. Name: your own signature image. Titles, byline, tagline: Eden Meadow (look-alike Gilda Display). Menu and small labels: Montserrat. |
-| Layout | Mosaic per category: tiles in four random sizes (S, M, L, XL) on a square-cell grid, packed with no gaps; Shuffle re-deals them |
+| Layout | Mosaic per category: tiles in four sizes (S, M, L, XL) on a square-cell grid, packed with no gaps |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
-| Categories | Spaced capitals in a band between two white lines: ARCHITECTURE / PEOPLE / NATURE / TRAVEL, next to "Shot on Fujifilm"; the hatch on the right shuffles. Sticks to the top while scrolling. |
+| Categories | Spaced capitals in a band between two white lines, from the left: ARCHITECTURE / PEOPLE / NATURE / TRAVEL \| SHOT ON FUJIFILM. Sticks to the top while scrolling. |
 | Hosting | GitHub, published with GitHub Pages |
 
 ### Colour palette
@@ -196,6 +196,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Removed the hatch (and with it the Shuffle feature; tile sizes are still mixed, but fixed). "| SHOT ON FUJIFILM" now follows the categories on the left of the band. "Hours" made slightly smaller so it clears the divider in the signature line. Moved "Park Skyline" from Travel to Architecture, and "The Myst", "Copper Hearth", "Night Table", "Clay Bar", "Sapa Station", "Terrace Mosaic" and "Mosaic Stair" from Architecture to Travel (files renamed to match). Now Architecture 19, People 7, Nature 4, Travel 15. |
 | 2026-11-02 | Menu band rearranged: the category titles now start from the left, and "Shot on Fujifilm" moved to the right in a smaller size, sitting just above the shuffle hatch. On phones the categories are on top with "Shot on Fujifilm" and the hatch below. |
 | 2026-11-02 | "Hours" changed to Birthstone Bounce, a free cursive with a tall looping H and bouncing letters; the doubled outline and grey fill are kept. |
 | 2026-11-02 | Stronger vignette on the left and right: textured edge strips cut from your background (`images/bg-edge-left.webp`, `bg-edge-right.webp`) now sit on both sides at every screen size, so the edges show on tall phone screens too, with a soft darkening toward each side. |
