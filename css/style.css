@@ -108,13 +108,15 @@ main { position: relative; z-index: 1; }
   padding: 14px max(var(--gutter), env(safe-area-inset-right, 0px)) 14px max(var(--gutter), env(safe-area-inset-left, 0px));
   background: var(--paper);
 }
-.filters { position: relative; display: flex; justify-content: space-between; gap: 12px; }
+.filters { position: relative; display: flex; justify-content: flex-start; gap: 12px; }
 .filters::before {           /* the rule the tags sit on */
   content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--sand); z-index: -1;
 }
 .filter {
   appearance: none; cursor: pointer; flex: none;
   display: inline-flex; align-items: center; gap: 9px;
+  /* every tag is the same width, so the row reads as an even set from the left */
+  width: 196px; justify-content: flex-start;
   padding: 4px 14px 4px 4px; border: 1px solid var(--sand); border-radius: 999px;
   background: var(--paper); color: var(--ink-soft);
   font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
@@ -125,7 +127,7 @@ main { position: relative; z-index: 1; }
   width: 28px; height: 28px; border-radius: 50%; border: 1px solid currentColor;
   font: 500 9px/1 var(--mono); letter-spacing: .02em; font-variant-numeric: tabular-nums;
 }
-.filter .n { font-size: 9px; letter-spacing: .06em; opacity: .6; font-variant-numeric: tabular-nums; }
+.filter .n { margin-left: auto; font-size: 9px; letter-spacing: .06em; opacity: .6; font-variant-numeric: tabular-nums; }
 .filter:hover { color: var(--ink); border-color: var(--ink-soft); }
 .filter[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
