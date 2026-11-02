@@ -36,24 +36,14 @@
 
   const categories = [...new Set(photos.map((p) => p.category).filter(Boolean))];
 
-  /* ---------- Grid bubbles on the divider: A1, B2, C3 ... one per column line ---------- */
-  const divider = document.getElementById("divider");
-  const drawBubbles = () => {
-    const cols = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--cols")) || 12;
-    if (divider.dataset.cols === String(cols)) return;
-    divider.dataset.cols = cols;
-    const tag = (i) => `${String.fromCharCode(65 + i)}${i + 1}`;
-    divider.innerHTML = Array.from({ length: cols }, (_, i) => `<div class="bubble"><span>${tag(i)}</span></div>`).join("") +
-      `<div class="bubble-end">${tag(cols)}</div>`;
-  };
-  drawBubbles();
-  window.addEventListener("resize", drawBubbles);
+  // Plan-style grid tags: A1, B2, C3 ... used on the menu and on each category heading
+  const gridTag = (i) => `${String.fromCharCode(65 + i)}${i + 1}`;
 
   /* ---------- Filters ---------- */
   const renderFilters = (active) => {
     const items = [["all", "All", photos.length], ...categories.map((c) => [slug(c), c, photos.filter((p) => p.category === c).length])];
-    filtersEl.innerHTML = items.map(([id, label, n]) =>
-      `<button class="filter" type="button" data-cat="${id}" aria-pressed="${id === active}">${esc(label)}<sup>${n}</sup></button>`
+    filtersEl.innerHTML = items.map(([id, label, n], i) =>
+      `<button class="filter" type="button" data-cat="${id}" aria-pressed="${id === active}"><span class="tag">${gridTag(i)}</span><span class="name">${esc(label)}</span><span class="n">${n}</span></button>`
     ).join("");
   };
   filtersEl.addEventListener("click", (e) => {
@@ -190,7 +180,7 @@
       if (!items.length) return "";
       return `<section class="group" id="group-${slug(c)}">
         <div class="group-head">
-          <h2 class="group-title">${esc(c)}</h2>
+          <h2 class="group-title"><span class="tag">${gridTag(categories.indexOf(c) + 1)}</span>${esc(c)}</h2>
           <p class="group-meta">${String(items.length).padStart(2, "0")} ${items.length === 1 ? "photo" : "photos"}${yearSpan(items) ? " · " + yearSpan(items) : ""}</p>
         </div>
         <div class="collage">${items.map((p, j) => shotHTML(p, ++idx, j + 1)).join("")}</div>

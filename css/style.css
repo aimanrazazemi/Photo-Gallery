@@ -1,13 +1,13 @@
-/* Layout: a quiet page in one typeface, over faint vertical column lines. Thin rules separate the header, intro and gallery;
-   photos are grouped by category in edge-to-edge collages with generous space between groups. */
+/* Layout: a black gallery wall. A wide ink-spill title opens the page, a plan-style index of grid tags
+   (A1, B2, C3 …) is the category menu, and photos hang below in edge-to-edge collages, one per category. */
 :root {
-  --paper: #ffffff;      /* white ground */
-  --stone: #f0f0f0;      /* photo placeholder while loading */
-  --sand: #cfcfcf;       /* lines, frames */
-  --umber: #111111;      /* black: accent, active states */
-  --ink: #111111;        /* black text */
-  --ink-soft: #5c5c5c;   /* secondary text */
-  --veil: rgba(255, 255, 255, 0.92);   /* white hover panel */
+  --paper: #0b0b0b;      /* black ground */
+  --stone: #1a1a1a;      /* photo placeholder while loading */
+  --sand: #3a3a3a;       /* lines, outlines */
+  --umber: #f2f2f2;      /* white: accent, active states */
+  --ink: #f2f2f2;        /* white text and ink */
+  --ink-soft: #9a9a9a;   /* secondary text */
+  --veil: rgba(11, 11, 11, 0.86);      /* dark hover panel */
 
   --font: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --script: "Mrs Saint Delafield", "Brush Script MT", cursive;   /* "Hours" in the main heading */
@@ -20,7 +20,7 @@
   --gap: clamp(12px, 2vw, 28px);
   --gutter: clamp(16px, 5vw, 80px);
   --ease: cubic-bezier(.2, .7, .1, 1);
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -45,27 +45,12 @@ body::before {
   z-index: 10; background: var(--paper);
 }
 .bar {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap;
-  gap: 8px 32px;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap;
   padding-block: 22px 18px;
-  background: var(--paper);
   border-bottom: 1px solid var(--sand);
 }
-.brand {
-  font: 600 14px/1 var(--display); letter-spacing: .16em; text-transform: uppercase; text-decoration: none;
-}
-.filters { display: flex; flex-wrap: wrap; gap: 4px 22px; }
-.filter {
-  appearance: none; border: 0; background: none; padding: 4px 0; cursor: pointer;
-  font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
-  color: var(--ink-soft);
-  border-bottom: 1px solid transparent;
-  transition: color .2s, border-color .2s;
-}
-.filter sup { font-size: 9px; margin-left: 3px; color: var(--sand); }
-.filter:hover { color: var(--ink); }
-.filter[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--umber); }
+.brand { font: 600 13px/1 var(--display); letter-spacing: .18em; text-transform: uppercase; text-decoration: none; }
+.bar-note { font: 500 10px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
 
 main { position: relative; z-index: 1; }
 
@@ -86,7 +71,6 @@ main { position: relative; z-index: 1; }
 .hero-title {
   margin: 0; font-size: 1em; font-weight: 500; line-height: .9;
   position: absolute; inset: 0;
-  text-shadow: 0 .02em .05em rgba(0, 0, 0, .16);
 }
 .hero-title span { position: absolute; white-space: nowrap; }
 .hero-title .after { left: -.04em; top: 0; font-family: var(--display); letter-spacing: -.04em; }
@@ -100,49 +84,49 @@ main { position: relative; z-index: 1; }
   position: absolute; z-index: 3;
   left: 3.62em; top: .38em; width: 1.48em; height: 1.48em; max-width: none;
   border-radius: 50%; object-fit: cover;
-  box-shadow: 0 0 0 .025em var(--paper), 0 .03em .12em rgba(0, 0, 0, .25);
+  box-shadow: 0 0 0 .025em var(--paper);
 }
-.hero-text {
-  display: grid; gap: 14px; width: min(100%, 34rem);
-  margin-top: 8px;
+/* the byline is signed under "Hours", right-aligned so it ends just before the ink pool */
+.intro-by {
+  position: absolute; z-index: 2; margin: 0;
+  right: calc(var(--t) * 1.95); top: calc(var(--t) * 1.92);
+  font: 400 max(.27em, 22px)/1 var(--sign); letter-spacing: 0; color: var(--ink); white-space: nowrap;
+}
+.intro-tagline {
+  margin: clamp(20px, 3vw, 40px) 0 0; max-width: 34rem;
+  font-size: 15px; line-height: 1.7; color: var(--ink-soft);
   animation: rise 1.1s .15s var(--ease) both;
-}
-/* the byline is signed, in a handwritten signature face */
-.intro-by { margin: 0; font: 400 clamp(34px, 3.6vw, 52px)/1 var(--sign); color: var(--ink); letter-spacing: 0; }
-.intro-tagline { margin: 0; font-size: 15px; line-height: 1.7; color: var(--ink-soft); text-align: justify; hyphens: auto; }
-/* On wider screens the signature and tagline sit on one line under the artwork, keeping the hero wide and low */
-@media (min-width: 761px) {
-  .hero-text {
-    width: 100%; margin-top: clamp(16px, 2vw, 28px);
-    grid-template-columns: auto minmax(0, 34rem); justify-content: space-between; align-items: end; gap: 32px;
-  }
 }
 
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
 
-/* A single rule between the intro and the gallery */
-.divider { border: 0; border-top: 1px solid var(--sand); margin: 0 0 clamp(48px, 7vw, 100px); }
-
-/* Grid bubbles on the divider, one where each column line meets it, like gridline tags on a plan */
-.divider {
-  --bubble: clamp(26px, 2.4vw, 34px);
-  position: relative; height: 0;
-  display: grid; grid-template-columns: repeat(var(--cols), 1fr); column-gap: var(--gap);
-  margin-top: calc(var(--bubble) / 2);
-  margin-bottom: calc(clamp(48px, 7vw, 100px) + var(--bubble) / 2);
+/* Index: the category menu, set on a single rule as plan-style grid tags. It sticks to the top while scrolling. */
+.index {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  margin: 0 calc(-1 * max(var(--gutter), env(safe-area-inset-left, 0px))) clamp(40px, 6vw, 84px);
+  padding: 14px max(var(--gutter), env(safe-area-inset-right, 0px)) 14px max(var(--gutter), env(safe-area-inset-left, 0px));
+  background: var(--paper);
 }
-.bubble {
-  position: relative; width: 0; height: 0;
+.filters { position: relative; display: flex; justify-content: space-between; gap: 12px; }
+.filters::before {           /* the rule the tags sit on */
+  content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--sand); z-index: -1;
 }
-.bubble span, .bubble-end {
-  position: absolute; top: 0; left: 0; transform: translate(-50%, -50%);
-  width: var(--bubble); height: var(--bubble); border-radius: 50%;
-  border: 1px solid var(--sand); background: var(--paper);
-  display: grid; place-items: center;
-  font: 500 clamp(8px, .7vw, 10px)/1 var(--mono); letter-spacing: .02em; color: var(--ink-soft);
-  font-variant-numeric: tabular-nums;
+.filter {
+  appearance: none; cursor: pointer; flex: none;
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 4px 14px 4px 4px; border: 1px solid var(--sand); border-radius: 999px;
+  background: var(--paper); color: var(--ink-soft);
+  font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  transition: color .2s, border-color .2s, background-color .2s;
 }
-.bubble-end { left: 100%; }
+.tag {
+  display: inline-grid; place-items: center; flex: none;
+  width: 28px; height: 28px; border-radius: 50%; border: 1px solid currentColor;
+  font: 500 9px/1 var(--mono); letter-spacing: .02em; font-variant-numeric: tabular-nums;
+}
+.filter .n { font-size: 9px; letter-spacing: .06em; opacity: .6; font-variant-numeric: tabular-nums; }
+.filter:hover { color: var(--ink); border-color: var(--ink-soft); }
+.filter[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
 /* Collage: photos grouped by category, packed into a dense grid of square cells */
 .gallery { display: grid; gap: clamp(72px, 9vw, 140px); padding-bottom: clamp(80px, 12vw, 180px); }
@@ -153,8 +137,10 @@ main { position: relative; z-index: 1; }
 }
 .group-title {
   grid-column: 1 / span 8; margin: 0;
-  font: 600 clamp(26px, 3.6vw, 48px)/1.1 var(--display); letter-spacing: -.02em;
+  display: flex; align-items: center; gap: 14px;
+  font: 500 clamp(22px, 2.6vw, 34px)/1.1 var(--display); letter-spacing: -.01em;
 }
+.group-title .tag { width: 34px; height: 34px; font-size: 10px; color: var(--ink-soft); }
 .group-meta {
   grid-column: 9 / -1; justify-self: end; text-align: right;
   font: 500 10px/1.6 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
@@ -239,16 +225,16 @@ main { position: relative; z-index: 1; }
   .group-title, .group-meta { grid-column: 1 / -1; justify-self: start; text-align: left; }
   .group-meta { margin-top: 8px; }
   .counter { display: none; }
-  /* one swipeable row of categories instead of wrapping onto two lines */
-  .bar { flex-wrap: nowrap; flex-direction: column; align-items: stretch; gap: 10px; padding-block: 14px 0; }
-  .filters {
-    flex-wrap: nowrap; overflow-x: auto; gap: 0 20px; scrollbar-width: none;
-    margin-right: calc(-1 * max(var(--gutter), env(safe-area-inset-right, 0px)));
-    padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
-  }
-  .filters::-webkit-scrollbar { display: none; }
-  .filter { flex: none; padding: 10px 0 12px; }
+  .bar-note { display: none; }
   .hero { padding-block: 28px 36px; }
+}
+
+@media (max-width: 1100px) {
+  /* the index scrolls sideways as one row */
+  .filters { justify-content: flex-start; overflow-x: auto; scrollbar-width: none; gap: 10px;
+    margin-right: calc(-1 * max(var(--gutter), env(safe-area-inset-right, 0px))); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+  .filters::-webkit-scrollbar { display: none; }
+  .filters::before { right: auto; width: 100%; min-width: max-content; }
 }
 
 @media (hover: none) {

@@ -16,21 +16,28 @@ This file is the project's working record. Every change to the site is noted in 
 | Item | Choice |
 |---|---|
 | Theme | Simple, clean and architectural |
-| Colours | Black and white; only the photos are in colour |
+| Colours | Black background, white text and ink; only the photos are in colour |
 | Typeface | Montserrat for everything: "After" (medium), other headings (semi-bold), text (regular) and small labels (medium, spaced capitals) |
 | Signature typeface | Herr Von Muellerhoff, for "by Aiman Razazemi" |
 | Script typeface | Mrs Saint Delafield, for "Hours" in the main heading. It's a free stand-in for Amsterdam, which is a paid font and isn't on Google Fonts. |
 | Layout | Collage grouped by category: photos packed edge to edge in rows of mixed heights, with white space between groups |
 | Interaction | Hover (or tap on phones) shows photo details. Clicking doesn't open a lightbox. |
-| Categories | Yes, with a filter menu |
+| Categories | Menu set on a line as plan-style grid tags (A1 All, B2 Interiors, C3 Architecture …); it sticks to the top while scrolling |
 | Hosting | GitHub, published with GitHub Pages |
 
 ### Colour palette
 
-Black and white throughout; only the photos are in colour.
+A black gallery wall; only the photos are in colour.
 
 | Name | Hex | Used for |
 |---|---|---|
+| Black | `#0B0B0B` | Page background |
+| Near black | `#1A1A1A` | Photo placeholders while loading |
+| Line grey | `#3A3A3A` | Lines, menu and tag outlines |
+| White | `#F2F2F2` | Text, headings, the ink spill, active menu item |
+| Soft grey | `#9A9A9A` | Secondary text |
+
+---|---|---|
 | White | `#FFFFFF` | Page background, portrait background, hover panel (slightly see-through) |
 | Light grey | `#F0F0F0` | Photo placeholders while loading |
 | Line grey | `#CFCFCF` | Lines, dividers, grid bubble outlines (column lines are black at 7%) |
@@ -190,6 +197,7 @@ Newest first.
 
 | Date | Change |
 |---|---|
+| 2026-11-02 | Black theme: black background, white text, white ink spill; the portrait is inverted to suit (white hair and linework on black). The signature "by Aiman Razazemi" now sits under "Hours" on the right, just left of the portrait. The category menu moved out of the header onto the line above the gallery as grid-tag pills (A1 All, B2 Interiors, C3 Architecture, D4 People, E5 Nature, F6 Travel); it sticks to the top while scrolling and swipes sideways on phones and tablets. Each category heading carries its matching tag. The header is now just "Photo Dump" plus "Photographs · Fujifilm X-E5". The separate A1–M13 bubble row is replaced by the menu. |
 | 2026-11-02 | Hero made horizontal: the ink pool and portrait now sit to the right of the title, centred level with "After / Hours", with the spill running sideways from the tail of "Hours". The signature and tagline sit on one line below (stacked on phones). "by Aiman Razazemi" is now in a handwritten signature font, Herr Von Muellerhoff. |
 | 2026-11-02 | Redesigned the opening section as one composition. The vertical column lines are removed. The tail of the script "Hours" now spills as ink into a lopsided pool with drips and droplets, and the round portrait sits in that pool, overlapping the end of "Hours". On larger screens the byline and tagline tuck under "After"; on phones they sit below. The whole piece scales as one to fill the phone screen. On phones the category menu is a single swipeable row with larger tap targets. |
 | 2026-10-30 | New black-and-white theme: white background, black text and accents, light grey lines. Portrait redone in greyscale (white background, black hair, light grey face, white highlights) with a thin black outline. The heading's white effect is now a faint soft shadow, the same as under the portrait. Photos keep their colour. |
